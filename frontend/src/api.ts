@@ -8,8 +8,8 @@ import type { HealthInfo, VersionInfo } from "./llm";
 import { API_BASE } from "./sse";
 import { z } from "zod";
 
-/** 목업 모드 여부(빌드 시점 환경변수 `VITE_MOCK=1`). */
-export const MOCK = import.meta.env.VITE_MOCK === "1";
+/** 목업 모드 여부: 빌드 시점 환경변수 `VITE_MOCK=1` 또는 `vite --mode mock`(OS 무관). */
+export const MOCK = import.meta.env.VITE_MOCK === "1" || import.meta.env.MODE === "mock";
 /**
  * 이상 목록을 한 번에 받는 조회 기간(일) — 서버 `lookback_days` 상한(30). 이상은 해상도와 무관해 30일치를 한 번 받아
  * 1/7/30일 전환을 클라이언트에서 처리한다. (시계열은 해상도가 기간마다 달라 기간별로 받는다.)

@@ -73,6 +73,42 @@ LLM 백엔드는 `fake`(LLM 없음), `ollama`(로컬), `openai`(과금) 세 가�
 
 ## 주요 실행 방법
 
+### 사전 준비
+
+| 도구 | 버전 | 언제 필요한가 |
+|---|---|---|
+| Git | 아무 버전 | 저장소 받기 |
+| Python | 3.11 (또는 [uv](https://docs.astral.sh/uv/)가 있으면 자동으로 받는다) | 백엔드 |
+| Node.js | 22 이상 | 웹 화면 |
+| Ollama | 최신 | 로컬 LLM을 쓸 때만. 없으면 `fake` 모드(규칙 기반 리포트)로 동작한다 |
+| Docker Desktop 또는 Docker Engine + Compose v2 | 최신 | Docker로 한 번에 띄울 때만 |
+
+```bash
+git clone https://github.com/kimddong23/skala-15w-AI_Agent_Capstone_miniproject.git
+cd skala-15w-AI_Agent_Capstone_miniproject
+```
+
+### 운영체제별 실행
+
+| 운영체제 | 권장 방법 | 확인 범위 |
+|---|---|---|
+| macOS (Apple Silicon·Intel) | 아래 `sh/` 스크립트 | 새로 clone한 저장소에서 설치·테스트·기동 확인 |
+| Linux (x86_64, arm64) | 아래 `sh/` 스크립트 | x86_64 컨테이너에서 clone부터 설치·테스트·기동 확인 |
+| Windows 10/11 | Docker Desktop의 `docker compose up -d --build`, 또는 WSL2(Ubuntu)에서 Linux와 같은 명령 | 이미지는 amd64·arm64 공용이라 Docker 경로는 같다. Windows 네이티브 PowerShell 경로는 아래 명령만 정리했고 직접 실행해 보지는 않았다 |
+
+Windows에서 WSL2나 Docker 없이 PowerShell로 바로 실행하려면 스크립트 대신 다음을 쓴다(`.venv/bin/python` 대신 `.venv\Scripts\python`).
+
+```powershell
+py -3.11 -m venv .venv
+.venv\Scripts\python -m pip install -r requirements.txt
+$env:LLM_BACKEND = "fake"; $env:CHECKPOINTER = "sqlite"; $env:HITL_ENABLED = "true"
+.venv\Scripts\python -m uvicorn app.api.main:app --host 127.0.0.1 --port 8100
+# 새 PowerShell 창에서
+cd frontend; npm ci; npm run dev          # http://localhost:8600 (백엔드 8100으로 프록시)
+```
+
+로컬 LLM을 쓰려면 Ollama를 설치하고 `ollama pull qwen3:0.6b`, `ollama pull qwen3:8b`, `ollama pull bge-m3`를 받은 뒤 `$env:LLM_BACKEND = "ollama"`로 띄운다. 저장소의 `.gitattributes`가 줄바꿈을 LF로 고정하므로 Windows에서 받아도 셸 스크립트와 Docker 빌드가 깨지지 않는다.
+
 **맨 처음 한 번만**: 저장소를 받았다면 `.venv`부터 만든다. 가공 데이터(`data/processed/`)는 저장소에 들어 있어서 Kaggle 계정 없이 바로 실행된다.
 
 ```bash

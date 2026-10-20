@@ -1,0 +1,11 @@
+# 줄바꿈: Windows 에서 받아도 셸 스크립트·소스는 LF 로 유지한다 (CRLF 면 bash·Docker 가 깨진다).
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.png binary
+*.jpg binary
+*.ico binary
+*.parquet binary
+*.npz binary
+*.sqlite binary
+*.woff binary
+*.woff2 binary
