@@ -5,7 +5,7 @@
 - 장비: Apple M4 Pro, RAM 48 GB
 - LangSmith 실험(비공개)
 
-## KPI (README 표의 원천)
+## KPI (docs/evaluation.md 표의 원천)
 
 | KPI | 값 | 목표 |
 |---|---|---|
