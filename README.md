@@ -84,8 +84,8 @@ LLM 백엔드는 `fake`(LLM 없음), `ollama`(로컬), `openai`(과금) 세 가�
 | Docker Desktop 또는 Docker Engine + Compose v2 | 최신 | Docker로 한 번에 띄울 때만 |
 
 ```bash
-git clone https://github.com/kimddong23/skala-15w-AI_Agent_Capstone_miniproject.git
-cd skala-15w-AI_Agent_Capstone_miniproject
+git clone https://github.com/kimddong23/skala-15w-ai-agent-capstone-miniproject.git
+cd skala-15w-ai-agent-capstone-miniproject
 ```
 
 ### 운영체제별 실행
