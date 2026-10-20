@@ -1,0 +1,95 @@
+{
+ "variant": "v5",
+ "runs": [
+  {
+   "query": "U05 최근 30일 심박 이상 점검해줘",
+   "total_s": 31.9,
+   "marks": {
+    "plan_created": 5.4,
+    "anomalies_found": 5.6,
+    "analysis_done": 10.7,
+    "first_token": 10.7,
+    "writing_done": 31.9,
+    "validation": 31.9
+   },
+   "attempts": 1,
+   "passed": true,
+   "degraded": false,
+   "issues": [],
+   "report_chars": 595,
+   "n_anomalies": 5
+  },
+  {
+   "query": "U03 최근 30일 이상 있었는지 점검해줘",
+   "total_s": 32.2,
+   "marks": {
+    "plan_created": 6.6,
+    "anomalies_found": 6.7,
+    "analysis_done": 12.0,
+    "first_token": 12.0,
+    "writing_done": 32.2,
+    "validation": 32.2
+   },
+   "attempts": 1,
+   "passed": true,
+   "degraded": false,
+   "issues": [],
+   "report_chars": 582,
+   "n_anomalies": 3
+  },
+  {
+   "query": "U12 지난 2주 심박 점검해줘",
+   "total_s": 19.7,
+   "marks": {
+    "plan_created": 6.9,
+    "anomalies_found": 7.0,
+    "analysis_done": 9.9,
+    "first_token": 12.3,
+    "writing_done": 19.7,
+    "validation": 19.7
+   },
+   "attempts": 1,
+   "passed": true,
+   "degraded": false,
+   "issues": [],
+   "report_chars": 310,
+   "n_anomalies": 0
+  },
+  {
+   "query": "U08 최근 한 달 심박이 평소와 다른지 확인해줘",
+   "total_s": 35.3,
+   "marks": {
+    "plan_created": 8.3,
+    "anomalies_found": 8.5,
+    "analysis_done": 12.1,
+    "first_token": 17.5,
+    "writing_done": 35.3,
+    "validation": 35.3
+   },
+   "attempts": 1,
+   "passed": true,
+   "degraded": false,
+   "issues": [],
+   "report_chars": 436,
+   "n_anomalies": 4
+  },
+  {
+   "query": "U06 최근 30일 이상 징후 분석해줘",
+   "total_s": 38.2,
+   "marks": {
+    "plan_created": 8.6,
+    "anomalies_found": 8.7,
+    "analysis_done": 15.7,
+    "first_token": 19.9,
+    "writing_done": 38.2,
+    "validation": 38.2
+   },
+   "attempts": 1,
+   "passed": true,
+   "degraded": false,
+   "issues": [],
+   "report_chars": 457,
+   "n_anomalies": 2
+  }
+ ]
+}

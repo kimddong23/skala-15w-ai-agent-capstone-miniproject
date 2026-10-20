@@ -1,0 +1,35 @@
+# Python 3.11 — `uv pip install --python .venv/bin/python -r requirements.txt`
+# 에이전트 / 그래프
+langgraph==1.2.16
+langgraph-checkpoint-sqlite==3.1.2
+aiosqlite==0.22.1
+langchain-core==1.6.12
+langchain-ollama==1.1.0
+langchain-openai==1.7.2  # LLM_BACKEND=openai (과금 — 테스트에서는 생성만, 호출 금지)
+openai==3.35.1
+langchain-mcp-adapters==0.3.2
+langsmith==0.14.11
+# MCP 서버
+fastmcp==3.4.9
+mcp==1.30.0
+# API
+fastapi==0.148.0
+uvicorn==0.54.0
+pydantic==2.14.1
+pydantic-settings==2.16.0
+python-dotenv==1.2.4  # .env 로딩(LangSmith 설정 등) — app.config 에서 사용
+httpx==0.28.1
+# 데이터 / 탐지
+pandas==3.0.6
+pyarrow==26.0.0
+numpy==2.4.6
+scikit-learn==1.9.1  # 연구 방법 탐지기(data 담당)
+scipy==1.17.1
+threadpoolctl==3.7.0
+# 테스트
+pytest==9.1.1
+pytest-asyncio==1.4.0
+# 선택(미검증): CHECKPOINTER=postgres 일 때만 필요
+# langgraph-checkpoint-postgres
+# psycopg[binary,pool]
+openpyxl==3.1.5

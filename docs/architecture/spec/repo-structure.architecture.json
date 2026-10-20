@@ -1,0 +1,398 @@
+{
+ "schema_version": 1,
+ "diagram_type": "architecture",
+ "meta": {
+  "title": "저장소 구조와 모듈 의존성",
+  "quality_profile": "showcase",
+  "viewBox": [
+   1260,
+   660
+  ],
+  "legend": {
+   "mode": "auto",
+   "entries": {
+    "frontend": {
+     "label": "UI"
+    },
+    "backend": {
+     "label": "app/ 모듈"
+    },
+    "database": {
+     "label": "데이터"
+    },
+    "cloud": {
+     "label": "배포"
+    },
+    "external": {
+     "label": "스크립트·검증·문서"
+    }
+   }
+  }
+ },
+ "components": [
+  {
+   "id": "docker",
+   "type": "cloud",
+   "label": "Docker",
+   "sublabel": "backend+frontend 이미지",
+   "pos": [
+    40,
+    40
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "docker"
+  },
+  {
+   "id": "sh",
+   "type": "external",
+   "label": "sh/",
+   "sublabel": "setup·run 스크립트",
+   "pos": [
+    290,
+    40
+   ],
+   "size": [
+    150,
+    72
+   ]
+  },
+  {
+   "id": "docs",
+   "type": "external",
+   "label": "docs/",
+   "sublabel": "구성도 · 사용자 가이드",
+   "pos": [
+    540,
+    40
+   ],
+   "size": [
+    150,
+    72
+   ]
+  },
+  {
+   "id": "frontend",
+   "type": "frontend",
+   "label": "frontend/src",
+   "sublabel": "콘솔 UI · SSE·zod",
+   "pos": [
+    40,
+    190
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "react"
+  },
+  {
+   "id": "api",
+   "type": "backend",
+   "label": "app/api",
+   "sublabel": "FastAPI · 싱글턴",
+   "pos": [
+    290,
+    190
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "fastapi"
+  },
+  {
+   "id": "agent",
+   "type": "backend",
+   "label": "app/agent",
+   "sublabel": "그래프·게이트·검증기",
+   "pos": [
+    540,
+    190
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": {
+    "url": "https://www.langchain.com/langgraph",
+    "sha256": "0c60295f8003df255890bff79d9b006d5b3459f90e02c31c850e05b4365c9029"
+   }
+  },
+  {
+   "id": "mcp",
+   "type": "backend",
+   "label": "app/mcp_server",
+   "sublabel": "도구·문서 서버 2개",
+   "pos": [
+    790,
+    190
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "python"
+  },
+  {
+   "id": "rag",
+   "type": "backend",
+   "label": "app/rag",
+   "sublabel": "청킹·임베딩·검색",
+   "pos": [
+    1040,
+    40
+   ],
+   "size": [
+    150,
+    72
+   ]
+  },
+  {
+   "id": "detection",
+   "type": "backend",
+   "label": "app/detection",
+   "sublabel": "결정론 탐지 규칙",
+   "pos": [
+    1040,
+    190
+   ],
+   "size": [
+    150,
+    72
+   ]
+  },
+  {
+   "id": "data",
+   "type": "database",
+   "label": "app/data",
+   "sublabel": "prepare 변환 · store",
+   "pos": [
+    1040,
+    340
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": {
+    "url": "https://pandas.pydata.org/",
+    "sha256": "ff6e701917e67fa8d8f1ea4749a3a7dae1b1c8dc5e583facd442841b8d2b8146"
+   }
+  },
+  {
+   "id": "data_dir",
+   "type": "database",
+   "label": "data/processed",
+   "sublabel": "parquet · 라벨 · 인덱스",
+   "pos": [
+    1040,
+    490
+   ],
+   "size": [
+    150,
+    72
+   ]
+  },
+  {
+   "id": "e2e",
+   "type": "external",
+   "label": "e2e/",
+   "sublabel": "Playwright 브라우저",
+   "pos": [
+    40,
+    490
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": {
+    "url": "https://playwright.dev/",
+    "sha256": "d81c748cc8bd064ea31772063fa2a8373df0a6f621495428755be015f6c239cf"
+   }
+  },
+  {
+   "id": "tests",
+   "type": "external",
+   "label": "tests/",
+   "sublabel": "pytest 단위·통합",
+   "pos": [
+    290,
+    490
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": {
+    "url": "https://pytest.org/",
+    "sha256": "27055a4e52d49c7593a3cd70624fce09836d5327639f4e67f2da1fd0a65201aa"
+   }
+  },
+  {
+   "id": "eval",
+   "type": "external",
+   "label": "eval/",
+   "sublabel": "탐지·RAG·에이전트 평가",
+   "pos": [
+    540,
+    490
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "python"
+  }
+ ],
+ "connections": [
+  {
+   "id": "docker-fe",
+   "from": "docker",
+   "to": "frontend",
+   "label": "이미지 빌드",
+   "variant": "dashed",
+   "labelAt": [
+    115,
+    151
+   ]
+  },
+  {
+   "id": "sh-api",
+   "from": "sh",
+   "to": "api",
+   "label": "기동",
+   "variant": "dashed",
+   "labelAt": [
+    365,
+    151
+   ]
+  },
+  {
+   "id": "fe-api",
+   "from": "frontend",
+   "to": "api",
+   "label": "HTTP · SSE",
+   "variant": "emphasis"
+  },
+  {
+   "id": "api-agent",
+   "from": "api",
+   "to": "agent",
+   "label": "그래프 호출",
+   "variant": "emphasis"
+  },
+  {
+   "id": "agent-mcp",
+   "from": "agent",
+   "to": "mcp",
+   "label": "stdio",
+   "variant": "emphasis"
+  },
+  {
+   "id": "mcp-det",
+   "from": "mcp",
+   "to": "detection",
+   "label": "탐지",
+   "labelAt": [
+    1015,
+    226
+   ]
+  },
+  {
+   "id": "mcp-rag",
+   "from": "mcp",
+   "to": "rag",
+   "label": "검색",
+   "labelAt": [
+    990,
+    150
+   ]
+  },
+  {
+   "id": "mcp-data",
+   "from": "mcp",
+   "to": "data",
+   "label": "조회",
+   "labelAt": [
+    990,
+    300
+   ]
+  },
+  {
+   "id": "data-det",
+   "from": "data",
+   "to": "detection",
+   "label": "라벨 검증",
+   "variant": "dashed",
+   "labelAt": [
+    1115,
+    301
+   ]
+  },
+  {
+   "id": "data-dir",
+   "from": "data",
+   "to": "data_dir",
+   "label": "parquet",
+   "labelAt": [
+    1115,
+    451
+   ]
+  },
+  {
+   "id": "e2e-fe",
+   "from": "e2e",
+   "to": "frontend",
+   "label": "브라우저 시험",
+   "variant": "dashed",
+   "labelAt": [
+    115,
+    376
+   ]
+  },
+  {
+   "id": "tests-api",
+   "from": "tests",
+   "to": "api",
+   "label": "API 시험",
+   "variant": "dashed",
+   "labelAt": [
+    365,
+    376
+   ]
+  },
+  {
+   "id": "eval-agent",
+   "from": "eval",
+   "to": "agent",
+   "label": "종단 평가",
+   "variant": "dashed",
+   "labelAt": [
+    615,
+    376
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "dot": "cyan",
+   "title": "의존 방향",
+   "items": [
+    "frontend → api → agent → MCP 서버 → 탐지기·RAG·데이터 (한 방향)",
+    "agent는 MCP 서버를 import하지 않고 stdio로만 호출"
+   ]
+  },
+  {
+   "dot": "emerald",
+   "title": "공용·검증",
+   "items": [
+    "app/ 모든 모듈은 app.config(설정)를 읽는다",
+    "tests와 eval은 app/ 전 모듈을 import, 평가 결과는 eval/results"
+   ]
+  }
+ ]
+}

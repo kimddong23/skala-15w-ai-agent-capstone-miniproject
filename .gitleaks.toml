@@ -1,0 +1,13 @@
+# gitleaks 설정 — 기본 규칙셋을 그대로 쓰고, 재현용 대용량 원천 데이터만 검사에서 제외한다.
+# 실행: gitleaks git . --redact (이력) / gitleaks dir . --redact (작업 트리)
+[extend]
+useDefault = true
+
+[allowlist]
+description = "공개 데이터셋 원본(Kaggle arashnic/fitbit, CC BY 4.0)과 빌드 산출물은 비밀값이 없는 대용량 파일이라 제외"
+paths = [
+  '''data/raw/''',
+  '''frontend/node_modules/''',
+  '''frontend/dist/''',
+  '''e2e/node_modules/''',
+]

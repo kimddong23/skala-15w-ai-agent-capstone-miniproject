@@ -1,0 +1,11 @@
+# NVIDIA GPU 를 컨테이너 Ollama 에 붙이는 덮어쓰기 파일(NVIDIA Container Toolkit 필요, 주로 Linux).
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml --profile ollama up -d
+services:
+  ollama:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

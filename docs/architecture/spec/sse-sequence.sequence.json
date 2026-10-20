@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "분석 요청 1건의 SSE 시퀀스",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1080,
+      611
+    ],
+    "column_fit": "spread"
+  },
+  "participants": [
+    {
+      "id": "fe",
+      "type": "frontend",
+      "label": "Frontend",
+      "sublabel": "sse.ts"
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "FastAPI",
+      "sublabel": "/chat/stream"
+    },
+    {
+      "id": "graph",
+      "type": "backend",
+      "label": "LangGraph",
+      "sublabel": "노드 그래프"
+    },
+    {
+      "id": "llm",
+      "type": "external",
+      "label": "Ollama",
+      "sublabel": "fast / quality"
+    },
+    {
+      "id": "mcp",
+      "type": "backend",
+      "label": "MCP 서버",
+      "sublabel": "stdio"
+    }
+  ],
+  "segments": [
+    {
+      "from": 158,
+      "to": 258,
+      "label": "분류 · 계획"
+    },
+    {
+      "from": 276,
+      "to": 340,
+      "label": "조사"
+    },
+    {
+      "from": 358,
+      "to": 422,
+      "label": "해석 · 서술"
+    },
+    {
+      "from": 440,
+      "to": 540,
+      "label": "스트리밍 · 마무리"
+    }
+  ],
+  "messages": [
+    {
+      "from": "fe",
+      "to": "api",
+      "y": 172,
+      "label": "POST /chat/stream",
+      "variant": "emphasis"
+    },
+    {
+      "from": "api",
+      "to": "graph",
+      "y": 208,
+      "label": "astream(custom)",
+      "variant": "emphasis"
+    },
+    {
+      "from": "graph",
+      "to": "llm",
+      "y": 244,
+      "label": "route, plan (fast, JSON)",
+      "variant": "default"
+    },
+    {
+      "from": "graph",
+      "to": "mcp",
+      "y": 290,
+      "label": "summary + detect 병렬",
+      "variant": "emphasis"
+    },
+    {
+      "from": "mcp",
+      "to": "graph",
+      "y": 326,
+      "label": "요약, 이상 목록",
+      "variant": "return"
+    },
+    {
+      "from": "graph",
+      "to": "llm",
+      "y": 372,
+      "label": "analysis (fast), writing (quality)",
+      "variant": "default"
+    },
+    {
+      "from": "llm",
+      "to": "graph",
+      "y": 408,
+      "label": "토큰 스트림",
+      "variant": "return"
+    },
+    {
+      "from": "graph",
+      "to": "api",
+      "y": 454,
+      "label": "계약 이벤트를 단계마다 방출",
+      "variant": "dashed"
+    },
+    {
+      "from": "api",
+      "to": "fe",
+      "y": 490,
+      "label": "SSE 프레임 (event: type)",
+      "variant": "dashed"
+    },
+    {
+      "from": "api",
+      "to": "fe",
+      "y": 526,
+      "label": "done 또는 error",
+      "variant": "return"
+    }
+  ],
+  "activations": [
+    {
+      "participant": "api",
+      "from": 166,
+      "to": 532,
+      "type": "backend"
+    },
+    {
+      "participant": "graph",
+      "from": 202,
+      "to": 460,
+      "type": "backend"
+    },
+    {
+      "participant": "llm",
+      "from": 238,
+      "to": 250,
+      "type": "external"
+    },
+    {
+      "participant": "mcp",
+      "from": 284,
+      "to": 332,
+      "type": "backend"
+    },
+    {
+      "participant": "llm",
+      "from": 366,
+      "to": 414,
+      "type": "external"
+    }
+  ]
+}

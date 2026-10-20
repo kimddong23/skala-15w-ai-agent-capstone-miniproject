@@ -1,0 +1,299 @@
+{
+ "schema_version": 1,
+ "diagram_type": "sequence",
+ "meta": {
+  "title": "분석 요청 1건의 종단 간 흐름",
+  "quality_profile": "showcase",
+  "viewBox": [
+   1380,
+   892
+  ],
+  "column_fit": "spread"
+ },
+ "participants": [
+  {
+   "id": "user",
+   "type": "external",
+   "label": "사용자"
+  },
+  {
+   "id": "ui",
+   "type": "frontend",
+   "label": "Browser UI",
+   "brand": "react"
+  },
+  {
+   "id": "proxy",
+   "type": "frontend",
+   "label": "Vite · nginx",
+   "brand": {
+    "url": "https://nginx.org/",
+    "sha256": "47aaa89c6703eb0dff563584ba86264bfa52c95129aba509d60c44bd200b8d85"
+   }
+  },
+  {
+   "id": "api",
+   "type": "backend",
+   "label": "FastAPI",
+   "brand": "fastapi"
+  },
+  {
+   "id": "graph",
+   "type": "backend",
+   "label": "LangGraph",
+   "brand": {
+    "url": "https://www.langchain.com/langgraph",
+    "sha256": "0c60295f8003df255890bff79d9b006d5b3459f90e02c31c850e05b4365c9029"
+   }
+  },
+  {
+   "id": "mcp",
+   "type": "backend",
+   "label": "MCP 서버 2개",
+   "brand": "python"
+  },
+  {
+   "id": "llm",
+   "type": "external",
+   "label": "Ollama",
+   "brand": "ollama"
+  },
+  {
+   "id": "ls",
+   "type": "cloud",
+   "label": "LangSmith",
+   "brand": {
+    "url": "https://www.langchain.com/langsmith",
+    "sha256": "0c60295f8003df255890bff79d9b006d5b3459f90e02c31c850e05b4365c9029"
+   }
+  }
+ ],
+ "segments": [
+  {
+   "from": 162,
+   "to": 273,
+   "label": "요청 전달"
+  },
+  {
+   "from": 284,
+   "to": 395,
+   "label": "분류 · 계획"
+  },
+  {
+   "from": 406,
+   "to": 461,
+   "label": "조사"
+  },
+  {
+   "from": 472,
+   "to": 639,
+   "label": "해석 · 서술 · 검증"
+  },
+  {
+   "from": 650,
+   "to": 761,
+   "label": "승인 후 재개"
+  },
+  {
+   "from": 772,
+   "to": 799,
+   "label": "관측"
+  }
+ ],
+ "messages": [
+  {
+   "id": "q",
+   "from": "user",
+   "to": "ui",
+   "y": 176,
+   "label": "질문 입력 (U05, 최근 30일)",
+   "variant": "default"
+  },
+  {
+   "id": "post",
+   "from": "ui",
+   "to": "proxy",
+   "y": 204,
+   "label": "POST /api/chat/stream",
+   "variant": "emphasis"
+  },
+  {
+   "id": "fwd",
+   "from": "proxy",
+   "to": "api",
+   "y": 232,
+   "label": "POST /chat/stream (SSE 무버퍼 중계)",
+   "variant": "emphasis"
+  },
+  {
+   "id": "astream",
+   "from": "api",
+   "to": "graph",
+   "y": 260,
+   "label": "astream (thread_id, 이벤트 스트림)",
+   "variant": "emphasis"
+  },
+  {
+   "id": "route",
+   "from": "graph",
+   "to": "llm",
+   "y": 298,
+   "label": "route (fast, JSON) + 코드 보정",
+   "variant": "default"
+  },
+  {
+   "id": "prompt",
+   "from": "graph",
+   "to": "mcp",
+   "y": 326,
+   "label": "plan: MCP Prompt anomaly_review 조회",
+   "variant": "default"
+  },
+  {
+   "id": "plan",
+   "from": "graph",
+   "to": "llm",
+   "y": 354,
+   "label": "plan (fast, JSON) → gate (코드)",
+   "variant": "default"
+  },
+  {
+   "id": "e2",
+   "from": "graph",
+   "to": "ui",
+   "y": 382,
+   "label": "SSE route_decided · plan_created · gate_applied",
+   "variant": "dashed"
+  },
+  {
+   "id": "res",
+   "from": "graph",
+   "to": "mcp",
+   "y": 420,
+   "label": "research 병렬: get_vitals_summary + detect_anomalies → 요약 · 이상 목록 (재시도 · 20초 상한)",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e3",
+   "from": "graph",
+   "to": "ui",
+   "y": 448,
+   "label": "SSE task_started/completed · anomalies_found (커버리지 부족이면 replan 1회)",
+   "variant": "dashed"
+  },
+  {
+   "id": "ana",
+   "from": "graph",
+   "to": "llm",
+   "y": 486,
+   "label": "analysis (해석)",
+   "variant": "default"
+  },
+  {
+   "id": "e4",
+   "from": "graph",
+   "to": "ui",
+   "y": 514,
+   "label": "SSE safety_escalation (critical이면 고정 안내문, 코드)",
+   "variant": "security"
+  },
+  {
+   "id": "wr",
+   "from": "graph",
+   "to": "llm",
+   "y": 542,
+   "label": "writing (quality) ↔ 토큰 스트림",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e5",
+   "from": "graph",
+   "to": "ui",
+   "y": 570,
+   "label": "SSE token (이상 있으면 사실 서술 문장만 허용 목록 통과, 조언·평가 문장은 건너뜀)",
+   "variant": "security"
+  },
+  {
+   "id": "e6",
+   "from": "graph",
+   "to": "ui",
+   "y": 598,
+   "label": "SSE token (코드가 붙이는 대응 안내·면책) · validation (규칙 검증, 실패 시 재작성 1회 → 템플릿)",
+   "variant": "security"
+  },
+  {
+   "id": "e7",
+   "from": "graph",
+   "to": "ui",
+   "y": 626,
+   "label": "SSE approval_required → done (interrupt 대기)",
+   "variant": "security"
+  },
+  {
+   "id": "dec",
+   "from": "user",
+   "to": "ui",
+   "y": 664,
+   "label": "보호자 알림 승인 또는 거절",
+   "variant": "default"
+  },
+  {
+   "id": "appr",
+   "from": "ui",
+   "to": "api",
+   "y": 692,
+   "label": "POST /chat/approve (프록시 경유)",
+   "variant": "emphasis"
+  },
+  {
+   "id": "resume",
+   "from": "api",
+   "to": "graph",
+   "y": 720,
+   "label": "Command(resume={approved})",
+   "variant": "emphasis"
+  },
+  {
+   "id": "fin",
+   "from": "graph",
+   "to": "ui",
+   "y": 748,
+   "label": "최종 리포트 (알림 결과 한 줄 덧붙임)",
+   "variant": "return"
+  },
+  {
+   "id": "trace",
+   "from": "graph",
+   "to": "ls",
+   "y": 786,
+   "label": "run 트리: 노드·LLM·MCP span, 토큰·지연 (비동기)",
+   "variant": "dashed"
+  }
+ ],
+ "activations": [
+  {
+   "participant": "api",
+   "from": 226,
+   "to": 632,
+   "type": "backend"
+  },
+  {
+   "participant": "graph",
+   "from": 254,
+   "to": 632,
+   "type": "backend"
+  },
+  {
+   "participant": "api",
+   "from": 686,
+   "to": 754,
+   "type": "backend"
+  },
+  {
+   "participant": "graph",
+   "from": 714,
+   "to": 792,
+   "type": "backend"
+  }
+ ]
+}

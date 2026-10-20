@@ -1,0 +1,16 @@
+{
+  "name": "vital-sentinel-e2e",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test --project=default --project=hitl",
+    "test:llm": "LLM_ENABLED=true playwright test --project=llm",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

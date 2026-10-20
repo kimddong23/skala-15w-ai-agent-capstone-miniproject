@@ -1,0 +1,1838 @@
+{
+ "sensitivity": {
+  "covid|symptom|all": {
+   "n": 32,
+   "n_not_evaluable": 0,
+   "hits": 27,
+   "sensitivity": 0.844,
+   "lead_median_days": 3,
+   "detected_before_or_on_onset": 19
+  },
+  "covid|symptom|elevated_resting_trend": {
+   "n": 32,
+   "n_not_evaluable": 0,
+   "hits": 8,
+   "sensitivity": 0.25,
+   "lead_median_days": -0.5,
+   "detected_before_or_on_onset": 4
+  },
+  "covid|symptom|personal_deviation": {
+   "n": 32,
+   "n_not_evaluable": 0,
+   "hits": 14,
+   "sensitivity": 0.438,
+   "lead_median_days": 1.5,
+   "detected_before_or_on_onset": 10
+  },
+  "covid|symptom|resting_tachycardia": {
+   "n": 32,
+   "n_not_evaluable": 0,
+   "hits": 15,
+   "sensitivity": 0.469,
+   "lead_median_days": 0,
+   "detected_before_or_on_onset": 8
+  },
+  "covid|diagnosis|all": {
+   "n": 31,
+   "n_not_evaluable": 0,
+   "hits": 26,
+   "sensitivity": 0.839,
+   "lead_median_days": 4.0,
+   "detected_before_or_on_onset": 25
+  },
+  "covid|diagnosis|elevated_resting_trend": {
+   "n": 31,
+   "n_not_evaluable": 0,
+   "hits": 7,
+   "sensitivity": 0.226,
+   "lead_median_days": 2,
+   "detected_before_or_on_onset": 7
+  },
+  "covid|diagnosis|personal_deviation": {
+   "n": 31,
+   "n_not_evaluable": 0,
+   "hits": 14,
+   "sensitivity": 0.452,
+   "lead_median_days": 2.5,
+   "detected_before_or_on_onset": 13
+  },
+  "covid|diagnosis|resting_tachycardia": {
+   "n": 31,
+   "n_not_evaluable": 0,
+   "hits": 16,
+   "sensitivity": 0.516,
+   "lead_median_days": 4.5,
+   "detected_before_or_on_onset": 12
+  },
+  "other|symptom|all": {
+   "n": 13,
+   "n_not_evaluable": 0,
+   "hits": 7,
+   "sensitivity": 0.538,
+   "lead_median_days": 4,
+   "detected_before_or_on_onset": 5
+  },
+  "other|symptom|elevated_resting_trend": {
+   "n": 13,
+   "n_not_evaluable": 0,
+   "hits": 2,
+   "sensitivity": 0.154,
+   "lead_median_days": 2.0,
+   "detected_before_or_on_onset": 2
+  },
+  "other|symptom|personal_deviation": {
+   "n": 13,
+   "n_not_evaluable": 0,
+   "hits": 3,
+   "sensitivity": 0.231,
+   "lead_median_days": -1,
+   "detected_before_or_on_onset": 1
+  },
+  "other|symptom|resting_tachycardia": {
+   "n": 13,
+   "n_not_evaluable": 0,
+   "hits": 5,
+   "sensitivity": 0.385,
+   "lead_median_days": 6,
+   "detected_before_or_on_onset": 4
+  }
+ },
+ "chance_baseline": {
+  "covid": {
+   "events": 32,
+   "observed_hits": 27,
+   "expected_hits_by_chance": 20.8,
+   "observed_rate": 0.844,
+   "chance_rate": 0.649,
+   "alarm_day_rate_in_window": 0.251,
+   "alarm_day_rate_outside_events": 0.189
+  },
+  "other": {
+   "events": 13,
+   "observed_hits": 7,
+   "expected_hits_by_chance": 9.3,
+   "observed_rate": 0.538,
+   "chance_rate": 0.716,
+   "alarm_day_rate_in_window": 0.153,
+   "alarm_day_rate_outside_events": 0.189
+  }
+ },
+ "false_alarms": {
+  "controls": {
+   "days": 1859,
+   "alarm_days": 232,
+   "per_30_person_days": 3.74
+  },
+  "labeled_outside_events": {
+   "days": 1628,
+   "alarm_days": 308,
+   "per_30_person_days": 5.68
+  },
+  "by_type_all_participants_outside_events": {
+   "elevated_resting_trend": {
+    "days": 3487,
+    "alarm_days": 38,
+    "per_30_person_days": 0.33
+   },
+   "personal_deviation": {
+    "days": 3487,
+    "alarm_days": 141,
+    "per_30_person_days": 1.21
+   },
+   "resting_tachycardia": {
+    "days": 3487,
+    "alarm_days": 391,
+    "per_30_person_days": 3.36
+   }
+  }
+ },
+ "participants": {
+  "n": 75,
+  "labeled": 45,
+  "controls": 30,
+  "with_sleep": 32
+ },
+ "events_summary": [
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 4
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -2
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 4
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 5
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 5
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 1
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -2
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 1
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 5
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 1
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 5
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -2
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 2
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 2
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 4
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 4
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -3
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -3
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -3
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -3
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -3
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 5
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 5
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 0
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -3
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -3
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 1
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 4
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -2
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -2
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -3
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -3
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 2
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 3
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 4
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 5
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 4
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 5
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 1
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 2
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -2
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 4
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -2
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 4
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 2
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 2
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 4
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 2
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 4
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 2
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "other",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 5
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 5
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 6
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 2
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 7
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 2
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": -1
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": true,
+    "lead_days": 1
+   }
+  },
+  {
+   "kind": "covid",
+   "symptom_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_all": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_elevated_resting_trend": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_personal_deviation": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "symptom_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   },
+   "diagnosis_resting_tachycardia": {
+    "evaluable": true,
+    "hit": false,
+    "lead_days": null
+   }
+  }
+ ],
+ "paper_reference": {
+  "covid": {
+   "rows": 32,
+   "with_symptom_day": 30,
+   "detected": 26,
+   "missed": 4,
+   "sensitivity_among_with_symptom_day": 0.867,
+   "median_delta_days": -4.0,
+   "detected_at_or_before_onset": 23
+  },
+  "other": {
+   "rows": 15,
+   "with_symptom_day": 14,
+   "detected": 13,
+   "missed": 1,
+   "sensitivity_among_with_symptom_day": 0.929,
+   "median_delta_days": -2.0,
+   "detected_at_or_before_onset": 9
+  }
+ }
+}

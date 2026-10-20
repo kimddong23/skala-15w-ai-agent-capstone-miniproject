@@ -1,0 +1,550 @@
+{
+ "schema_version": 1,
+ "diagram_type": "architecture",
+ "meta": {
+  "title": "LangGraph 에이전트 노드 그래프",
+  "quality_profile": "showcase",
+  "viewBox": [
+   1370,
+   760
+  ],
+  "legend": {
+   "mode": "auto",
+   "entries": {
+    "messagebus": {
+     "label": "도구 호출"
+    },
+    "security": {
+     "label": "정책·게이트·승인"
+    },
+    "external": {
+     "label": "시작·종료"
+    },
+    "backend": {
+     "label": "LLM·로직 노드"
+    }
+   }
+  }
+ },
+ "components": [
+  {
+   "id": "start",
+   "type": "external",
+   "label": "START",
+   "sublabel": "사용자 질문",
+   "pos": [
+    40,
+    50
+   ],
+   "size": [
+    120,
+    60
+   ],
+   "brand": {
+    "url": "https://www.langchain.com/langgraph",
+    "sha256": "0c60295f8003df255890bff79d9b006d5b3459f90e02c31c850e05b4365c9029"
+   }
+  },
+  {
+   "id": "route",
+   "type": "backend",
+   "label": "route",
+   "sublabel": "fast LLM + 코드 보정",
+   "pos": [
+    235,
+    50
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "plan",
+   "type": "backend",
+   "label": "plan",
+   "sublabel": "Prompt + LLM",
+   "pos": [
+    430,
+    50
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "gate",
+   "type": "security",
+   "label": "gate",
+   "sublabel": "코드 이중 게이트",
+   "pos": [
+    625,
+    50
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "end_s",
+   "type": "external",
+   "label": "END",
+   "sublabel": "simple 응답",
+   "pos": [
+    40,
+    190
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "simple",
+   "type": "backend",
+   "label": "simple_answer",
+   "sublabel": "이전 사실로 답변",
+   "pos": [
+    235,
+    190
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "replan",
+   "type": "messagebus",
+   "label": "replan",
+   "sublabel": "조회 기간 2배",
+   "pos": [
+    430,
+    190
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "research",
+   "type": "messagebus",
+   "label": "research",
+   "sublabel": "도구 병렬·재시도",
+   "pos": [
+    625,
+    190
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "analysis",
+   "type": "backend",
+   "label": "analysis",
+   "sublabel": "LLM 해석",
+   "pos": [
+    625,
+    330
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "safety",
+   "type": "security",
+   "label": "safety_gate",
+   "sublabel": "critical면 안내문",
+   "pos": [
+    820,
+    330
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "end_m",
+   "type": "external",
+   "label": "END",
+   "sublabel": "최종 응답",
+   "pos": [
+    1210,
+    330
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "writing",
+   "type": "backend",
+   "label": "writing",
+   "sublabel": "스트림 · 사실 서술만",
+   "pos": [
+    820,
+    470
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "validator",
+   "type": "security",
+   "label": "validator",
+   "sublabel": "규칙 검증 · 2차 방어",
+   "pos": [
+    1015,
+    470
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "finalize",
+   "type": "backend",
+   "label": "finalize",
+   "sublabel": "실패 시 템플릿",
+   "pos": [
+    1210,
+    470
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "notify",
+   "type": "security",
+   "label": "notify_guardian",
+   "sublabel": "사람 승인",
+   "pos": [
+    1210,
+    620
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "end_h",
+   "type": "external",
+   "label": "END",
+   "sublabel": "승인 뒤 재개",
+   "pos": [
+    1015,
+    620
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "v_start",
+   "type": "external",
+   "label": "START",
+   "sublabel": "v1 기준선",
+   "pos": [
+    40,
+    620
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "v_route",
+   "type": "backend",
+   "label": "route",
+   "sublabel": "항상 analysis",
+   "pos": [
+    235,
+    620
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "v_research",
+   "type": "messagebus",
+   "label": "research",
+   "sublabel": "게이트 없는 조회",
+   "pos": [
+    430,
+    620
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "v_writing",
+   "type": "backend",
+   "label": "writing",
+   "sublabel": "LLM 1회 서술",
+   "pos": [
+    625,
+    620
+   ],
+   "size": [
+    120,
+    60
+   ]
+  },
+  {
+   "id": "v_end",
+   "type": "external",
+   "label": "END",
+   "sublabel": "검증 없음",
+   "pos": [
+    820,
+    620
+   ],
+   "size": [
+    120,
+    60
+   ]
+  }
+ ],
+ "connections": [
+  {
+   "id": "c1",
+   "from": "start",
+   "to": "route",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c2",
+   "from": "route",
+   "to": "plan",
+   "label": "analysis",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c3",
+   "from": "route",
+   "to": "simple",
+   "label": "simple · 후속 질문 강제",
+   "variant": "dashed",
+   "fromSide": "bottom",
+   "toSide": "top",
+   "labelDy": 24
+  },
+  {
+   "id": "c4",
+   "from": "simple",
+   "to": "end_s",
+   "variant": "dashed"
+  },
+  {
+   "id": "c5",
+   "from": "plan",
+   "to": "gate",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c6",
+   "from": "gate",
+   "to": "research",
+   "variant": "emphasis",
+   "fromSide": "bottom",
+   "toSide": "top"
+  },
+  {
+   "id": "c7",
+   "from": "research",
+   "to": "replan",
+   "label": "데이터 부족",
+   "variant": "dashed",
+   "fromSide": "left",
+   "toSide": "right"
+  },
+  {
+   "id": "c8",
+   "from": "replan",
+   "to": "research",
+   "label": "재조회",
+   "variant": "dashed",
+   "fromSide": "bottom",
+   "toSide": "bottom",
+   "labelDx": -10
+  },
+  {
+   "id": "c9",
+   "from": "research",
+   "to": "analysis",
+   "label": "분석 필요",
+   "variant": "emphasis",
+   "fromSide": "bottom",
+   "toSide": "top",
+   "labelDy": 24,
+   "labelDx": 45
+  },
+  {
+   "id": "c10",
+   "from": "research",
+   "to": "safety",
+   "label": "분석 불필요",
+   "variant": "dashed",
+   "fromSide": "right",
+   "toSide": "top"
+  },
+  {
+   "id": "c11",
+   "from": "analysis",
+   "to": "safety",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c12",
+   "from": "safety",
+   "to": "writing",
+   "variant": "emphasis",
+   "fromSide": "bottom",
+   "toSide": "top"
+  },
+  {
+   "id": "c13",
+   "from": "writing",
+   "to": "validator",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c14",
+   "from": "validator",
+   "to": "writing",
+   "label": "실패",
+   "variant": "dashed",
+   "fromSide": "bottom",
+   "toSide": "bottom"
+  },
+  {
+   "id": "c15",
+   "from": "validator",
+   "to": "finalize",
+   "label": "통과 · 소진",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c16",
+   "from": "finalize",
+   "to": "end_m",
+   "variant": "dashed",
+   "fromSide": "top",
+   "toSide": "bottom",
+   "label": "승인 불필요",
+   "labelAt": [
+    1270,
+    430
+   ]
+  },
+  {
+   "id": "h1",
+   "from": "finalize",
+   "to": "notify",
+   "label": "critical + HITL",
+   "variant": "security",
+   "fromSide": "bottom",
+   "toSide": "top",
+   "labelAt": [
+    1270,
+    575
+   ]
+  },
+  {
+   "id": "h2",
+   "from": "notify",
+   "to": "end_h",
+   "label": "승인·거절",
+   "variant": "dashed"
+  },
+  {
+   "id": "v1",
+   "from": "v_start",
+   "to": "v_route"
+  },
+  {
+   "id": "v2",
+   "from": "v_route",
+   "to": "v_research"
+  },
+  {
+   "id": "v3",
+   "from": "v_research",
+   "to": "v_writing"
+  },
+  {
+   "id": "v4",
+   "from": "v_writing",
+   "to": "v_end"
+  }
+ ],
+ "cards": [
+  {
+   "dot": "cyan",
+   "title": "분기 판단은 코드",
+   "items": [
+    "조건부 엣지 4개(route, research, validator, finalize)는 모두 코드가 결정한다",
+    "후속 질문은 코드가 simple로 강제한다"
+   ]
+  },
+  {
+   "dot": "orange",
+   "title": "반복에는 한도가 있다",
+   "items": [
+    "재계획 최대 1회, 재작성 최대 1회",
+    "그래프 전체는 recursion_limit 40"
+   ]
+  },
+  {
+   "dot": "amber",
+   "title": "이상 리포트는 사실 서술만",
+   "items": [
+    "writing이 쓴 문장 중 시각·수치·유형 같은 사실 서술만 허용 목록 필터가 남기고 조언·평가·안심은 삭제한다",
+    "대응 안내(에스컬레이션·주의·이상 없음)는 코드가 고정 문장으로 붙인다",
+    "스트리밍 중 허용되지 않은 문장은 조용히 건너뛴다"
+   ]
+  },
+  {
+   "dot": "rose",
+   "title": "HITL은 부가 조치만",
+   "items": [
+    "안내문은 finalize 전에 이미 리포트에 들어 있다",
+    "승인 대기(interrupt)는 checkpointer에 저장되어 재시작 뒤에도 재개된다"
+   ]
+  }
+ ],
+ "boundaries": [
+  {
+   "kind": "region",
+   "label": "v1 선형 기준선 (SUPERVISOR_VERSION=v1)",
+   "wraps": [
+    "v_start",
+    "v_route",
+    "v_research",
+    "v_writing",
+    "v_end"
+   ]
+  }
+ ]
+}

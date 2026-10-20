@@ -1,0 +1,513 @@
+{
+ "schema_version": 1,
+ "diagram_type": "architecture",
+ "meta": {
+  "title": "Vital Sentinel 시스템 구성도",
+  "quality_profile": "showcase",
+  "viewBox": [
+   1380,
+   860
+  ]
+ },
+ "components": [
+  {
+   "id": "ui",
+   "type": "frontend",
+   "label": "Browser UI",
+   "sublabel": "React 19 · TypeScript",
+   "pos": [
+    50,
+    130
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "react"
+  },
+  {
+   "id": "transport",
+   "type": "frontend",
+   "label": "Custom Transport",
+   "sublabel": "SSE 파서 + zod",
+   "pos": [
+    50,
+    300
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": {
+    "url": "https://zod.dev/",
+    "sha256": "4a48dec5b493cee13513b77b04a37f7e5b29eeca7e8148492d6b627a5fbb456b"
+   }
+  },
+  {
+   "id": "vite",
+   "type": "frontend",
+   "label": "Vite 프록시",
+   "sublabel": "dev :8600 → /api",
+   "pos": [
+    310,
+    190
+   ],
+   "size": [
+    150,
+    72
+   ]
+  },
+  {
+   "id": "nginx",
+   "type": "frontend",
+   "label": "nginx",
+   "sublabel": "docker :8600 → /api",
+   "pos": [
+    310,
+    410
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": {
+    "url": "https://nginx.org/",
+    "sha256": "47aaa89c6703eb0dff563584ba86264bfa52c95129aba509d60c44bd200b8d85"
+   }
+  },
+  {
+   "id": "docker",
+   "type": "cloud",
+   "label": "Docker Compose",
+   "sublabel": "backend·frontend 이미지",
+   "pos": [
+    310,
+    590
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "docker"
+  },
+  {
+   "id": "fastapi",
+   "type": "backend",
+   "label": "FastAPI",
+   "sublabel": "/chat/stream :8100",
+   "pos": [
+    570,
+    300
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "fastapi"
+  },
+  {
+   "id": "graph",
+   "type": "backend",
+   "label": "LangGraph",
+   "sublabel": "supervisor v2 · 12노드",
+   "pos": [
+    830,
+    300
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": {
+    "url": "https://www.langchain.com/langgraph",
+    "sha256": "0c60295f8003df255890bff79d9b006d5b3459f90e02c31c850e05b4365c9029"
+   }
+  },
+  {
+   "id": "sqlite",
+   "type": "database",
+   "label": "SQLite",
+   "sublabel": "checkpointer · HITL 재개",
+   "pos": [
+    570,
+    150
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "sqlite"
+  },
+  {
+   "id": "langsmith",
+   "type": "cloud",
+   "label": "LangSmith",
+   "sublabel": "트레이스 · 평가 (선택)",
+   "pos": [
+    830,
+    30
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": {
+    "url": "https://www.langchain.com/langsmith",
+    "sha256": "0c60295f8003df255890bff79d9b006d5b3459f90e02c31c850e05b4365c9029"
+   }
+  },
+  {
+   "id": "openai",
+   "type": "external",
+   "label": "OpenAI",
+   "sublabel": "LLM_BACKEND=openai",
+   "pos": [
+    1130,
+    170
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "openai"
+  },
+  {
+   "id": "ollama",
+   "type": "external",
+   "label": "Ollama",
+   "sublabel": "fast 0.6b · quality 8b",
+   "pos": [
+    1130,
+    300
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "ollama"
+  },
+  {
+   "id": "vitals",
+   "type": "backend",
+   "label": "vitals_server",
+   "sublabel": "Tool 5 · Prompt 1",
+   "pos": [
+    830,
+    520
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "python"
+  },
+  {
+   "id": "guidelines",
+   "type": "backend",
+   "label": "guidelines_server",
+   "sublabel": "Resource 3 · 검색 Tool",
+   "pos": [
+    1130,
+    520
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": "python"
+  },
+  {
+   "id": "parquet",
+   "type": "database",
+   "label": "parquet 저장소",
+   "sublabel": "VitalsStore · 탐지기",
+   "pos": [
+    830,
+    700
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": {
+    "url": "https://pandas.pydata.org/",
+    "sha256": "ff6e701917e67fa8d8f1ea4749a3a7dae1b1c8dc5e583facd442841b8d2b8146"
+   }
+  },
+  {
+   "id": "rag",
+   "type": "database",
+   "label": "RAG 인덱스",
+   "sublabel": "index.npz · bge-m3",
+   "pos": [
+    1130,
+    700
+   ],
+   "size": [
+    150,
+    72
+   ]
+  },
+  {
+   "id": "stanford",
+   "type": "external",
+   "label": "Stanford COVID",
+   "sublabel": "외부 검증 · 로컬 전용",
+   "pos": [
+    570,
+    520
+   ],
+   "size": [
+    150,
+    72
+   ]
+  },
+  {
+   "id": "kaggle",
+   "type": "external",
+   "label": "Kaggle FitBit",
+   "sublabel": "개발 데이터 · CC BY 4.0",
+   "pos": [
+    570,
+    700
+   ],
+   "size": [
+    150,
+    72
+   ],
+   "brand": {
+    "url": "https://www.kaggle.com/",
+    "sha256": "d1b2a3a725461271ec26a14f68647ec3237c2711ea2bc63bd3db259b231d1308"
+   }
+  }
+ ],
+ "boundaries": [
+  {
+   "kind": "region",
+   "label": "브라우저",
+   "wraps": [
+    "ui",
+    "transport"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "백엔드 프로세스 (uvicorn · backend 컨테이너)",
+   "wraps": [
+    "fastapi",
+    "graph",
+    "sqlite"
+   ]
+  },
+  {
+   "kind": "security-group",
+   "label": "MCP subprocess 2개 (stdio)",
+   "wraps": [
+    "vitals",
+    "guidelines",
+    "parquet",
+    "rag"
+   ]
+  }
+ ],
+ "connections": [
+  {
+   "id": "ui-transport",
+   "from": "transport",
+   "to": "ui",
+   "label": "검증된 이벤트"
+  },
+  {
+   "id": "transport-vite",
+   "from": "transport",
+   "to": "vite",
+   "label": "개발"
+  },
+  {
+   "id": "transport-nginx",
+   "from": "transport",
+   "to": "nginx",
+   "label": "배포"
+  },
+  {
+   "id": "vite-api",
+   "from": "vite",
+   "to": "fastapi",
+   "label": "/api 프록시"
+  },
+  {
+   "id": "nginx-api",
+   "from": "nginx",
+   "to": "fastapi",
+   "label": "proxy_pass"
+  },
+  {
+   "id": "docker-nginx",
+   "from": "docker",
+   "to": "nginx",
+   "label": "이미지",
+   "variant": "dashed"
+  },
+  {
+   "id": "api-graph",
+   "from": "fastapi",
+   "to": "graph",
+   "label": "astream",
+   "variant": "emphasis"
+  },
+  {
+   "id": "graph-sqlite",
+   "from": "graph",
+   "to": "sqlite",
+   "label": "thread 상태",
+   "fromSide": "top",
+   "toSide": "right",
+   "labelAt": [
+    800,
+    186
+   ]
+  },
+  {
+   "id": "graph-ollama",
+   "from": "graph",
+   "to": "ollama",
+   "label": "추론",
+   "variant": "emphasis",
+   "labelAt": [
+    1092,
+    336
+   ]
+  },
+  {
+   "id": "graph-openai",
+   "from": "graph",
+   "to": "openai",
+   "label": "선택 백엔드",
+   "variant": "dashed",
+   "labelAt": [
+    1055,
+    250
+   ]
+  },
+  {
+   "id": "graph-ls",
+   "from": "graph",
+   "to": "langsmith",
+   "label": "트레이스",
+   "variant": "dashed",
+   "fromSide": "top",
+   "toSide": "bottom",
+   "labelAt": [
+    912,
+    200
+   ]
+  },
+  {
+   "id": "graph-vitals",
+   "from": "graph",
+   "to": "vitals",
+   "label": "Tool · Prompt",
+   "variant": "emphasis",
+   "labelAt": [
+    905,
+    468
+   ]
+  },
+  {
+   "id": "graph-guide",
+   "from": "graph",
+   "to": "guidelines",
+   "label": "검색 · Resource",
+   "variant": "emphasis",
+   "fromSide": "bottom",
+   "toSide": "left",
+   "via": [
+    [
+     905,
+     446
+    ],
+    [
+     1055,
+     446
+    ],
+    [
+     1055,
+     556
+    ]
+   ],
+   "labelAt": [
+    980,
+    446
+   ]
+  },
+  {
+   "id": "vitals-parquet",
+   "from": "vitals",
+   "to": "parquet",
+   "label": "조회",
+   "labelAt": [
+    905,
+    646
+   ]
+  },
+  {
+   "id": "guide-rag",
+   "from": "guidelines",
+   "to": "rag",
+   "label": "벡터 검색",
+   "labelAt": [
+    1205,
+    646
+   ]
+  },
+  {
+   "id": "guide-ollama",
+   "from": "guidelines",
+   "to": "ollama",
+   "label": "bge-m3",
+   "variant": "dashed",
+   "fromSide": "top",
+   "toSide": "bottom"
+  },
+  {
+   "id": "stanford-vitals",
+   "from": "stanford",
+   "to": "vitals",
+   "label": "사건·첫 경고 로드",
+   "variant": "dashed"
+  },
+  {
+   "id": "kaggle-parquet",
+   "from": "kaggle",
+   "to": "parquet",
+   "label": "prepare.py",
+   "variant": "dashed"
+  }
+ ],
+ "cards": [
+  {
+   "dot": "cyan",
+   "title": "탐지와 해석의 분리",
+   "items": [
+    "이상 탐지는 규칙 코드, LLM은 해석과 서술만",
+    "MCP 서버는 데이터와 문서 검색을 나눠 장애를 격리"
+   ]
+  },
+  {
+   "dot": "emerald",
+   "title": "데이터 경계",
+   "items": [
+    "외부 연구 데이터(Stanford)는 로컬 전용, 커밋 금지",
+    "LLM과 LangSmith에는 집계 사실만 전달"
+   ]
+  },
+  {
+   "dot": "rose",
+   "title": "안전",
+   "items": [
+    "critical 이상은 코드가 고정 안내문을 강제, 이상 리포트 본문은 사실 서술만 허용",
+    "LLM이 없어도 템플릿 리포트로 끝까지 동작"
+   ]
+  }
+ ]
+}

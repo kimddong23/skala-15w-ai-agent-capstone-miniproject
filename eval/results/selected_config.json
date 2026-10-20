@@ -1,0 +1,13 @@
+{
+  "name": "C_combined",
+  "config": {
+    "trend": "both",
+    "hourly": "rhr",
+    "contamination": 0.02,
+    "min_hours": 2,
+    "min_delta_bpm": 8.0,
+    "cusum_k": 1.0,
+    "cusum_h": 4.0,
+    "personal_rule": true
+  }
+}

@@ -1,0 +1,1297 @@
+{
+  "n_questions": 45,
+  "n_docs": 19,
+  "n_chunks": 52,
+  "n_answerable_by_old_corpus": 7,
+  "results": {
+    "A_old_keyword": {
+      "mrr": 0.133,
+      "latency_ms": {
+        "p50": 0.11,
+        "p95": 0.22,
+        "mean": 0.13
+      },
+      "hit@1": 0.111,
+      "hit@3": 0.156
+    },
+    "B_keyword_expanded": {
+      "mrr": 0.63,
+      "latency_ms": {
+        "p50": 2.29,
+        "p95": 3.48,
+        "mean": 2.38
+      },
+      "hit@1": 0.467,
+      "hit@3": 0.756
+    },
+    "C_rag_vector": {
+      "mrr": 0.908,
+      "latency_ms": {
+        "p50": 50.61,
+        "p95": 66.35,
+        "mean": 51.74
+      },
+      "hit@1": 0.867,
+      "hit@3": 0.956
+    },
+    "D_rag_keyword_fallback": {
+      "mrr": 0.62,
+      "latency_ms": {
+        "p50": 0.14,
+        "p95": 0.24,
+        "mean": 0.14
+      },
+      "hit@1": 0.444,
+      "hit@3": 0.756
+    }
+  },
+  "results_answerable_subset": {
+    "A_old_keyword": {
+      "mrr": 0.857,
+      "hit@1": 0.714,
+      "hit@3": 1.0
+    },
+    "B_keyword_expanded": {
+      "mrr": 0.857,
+      "hit@1": 0.714,
+      "hit@3": 1.0
+    },
+    "C_rag_vector": {
+      "mrr": 1.0,
+      "hit@1": 1.0,
+      "hit@3": 1.0
+    },
+    "D_rag_keyword_fallback": {
+      "mrr": 0.786,
+      "hit@1": 0.571,
+      "hit@3": 1.0
+    }
+  },
+  "index": {
+    "model": "bge-m3:latest",
+    "dim": 1024,
+    "bytes": 217126,
+    "cold_build_s": 3.062,
+    "cold_embedded": 52,
+    "warm_build_s": 0.002,
+    "warm_embedded": 0,
+    "first_embed_call_ms": 79.3,
+    "query_embed_ms": {
+      "p50": 55.21,
+      "p95": 71.04,
+      "mean": 54.37
+    }
+  },
+  "outage": {
+    "method": "keyword",
+    "note": "임베딩 사용 불가(ConnectError: [Errno 61] Connection refused) - 키워드 검색으로 대체했습니다",
+    "first_query_ms": 4.9,
+    "second_query_ms": 0.2,
+    "second_method": "keyword"
+  },
+  "per_question": [
+    {
+      "id": "Q01",
+      "question": "성인 안정시 심박수 정상 범위가 어떻게 되나요?",
+      "gold": [
+        "heart-rate-ranges",
+        "resting-hr-basics"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "heart-rate-ranges",
+        "resting-hr-basics",
+        "sleep-hr"
+      ],
+      "C": [
+        "heart-rate-ranges",
+        "resting-hr-basics",
+        "exercise-hr-zones"
+      ],
+      "D": [
+        "heart-rate-ranges",
+        "resting-hr-basics",
+        "sleep-hr"
+      ]
+    },
+    {
+      "id": "Q02",
+      "question": "안정시 심박은 언제 어떻게 재야 정확해요?",
+      "gold": [
+        "resting-hr-basics"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "medications-and-hr",
+        "resting-hr-basics",
+        "dehydration-heat-fever"
+      ],
+      "C": [
+        "resting-hr-basics",
+        "heart-rate-ranges",
+        "stress-and-sleep-deprivation"
+      ],
+      "D": [
+        "medications-and-hr",
+        "red-flags",
+        "resting-hr-basics"
+      ]
+    },
+    {
+      "id": "Q03",
+      "question": "운동선수는 맥박이 왜 이렇게 느려요?",
+      "gold": [
+        "resting-hr-basics",
+        "heart-rate-ranges",
+        "bradycardia-overview"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "bradycardia-overview",
+        "exercise-hr-zones",
+        "stress-and-sleep-deprivation"
+      ],
+      "C": [
+        "bradycardia-overview",
+        "hr-recovery",
+        "tachycardia-overview"
+      ],
+      "D": [
+        "bradycardia-overview",
+        "exercise-hr-zones",
+        "stress-and-sleep-deprivation"
+      ]
+    },
+    {
+      "id": "Q04",
+      "question": "내 최대 심박수는 어떻게 계산해?",
+      "gold": [
+        "exercise-hr-zones"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "dehydration-heat-fever",
+        "heart-rate-ranges",
+        "exercise-hr-zones"
+      ],
+      "C": [
+        "exercise-hr-zones",
+        "heart-rate-ranges",
+        "resting-hr-basics"
+      ],
+      "D": [
+        "exercise-hr-zones",
+        "heart-rate-ranges",
+        "service-detection-rules"
+      ]
+    },
+    {
+      "id": "Q05",
+      "question": "220 - 나이 공식이 정확한가요",
+      "gold": [
+        "exercise-hr-zones"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "exercise-hr-zones",
+        "heart-rate-ranges",
+        "emergency-response"
+      ],
+      "C": [
+        "exercise-hr-zones",
+        "heart-rate-ranges",
+        "resting-hr-basics"
+      ],
+      "D": [
+        "exercise-hr-zones",
+        "heart-rate-ranges",
+        "emergency-response"
+      ]
+    },
+    {
+      "id": "Q06",
+      "question": "러닝할 때 심박이 170까지 올라가는데 위험한 건 아니죠?",
+      "gold": [
+        "exercise-hr-zones",
+        "heart-rate-ranges"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "heart-rate-ranges",
+        "sleep-hr",
+        "dehydration-heat-fever"
+      ],
+      "C": [
+        "heart-rate-ranges",
+        "exercise-hr-zones",
+        "service-detection-rules"
+      ],
+      "D": [
+        "hr-recovery",
+        "heart-rate-ranges",
+        "red-flags"
+      ]
+    },
+    {
+      "id": "Q07",
+      "question": "운동 끝나고 심박수가 언제쯤 내려와요?",
+      "gold": [
+        "hr-recovery"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "hr-recovery",
+        "sleep-hr",
+        "when-to-see-doctor"
+      ],
+      "C": [
+        "hr-recovery",
+        "sleep-hr",
+        "heart-rate-ranges"
+      ],
+      "D": [
+        "when-to-see-doctor",
+        "hr-recovery",
+        "sleep-hr"
+      ]
+    },
+    {
+      "id": "Q08",
+      "question": "쿨다운은 왜 하는 거야",
+      "gold": [
+        "hr-recovery"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "bradycardia-overview",
+        "dehydration-heat-fever",
+        "emergency-response"
+      ],
+      "C": [
+        "dehydration-heat-fever",
+        "sensor-gaps-and-wear",
+        "stress-and-sleep-deprivation"
+      ],
+      "D": [
+        "bradycardia-overview",
+        "dehydration-heat-fever",
+        "emergency-response"
+      ]
+    },
+    {
+      "id": "Q09",
+      "question": "자는 동안 심박이 낮아지는 게 정상인가요",
+      "gold": [
+        "sleep-hr"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "sleep-hr",
+        "sensor-gaps-and-wear",
+        "heart-rate-ranges"
+      ],
+      "C": [
+        "sleep-hr",
+        "heart-rate-ranges",
+        "stress-and-sleep-deprivation"
+      ],
+      "D": [
+        "sleep-hr",
+        "sensor-gaps-and-wear",
+        "heart-rate-ranges"
+      ]
+    },
+    {
+      "id": "Q10",
+      "question": "잘 때 심박이 갑자기 높게 나왔어요. 왜 그런가요?",
+      "gold": [
+        "sleep-hr"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "hr-recovery",
+        "sleep-hr",
+        "dehydration-heat-fever"
+      ],
+      "C": [
+        "sleep-hr",
+        "resting-hr-basics",
+        "stress-and-sleep-deprivation"
+      ],
+      "D": [
+        "hr-recovery",
+        "medications-and-hr",
+        "sleep-hr"
+      ]
+    },
+    {
+      "id": "Q11",
+      "question": "서맥이 뭐예요?",
+      "gold": [
+        "bradycardia-overview"
+      ],
+      "A": [
+        "red-flags",
+        "heart-rate-ranges"
+      ],
+      "B": [
+        "bradycardia-overview",
+        "red-flags",
+        "heart-rate-ranges"
+      ],
+      "C": [
+        "bradycardia-overview",
+        "tachycardia-overview",
+        "heart-rate-ranges"
+      ],
+      "D": [
+        "bradycardia-overview",
+        "red-flags",
+        "heart-rate-ranges"
+      ]
+    },
+    {
+      "id": "Q12",
+      "question": "맥박이 40 아래로 내려가면 큰일인가요",
+      "gold": [
+        "bradycardia-overview",
+        "red-flags"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "when-to-see-doctor",
+        "bradycardia-overview",
+        "exercise-hr-zones"
+      ],
+      "C": [
+        "bradycardia-overview",
+        "when-to-see-doctor",
+        "heart-rate-ranges"
+      ],
+      "D": [
+        "when-to-see-doctor",
+        "bradycardia-overview",
+        "exercise-hr-zones"
+      ]
+    },
+    {
+      "id": "Q13",
+      "question": "빈맥 원인이 뭔가요",
+      "gold": [
+        "tachycardia-overview"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "heart-rate-ranges",
+        "hrv-and-trends",
+        "red-flags"
+      ],
+      "C": [
+        "tachycardia-overview",
+        "red-flags",
+        "service-detection-rules"
+      ],
+      "D": [
+        "tachycardia-overview",
+        "heart-rate-ranges",
+        "hrv-and-trends"
+      ]
+    },
+    {
+      "id": "Q14",
+      "question": "가만히 있는데 가슴이 두근거리고 100이 넘어요 어떻게 해야하죠",
+      "gold": [
+        "tachycardia-overview",
+        "when-to-see-doctor"
+      ],
+      "A": [
+        "red-flags",
+        "heart-rate-ranges"
+      ],
+      "B": [
+        "dehydration-heat-fever",
+        "when-to-see-doctor",
+        "red-flags"
+      ],
+      "C": [
+        "when-to-see-doctor",
+        "emergency-response",
+        "tachycardia-overview"
+      ],
+      "D": [
+        "tachycardia-overview",
+        "when-to-see-doctor",
+        "dehydration-heat-fever"
+      ]
+    },
+    {
+      "id": "Q15",
+      "question": "스마트워치 심박 측정은 얼마나 정확해?",
+      "gold": [
+        "wearable-measurement-limits"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "hr-recovery",
+        "hrv-and-trends",
+        "resting-hr-basics"
+      ],
+      "C": [
+        "wearable-measurement-limits",
+        "sensor-gaps-and-wear",
+        "resting-hr-basics"
+      ],
+      "D": [
+        "resting-hr-basics",
+        "wearable-measurement-limits",
+        "hr-recovery"
+      ]
+    },
+    {
+      "id": "Q16",
+      "question": "PPG 센서가 뭔지 궁금합니다",
+      "gold": [
+        "wearable-measurement-limits"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "sensor-gaps-and-wear",
+        "wearable-measurement-limits",
+        "heart-rate-ranges"
+      ],
+      "C": [
+        "wearable-measurement-limits",
+        "disclaimer",
+        "sensor-gaps-and-wear"
+      ],
+      "D": [
+        "sensor-gaps-and-wear",
+        "wearable-measurement-limits",
+        "heart-rate-ranges"
+      ]
+    },
+    {
+      "id": "Q17",
+      "question": "달릴 때 워치 심박이 이상하게 튀어요",
+      "gold": [
+        "wearable-measurement-limits"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "heart-rate-ranges",
+        "hr-recovery",
+        "red-flags"
+      ],
+      "C": [
+        "wearable-measurement-limits",
+        "sensor-gaps-and-wear",
+        "heart-rate-ranges"
+      ],
+      "D": [
+        "heart-rate-ranges",
+        "hr-recovery",
+        "red-flags"
+      ]
+    },
+    {
+      "id": "Q18",
+      "question": "심박 데이터가 몇 시간씩 비어 있는 이유가 뭐죠",
+      "gold": [
+        "sensor-gaps-and-wear"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "sensor-gaps-and-wear",
+        "heart-rate-ranges",
+        "service-detection-rules"
+      ],
+      "C": [
+        "sensor-gaps-and-wear",
+        "wearable-measurement-limits",
+        "service-detection-rules"
+      ],
+      "D": [
+        "sensor-gaps-and-wear",
+        "service-detection-rules",
+        "stress-and-sleep-deprivation"
+      ]
+    },
+    {
+      "id": "Q19",
+      "question": "기기를 어떻게 차야 센서가 잘 읽나요",
+      "gold": [
+        "sensor-gaps-and-wear",
+        "wearable-measurement-limits"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "sensor-gaps-and-wear",
+        "wearable-measurement-limits",
+        "dehydration-heat-fever"
+      ],
+      "C": [
+        "sensor-gaps-and-wear",
+        "wearable-measurement-limits",
+        "disclaimer"
+      ],
+      "D": [
+        "sensor-gaps-and-wear",
+        "wearable-measurement-limits",
+        "heart-rate-ranges"
+      ]
+    },
+    {
+      "id": "Q20",
+      "question": "커피 마시면 심박이 올라가나요",
+      "gold": [
+        "stimulants-caffeine-alcohol"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "dehydration-heat-fever",
+        "stimulants-caffeine-alcohol",
+        "heart-rate-ranges"
+      ],
+      "C": [
+        "stimulants-caffeine-alcohol",
+        "heart-rate-ranges",
+        "sleep-hr"
+      ],
+      "D": [
+        "dehydration-heat-fever",
+        "stimulants-caffeine-alcohol",
+        "heart-rate-ranges"
+      ]
+    },
+    {
+      "id": "Q21",
+      "question": "어제 술 마셨더니 안정시 심박이 높네요",
+      "gold": [
+        "stimulants-caffeine-alcohol"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "dehydration-heat-fever",
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "C": [
+        "stimulants-caffeine-alcohol",
+        "resting-hr-basics",
+        "stress-and-sleep-deprivation"
+      ],
+      "D": [
+        "dehydration-heat-fever",
+        "heart-rate-ranges",
+        "red-flags"
+      ]
+    },
+    {
+      "id": "Q22",
+      "question": "스트레스 받으면 맥박이 빨라지는 이유",
+      "gold": [
+        "stress-and-sleep-deprivation"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "stress-and-sleep-deprivation",
+        "resting-hr-basics",
+        "tachycardia-overview"
+      ],
+      "C": [
+        "stress-and-sleep-deprivation",
+        "resting-hr-basics",
+        "tachycardia-overview"
+      ],
+      "D": [
+        "tachycardia-overview",
+        "stress-and-sleep-deprivation",
+        "when-to-see-doctor"
+      ]
+    },
+    {
+      "id": "Q23",
+      "question": "잠을 못 잤더니 심박이 높아요",
+      "gold": [
+        "stress-and-sleep-deprivation",
+        "sleep-hr"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "dehydration-heat-fever",
+        "heart-rate-ranges",
+        "hr-recovery"
+      ],
+      "C": [
+        "stress-and-sleep-deprivation",
+        "sleep-hr",
+        "resting-hr-basics"
+      ],
+      "D": [
+        "dehydration-heat-fever",
+        "heart-rate-ranges",
+        "hr-recovery"
+      ]
+    },
+    {
+      "id": "Q24",
+      "question": "물 안 마시면 심박수가 올라가?",
+      "gold": [
+        "dehydration-heat-fever"
+      ],
+      "A": [
+        "red-flags",
+        "heart-rate-ranges"
+      ],
+      "B": [
+        "dehydration-heat-fever",
+        "stimulants-caffeine-alcohol",
+        "bradycardia-overview"
+      ],
+      "C": [
+        "dehydration-heat-fever",
+        "resting-hr-basics",
+        "stress-and-sleep-deprivation"
+      ],
+      "D": [
+        "dehydration-heat-fever",
+        "stimulants-caffeine-alcohol",
+        "bradycardia-overview"
+      ]
+    },
+    {
+      "id": "Q25",
+      "question": "열이 나면 맥박이 얼마나 빨라지나요",
+      "gold": [
+        "dehydration-heat-fever"
+      ],
+      "A": [
+        "red-flags",
+        "heart-rate-ranges"
+      ],
+      "B": [
+        "bradycardia-overview",
+        "dehydration-heat-fever",
+        "exercise-hr-zones"
+      ],
+      "C": [
+        "dehydration-heat-fever",
+        "bradycardia-overview",
+        "tachycardia-overview"
+      ],
+      "D": [
+        "tachycardia-overview",
+        "when-to-see-doctor",
+        "bradycardia-overview"
+      ]
+    },
+    {
+      "id": "Q26",
+      "question": "베타차단제 먹는데 맥박이 느려요",
+      "gold": [
+        "medications-and-hr",
+        "bradycardia-overview"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "bradycardia-overview",
+        "medications-and-hr",
+        "exercise-hr-zones"
+      ],
+      "C": [
+        "medications-and-hr",
+        "bradycardia-overview",
+        "tachycardia-overview"
+      ],
+      "D": [
+        "bradycardia-overview",
+        "medications-and-hr",
+        "exercise-hr-zones"
+      ]
+    },
+    {
+      "id": "Q27",
+      "question": "감기약 먹고 두근거리는데 약 때문일 수 있나요",
+      "gold": [
+        "medications-and-hr"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "heart-rate-ranges",
+        "medications-and-hr",
+        "stimulants-caffeine-alcohol"
+      ],
+      "C": [
+        "medications-and-hr",
+        "bradycardia-overview",
+        "stimulants-caffeine-alcohol"
+      ],
+      "D": [
+        "tachycardia-overview",
+        "heart-rate-ranges",
+        "medications-and-hr"
+      ]
+    },
+    {
+      "id": "Q28",
+      "question": "언제 병원에 가야 하나요? 심박이 계속 높을 때",
+      "gold": [
+        "when-to-see-doctor"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "dehydration-heat-fever",
+        "service-detection-rules",
+        "emergency-response"
+      ],
+      "C": [
+        "when-to-see-doctor",
+        "red-flags",
+        "stress-and-sleep-deprivation"
+      ],
+      "D": [
+        "red-flags",
+        "emergency-response",
+        "hr-recovery"
+      ]
+    },
+    {
+      "id": "Q29",
+      "question": "병원 가기 전에 뭘 준비해서 가면 돼요",
+      "gold": [
+        "when-to-see-doctor"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "emergency-response",
+        "medications-and-hr",
+        "bradycardia-overview"
+      ],
+      "C": [
+        "medications-and-hr",
+        "red-flags",
+        "when-to-see-doctor"
+      ],
+      "D": [
+        "emergency-response",
+        "medications-and-hr",
+        "bradycardia-overview"
+      ]
+    },
+    {
+      "id": "Q30",
+      "question": "가슴이 아프고 숨이 차요 119 불러야 하나요",
+      "gold": [
+        "emergency-response",
+        "red-flags"
+      ],
+      "A": [
+        "red-flags",
+        "heart-rate-ranges"
+      ],
+      "B": [
+        "dehydration-heat-fever",
+        "red-flags",
+        "emergency-response"
+      ],
+      "C": [
+        "emergency-response",
+        "red-flags",
+        "when-to-see-doctor"
+      ],
+      "D": [
+        "dehydration-heat-fever",
+        "red-flags",
+        "disclaimer"
+      ]
+    },
+    {
+      "id": "Q31",
+      "question": "119 신고할 때 뭐라고 말하죠",
+      "gold": [
+        "emergency-response"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "emergency-response",
+        "dehydration-heat-fever",
+        "exercise-hr-zones"
+      ],
+      "C": [
+        "emergency-response",
+        "red-flags",
+        "when-to-see-doctor"
+      ],
+      "D": [
+        "dehydration-heat-fever",
+        "disclaimer",
+        "emergency-response"
+      ]
+    },
+    {
+      "id": "Q32",
+      "question": "HRV 가 뭐예요",
+      "gold": [
+        "hrv-and-trends"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "hrv-and-trends",
+        "bradycardia-overview",
+        "dehydration-heat-fever"
+      ],
+      "C": [
+        "hrv-and-trends",
+        "red-flags",
+        "wearable-measurement-limits"
+      ],
+      "D": [
+        "hrv-and-trends",
+        "bradycardia-overview",
+        "dehydration-heat-fever"
+      ]
+    },
+    {
+      "id": "Q33",
+      "question": "안정시 심박수 추세 알림은 무슨 뜻이에요?",
+      "gold": [
+        "hrv-and-trends",
+        "service-detection-rules",
+        "stress-and-sleep-deprivation"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "hrv-and-trends",
+        "stress-and-sleep-deprivation",
+        "medications-and-hr"
+      ],
+      "C": [
+        "heart-rate-ranges",
+        "resting-hr-basics",
+        "hrv-and-trends"
+      ],
+      "D": [
+        "hrv-and-trends",
+        "service-detection-rules",
+        "stress-and-sleep-deprivation"
+      ]
+    },
+    {
+      "id": "Q34",
+      "question": "이 서비스에서 critical 알림은 어떤 기준으로 뜨는 거야?",
+      "gold": [
+        "service-detection-rules"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "emergency-response",
+        "heart-rate-ranges",
+        "service-detection-rules"
+      ],
+      "C": [
+        "when-to-see-doctor",
+        "service-detection-rules",
+        "emergency-response"
+      ],
+      "D": [
+        "emergency-response",
+        "when-to-see-doctor",
+        "heart-rate-ranges"
+      ]
+    },
+    {
+      "id": "Q35",
+      "question": "운동 중엔 왜 알림이 안 와요",
+      "gold": [
+        "service-detection-rules",
+        "hr-recovery"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "emergency-response",
+        "exercise-hr-zones",
+        "heart-rate-ranges"
+      ],
+      "C": [
+        "service-detection-rules",
+        "exercise-hr-zones",
+        "sensor-gaps-and-wear"
+      ],
+      "D": [
+        "stress-and-sleep-deprivation",
+        "emergency-response",
+        "exercise-hr-zones"
+      ]
+    },
+    {
+      "id": "Q36",
+      "question": "이 앱이 진단도 해줘요? 의료기기예요?",
+      "gold": [
+        "disclaimer",
+        "service-detection-rules"
+      ],
+      "A": [
+        "red-flags",
+        "heart-rate-ranges"
+      ],
+      "B": [
+        "emergency-response",
+        "service-detection-rules",
+        "sleep-hr"
+      ],
+      "C": [
+        "disclaimer",
+        "service-detection-rules",
+        "emergency-response"
+      ],
+      "D": [
+        "disclaimer",
+        "emergency-response",
+        "service-detection-rules"
+      ]
+    },
+    {
+      "id": "Q37",
+      "question": "개인 기준 이탈이 뭔 말이죠",
+      "gold": [
+        "service-detection-rules"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "heart-rate-ranges",
+        "service-detection-rules",
+        "bradycardia-overview"
+      ],
+      "C": [
+        "service-detection-rules",
+        "heart-rate-ranges",
+        "disclaimer"
+      ],
+      "D": [
+        "heart-rate-ranges",
+        "service-detection-rules",
+        "when-to-see-doctor"
+      ]
+    },
+    {
+      "id": "Q38",
+      "question": "heart rate 정상 범위 알려줘 pls",
+      "gold": [
+        "heart-rate-ranges",
+        "resting-hr-basics"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "heart-rate-ranges",
+        "resting-hr-basics",
+        "bradycardia-overview"
+      ],
+      "C": [
+        "heart-rate-ranges",
+        "exercise-hr-zones",
+        "resting-hr-basics"
+      ],
+      "D": [
+        "heart-rate-ranges",
+        "emergency-response",
+        "resting-hr-basics"
+      ]
+    },
+    {
+      "id": "Q39",
+      "question": "사이클 타고 있었는데 쉬는 걸로 나와서 알림 왔어요",
+      "gold": [
+        "exercise-hr-zones",
+        "service-detection-rules"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "exercise-hr-zones",
+        "heart-rate-ranges",
+        "hr-recovery"
+      ],
+      "C": [
+        "service-detection-rules",
+        "when-to-see-doctor",
+        "sensor-gaps-and-wear"
+      ],
+      "D": [
+        "hr-recovery",
+        "service-detection-rules",
+        "exercise-hr-zones"
+      ]
+    },
+    {
+      "id": "Q40",
+      "question": "심박수가 며칠째 평소보다 높은데 이유가 뭘까요 (감기 기운도 있어요)",
+      "gold": [
+        "dehydration-heat-fever",
+        "stress-and-sleep-deprivation",
+        "hrv-and-trends"
+      ],
+      "A": [
+        "red-flags",
+        "heart-rate-ranges"
+      ],
+      "B": [
+        "dehydration-heat-fever",
+        "hrv-and-trends",
+        "sleep-hr"
+      ],
+      "C": [
+        "resting-hr-basics",
+        "stress-and-sleep-deprivation",
+        "dehydration-heat-fever"
+      ],
+      "D": [
+        "stress-and-sleep-deprivation",
+        "dehydration-heat-fever",
+        "hrv-and-trends"
+      ]
+    },
+    {
+      "id": "Q41",
+      "question": "쉬는데 130 넘게 나오면 위험한가요",
+      "gold": [
+        "red-flags",
+        "tachycardia-overview",
+        "emergency-response"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "tachycardia-overview",
+        "emergency-response",
+        "heart-rate-ranges"
+      ],
+      "C": [
+        "red-flags",
+        "heart-rate-ranges",
+        "tachycardia-overview"
+      ],
+      "D": [
+        "tachycardia-overview",
+        "emergency-response",
+        "heart-rate-ranges"
+      ]
+    },
+    {
+      "id": "Q42",
+      "question": "자다가 심박이 30대로 나왔는데 괜찮을까요",
+      "gold": [
+        "sleep-hr",
+        "bradycardia-overview"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "heart-rate-ranges",
+        "hr-recovery",
+        "red-flags"
+      ],
+      "C": [
+        "sleep-hr",
+        "heart-rate-ranges",
+        "stress-and-sleep-deprivation"
+      ],
+      "D": [
+        "heart-rate-ranges",
+        "hr-recovery",
+        "red-flags"
+      ]
+    },
+    {
+      "id": "Q43",
+      "question": "서마게 뭐에요?",
+      "gold": [
+        "bradycardia-overview"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "bradycardia-overview",
+        "dehydration-heat-fever",
+        "emergency-response"
+      ],
+      "C": [
+        "bradycardia-overview",
+        "heart-rate-ranges",
+        "tachycardia-overview"
+      ],
+      "D": [
+        "bradycardia-overview",
+        "dehydration-heat-fever",
+        "disclaimer"
+      ]
+    },
+    {
+      "id": "Q44",
+      "question": "심박 센써가 계속 끊겨여",
+      "gold": [
+        "sensor-gaps-and-wear"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "dehydration-heat-fever",
+        "hr-recovery",
+        "bradycardia-overview"
+      ],
+      "C": [
+        "heart-rate-ranges",
+        "when-to-see-doctor",
+        "stress-and-sleep-deprivation"
+      ],
+      "D": [
+        "dehydration-heat-fever",
+        "hr-recovery",
+        "bradycardia-overview"
+      ]
+    },
+    {
+      "id": "Q45",
+      "question": "운동후 회복 언제까지 걸려요 ㅠ",
+      "gold": [
+        "hr-recovery"
+      ],
+      "A": [
+        "heart-rate-ranges",
+        "red-flags"
+      ],
+      "B": [
+        "hr-recovery",
+        "resting-hr-basics",
+        "stress-and-sleep-deprivation"
+      ],
+      "C": [
+        "hr-recovery",
+        "service-detection-rules",
+        "when-to-see-doctor"
+      ],
+      "D": [
+        "hr-recovery",
+        "red-flags",
+        "resting-hr-basics"
+      ]
+    }
+  ],
+  "n_candidate_docs": {
+    "A_old_keyword": 2,
+    "B_keyword_expanded": 19,
+    "C_rag_vector": 19,
+    "D_rag_keyword_fallback": 19
+  },
+  "n_zero_keyword_questions": 1,
+  "measurement": {
+    "measured_at": "2026-10-20 09:30",
+    "rerun": false,
+    "note": "측정은 hit@k 이름 변경과 동점 처리 명시 이전 코드로 했다. 키워드 폴백의 동점은 당시에도 파일 순(= 문서 id 순)이어서 순위는 같다. 측정 이후 disclaimer 문서의 데이터 출처 문구(CC BY 4.0 표기) 한 줄이 바뀌어 해당 청크(disclaimer#0) 1개만 색인에서 다시 임베딩됐다(기존 벡터와 코사인 0.99). 나머지 51개 청크와 이 표의 수치는 바뀌지 않았고 재측정은 하지 않았다."
+  }
+}

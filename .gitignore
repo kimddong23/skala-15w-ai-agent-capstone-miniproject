@@ -1,0 +1,18 @@
+.venv/
+data/raw/
+# data/processed/ 는 git 에 포함한다(Kaggle arashnic/fitbit, CC BY 4.0 (Furberg et al. 2016, Zenodo; Kaggle arashnic/fitbit 재배포본) 에서 만든 가공 데이터 약 8MB — 재배포 가능). 원본(data/raw)만 제외.
+__pycache__/
+*.pyc
+.env
+node_modules/
+frontend/dist/
+*.sqlite*
+.pytest_cache/
+.omc/
+e2e/node_modules/
+e2e/test-results/
+e2e/playwright-report/
+e2e/.snapshot/
+eval/results/.before_after_partial.json
+data/external/
+data/cache/

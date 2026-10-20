@@ -1,0 +1,194 @@
+[
+  {
+    "event_id": "EVT-01",
+    "user_id": "U13",
+    "type": "elevated_resting_trend",
+    "start": "2016-04-06T00:00:00",
+    "end": "2016-04-08T23:59:00",
+    "severity": "warning",
+    "params": {
+      "kind": "trend",
+      "lift_bpm": 14.2,
+      "days": 3,
+      "n_minutes": 542,
+      "mean_before": 75.9
+    }
+  },
+  {
+    "event_id": "EVT-02",
+    "user_id": "U12",
+    "type": "elevated_resting_trend",
+    "start": "2016-04-07T00:00:00",
+    "end": "2016-04-08T23:59:00",
+    "severity": "warning",
+    "params": {
+      "kind": "trend",
+      "lift_bpm": 12.8,
+      "days": 2,
+      "n_minutes": 1337,
+      "mean_before": 68.1
+    }
+  },
+  {
+    "event_id": "EVT-03",
+    "user_id": "U12",
+    "type": "resting_tachycardia",
+    "start": "2016-04-15T13:32:00",
+    "end": "2016-04-15T14:08:00",
+    "severity": "warning",
+    "params": {
+      "kind": "awake",
+      "level": 120.2,
+      "ramp_min": 3,
+      "duration_min": 37
+    }
+  },
+  {
+    "event_id": "EVT-04",
+    "user_id": "U05",
+    "type": "resting_tachycardia",
+    "start": "2016-05-07T06:18:00",
+    "end": "2016-05-07T06:47:00",
+    "severity": "warning",
+    "params": {
+      "kind": "sleep",
+      "level": 106.6,
+      "ramp_min": 6,
+      "duration_min": 30
+    }
+  },
+  {
+    "event_id": "EVT-05",
+    "user_id": "U05",
+    "type": "resting_tachycardia",
+    "start": "2016-04-16T19:59:00",
+    "end": "2016-04-16T20:28:00",
+    "severity": "critical",
+    "params": {
+      "kind": "awake",
+      "level": 152.8,
+      "ramp_min": 4,
+      "duration_min": 30
+    }
+  },
+  {
+    "event_id": "EVT-06",
+    "user_id": "U07",
+    "type": "bradycardia",
+    "start": "2016-04-11T16:31:00",
+    "end": "2016-04-11T17:03:00",
+    "severity": "warning",
+    "params": {
+      "kind": "awake",
+      "level": 37.2,
+      "ramp_min": 5,
+      "duration_min": 33
+    }
+  },
+  {
+    "event_id": "EVT-07",
+    "user_id": "U03",
+    "type": "bradycardia",
+    "start": "2016-04-21T05:19:00",
+    "end": "2016-04-21T05:53:00",
+    "severity": "warning",
+    "params": {
+      "kind": "sleep",
+      "level": 31.7,
+      "ramp_min": 5,
+      "duration_min": 35
+    }
+  },
+  {
+    "event_id": "EVT-08",
+    "user_id": "U03",
+    "type": "bradycardia",
+    "start": "2016-04-03T12:33:00",
+    "end": "2016-04-03T13:01:00",
+    "severity": "critical",
+    "params": {
+      "kind": "awake",
+      "level": 29.7,
+      "ramp_min": 4,
+      "duration_min": 29
+    }
+  },
+  {
+    "event_id": "EVT-09",
+    "user_id": "U08",
+    "type": "personal_deviation",
+    "start": "2016-04-24T20:31:00",
+    "end": "2016-04-24T21:06:00",
+    "severity": "warning",
+    "params": {
+      "kind": "awake",
+      "level": 94.2,
+      "ramp_min": 4,
+      "duration_min": 36
+    }
+  },
+  {
+    "event_id": "EVT-10",
+    "user_id": "U06",
+    "type": "personal_deviation",
+    "start": "2016-04-21T01:08:00",
+    "end": "2016-04-21T01:44:00",
+    "severity": "warning",
+    "params": {
+      "kind": "sleep",
+      "level": 89.6,
+      "ramp_min": 6,
+      "duration_min": 37
+    }
+  },
+  {
+    "event_id": "EVT-11",
+    "user_id": "U08",
+    "type": "personal_deviation",
+    "start": "2016-04-22T14:47:00",
+    "end": "2016-04-22T15:31:00",
+    "severity": "warning",
+    "params": {
+      "kind": "awake",
+      "level": 94.2,
+      "ramp_min": 4,
+      "duration_min": 45
+    }
+  },
+  {
+    "event_id": "EVT-12",
+    "user_id": "U06",
+    "type": "sensor_gap",
+    "start": "2016-05-02T09:18:00",
+    "end": "2016-05-02T12:56:00",
+    "severity": "info",
+    "params": {
+      "kind": "gap",
+      "gap_minutes": 219
+    }
+  },
+  {
+    "event_id": "EVT-13",
+    "user_id": "U08",
+    "type": "sensor_gap",
+    "start": "2016-04-05T13:16:00",
+    "end": "2016-04-05T16:29:00",
+    "severity": "info",
+    "params": {
+      "kind": "gap",
+      "gap_minutes": 194
+    }
+  },
+  {
+    "event_id": "EVT-14",
+    "user_id": "U13",
+    "type": "sensor_gap",
+    "start": "2016-04-15T12:43:00",
+    "end": "2016-04-15T16:00:00",
+    "severity": "info",
+    "params": {
+      "kind": "gap",
+      "gap_minutes": 198
+    }
+  }
+]

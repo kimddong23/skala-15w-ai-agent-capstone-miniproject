@@ -1,0 +1,177 @@
+{
+  "config": {
+    "detector": {
+      "trend": "both",
+      "hourly": "rhr",
+      "contamination": 0.02,
+      "min_hours": 2,
+      "min_delta_bpm": 8.0,
+      "cusum_k": 1.0,
+      "cusum_h": 4.0,
+      "personal_rule": true
+    },
+    "rest_window_min": 15,
+    "n_labeled_events": 14,
+    "injected_users": [
+      "U03",
+      "U05",
+      "U06",
+      "U07",
+      "U08",
+      "U12",
+      "U13"
+    ]
+  },
+  "recall": {
+    "overall": 1.0,
+    "events": 14,
+    "detected": 14,
+    "by_type": {
+      "resting_tachycardia": {
+        "events": 3,
+        "detected": 3,
+        "severity_match": 3,
+        "missed": [],
+        "recall": 1.0
+      },
+      "bradycardia": {
+        "events": 3,
+        "detected": 3,
+        "severity_match": 3,
+        "missed": [],
+        "recall": 1.0
+      },
+      "personal_deviation": {
+        "events": 3,
+        "detected": 3,
+        "severity_match": 3,
+        "missed": [],
+        "recall": 1.0
+      },
+      "elevated_resting_trend": {
+        "events": 2,
+        "detected": 2,
+        "severity_match": 2,
+        "missed": [],
+        "recall": 1.0
+      },
+      "sensor_gap": {
+        "events": 3,
+        "detected": 3,
+        "severity_match": 3,
+        "missed": [],
+        "recall": 1.0
+      }
+    }
+  },
+  "precision_proxy": {
+    "detections_on_injected_users": 36,
+    "overlap_any_injected": 18,
+    "overlap_same_type": 14,
+    "precision_any": 0.5,
+    "precision_same_type": 0.389,
+    "unmatched_by_type": {
+      "personal_deviation": 4,
+      "sensor_gap": 12,
+      "resting_tachycardia": 2
+    },
+    "collateral_other_type": {
+      "personal_deviation<-elevated_resting_trend": 3,
+      "elevated_resting_trend<-sensor_gap": 1
+    }
+  },
+  "clean_alert_burden": {
+    "user_days": 469,
+    "alerts_total": 44,
+    "alerts_per_user_day": 0.0938,
+    "by_type": {
+      "resting_tachycardia": {
+        "alerts": 14,
+        "per_user_day": 0.0299
+      },
+      "bradycardia": {
+        "alerts": 0,
+        "per_user_day": 0.0
+      },
+      "personal_deviation": {
+        "alerts": 9,
+        "per_user_day": 0.0192
+      },
+      "elevated_resting_trend": {
+        "alerts": 1,
+        "per_user_day": 0.0021
+      },
+      "sensor_gap": {
+        "alerts": 20,
+        "per_user_day": 0.0426
+      }
+    },
+    "by_severity": {
+      "info": 20,
+      "warning": 20,
+      "critical": 4
+    },
+    "per_user": {
+      "U01": {
+        "days": 42,
+        "alerts": 2
+      },
+      "U02": {
+        "days": 5,
+        "alerts": 1
+      },
+      "U03": {
+        "days": 32,
+        "alerts": 3
+      },
+      "U04": {
+        "days": 27,
+        "alerts": 7
+      },
+      "U05": {
+        "days": 30,
+        "alerts": 3
+      },
+      "U06": {
+        "days": 42,
+        "alerts": 1
+      },
+      "U07": {
+        "days": 42,
+        "alerts": 5
+      },
+      "U08": {
+        "days": 39,
+        "alerts": 4
+      },
+      "U09": {
+        "days": 31,
+        "alerts": 7
+      },
+      "U10": {
+        "days": 3,
+        "alerts": 1
+      },
+      "U11": {
+        "days": 26,
+        "alerts": 2
+      },
+      "U12": {
+        "days": 44,
+        "alerts": 1
+      },
+      "U13": {
+        "days": 35,
+        "alerts": 4
+      },
+      "U14": {
+        "days": 29,
+        "alerts": 2
+      },
+      "U15": {
+        "days": 42,
+        "alerts": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+# nginx 설정 템플릿 — 공식 이미지가 기동 시 ${BACKEND_URL} 을 치환해 /etc/nginx/conf.d/default.conf 로 만든다.
+# nginx 변수($uri 등)는 치환 대상이 아니다(envsubst 는 환경변수에 있는 이름만 바꾼다).
+server {
+    listen 8080;
+    server_name _;
+    # 응답 헤더·오류 페이지에 nginx 버전을 싣지 않는다(공격자에게 알려 줄 이유가 없다).
+    server_tokens off;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+
+    # API: /api/xxx → ${BACKEND_URL}/xxx. SSE(/chat/stream)는 버퍼링을 끄고 읽기 제한을 늘린다(분석·작성에 수십 초).
+    location /api/ {
+        proxy_pass ${BACKEND_URL}/;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_read_timeout 600s;
+        proxy_send_timeout 600s;
+        include /etc/nginx/snippets/security-headers.conf;
+    }
+
+    # 해시가 붙은 빌드 산출물은 오래 캐시, index.html 은 캐시하지 않아 새 빌드가 바로 반영된다.
+    location /assets/ {
+        add_header Cache-Control "public, max-age=31536000, immutable";
+        include /etc/nginx/snippets/security-headers.conf;
+        try_files $uri =404;
+    }
+    location / {
+        add_header Cache-Control "no-cache";
+        include /etc/nginx/snippets/security-headers.conf;
+        try_files $uri /index.html;
+    }
+}

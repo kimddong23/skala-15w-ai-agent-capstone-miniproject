@@ -1,0 +1,109 @@
+# Vital Sentinel — 백엔드 + 프론트엔드 (기본). Ollama 는 호스트의 것을 쓰거나, `--profile ollama` 로 컨테이너로 띄운다.
+#
+#   docker compose up -d --build        # http://localhost:8600  (백엔드 http://localhost:8100/health)
+#   docker compose down                 # 컨테이너 정리(이미지·볼륨은 남음)
+#
+# Ollama 없이도 뜬다: 연결이 안 되면 화면에 "LLM 미연결 — 기본 리포트 모드" 가 표시되고, 탐지·안전 안내·검증은 그대로 동작한다.
+# 호스트의 Ollama 를 쓰려면 호스트에서 `ollama serve` 가 떠 있고 모델이 있어야 한다(bash sh/setup_ollama.sh).
+#   - macOS/Windows Docker Desktop: 기본값 http://host.docker.internal:11434 로 연결된다.
+#   - Linux: host-gateway 매핑으로 같은 주소를 쓰지만, 기본 설정의 호스트 Ollama 는 127.0.0.1 에서만 듣기 때문에 컨테이너에서 닿지 않는다.
+#     Ollama 를 0.0.0.0 으로 열면 인증 없는 LLM 서버가 같은 네트워크 전체에 노출되므로 권하지 않는다.
+#     Linux 에서는 아래 `--profile ollama`(컨테이너 Ollama, 호스트 포트를 열지 않음)를 쓰는 것이 안전하다.
+# 컨테이너 Ollama:  DOCKER_OLLAMA_URL=http://ollama:11434 docker compose --profile ollama up -d --build
+#   (GPU: docker compose -f docker-compose.yml -f docker-compose.gpu.yml --profile ollama up -d)
+#
+# 변수는 프로젝트 루트의 .env(선택)나 셸 환경에서 읽는다. 호스트 실행용 .env 의 OLLAMA_BASE_URL(localhost)을 컨테이너가
+# 그대로 쓰면 컨테이너 자기 자신을 가리키게 되므로, 컨테이너용 주소는 따로 DOCKER_OLLAMA_URL 로 받는다.
+# 외부 이미지(ollama/ollama)는 digest 로 고정했다. 갱신 방법은 Dockerfile 머리 주석과 같다.
+name: vital-sentinel
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vital-sentinel-backend:local
+    environment:
+      OLLAMA_BASE_URL: ${DOCKER_OLLAMA_URL:-http://host.docker.internal:11434}
+      # 값 없는 키는 셸/.env 에 있을 때만 전달된다 — 없으면 앱이 app/config.py 의 기본 모델을 쓴다(기본값을 여기 따로 적지 않는다).
+      FAST_MODEL:
+      QUALITY_MODEL:
+      EMBED_MODEL:
+      LLM_BACKEND: ${LLM_BACKEND:-ollama}
+      LLM_ENABLED: ${LLM_ENABLED:-true}
+      # 보호자 알림 승인(HITL) 시연 기본 켬. 끄려면 HITL_ENABLED=false
+      HITL_ENABLED: ${HITL_ENABLED:-true}
+      # 대화 기억은 이름 있는 볼륨(checkpoints)에 sqlite 로 저장해 컨테이너를 다시 만들어도 이어진다. 끄려면 CHECKPOINTER=memory.
+      CHECKPOINTER: ${CHECKPOINTER:-sqlite}
+      SQLITE_PATH: /app/state/checkpoints.sqlite
+      # OPENAI_API_KEY 는 넘기지만 과금 확인(OPENAI_CONFIRM)은 일부러 넘기지 않는다: 기본 compose 는 OpenAI 백엔드를 시작하지 않는다.
+      # OpenAI 를 쓰려면 확인을 한 번만 직접 준다:  docker compose run --rm -e OPENAI_CONFIRM=yes -e LLM_BACKEND=openai --service-ports backend
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      LANGCHAIN_TRACING_V2: ${LANGCHAIN_TRACING_V2:-false}
+      LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY:-}
+      LANGCHAIN_PROJECT: ${LANGCHAIN_PROJECT:-vital-sentinel-docker}
+      CORS_ORIGINS: http://localhost:${FRONTEND_PORT:-8600},http://127.0.0.1:${FRONTEND_PORT:-8600}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - checkpoints:/app/state
+    # 하드닝: 모든 리눅스 capability 제거, 권한 상승 금지. 코드·데이터는 이미지에서 root 소유 + 쓰기 금지다(Dockerfile 참고).
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "127.0.0.1:${BACKEND_PORT:-8100}:8100"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    image: vital-sentinel-frontend:local
+    environment:
+      BACKEND_URL: http://backend:8100
+    depends_on:
+      backend:
+        condition: service_healthy
+    # nginx 는 기동 시 설정 파일(envsubst)을 써야 해서 루트 파일시스템을 읽기 전용으로 두지 않는다. capability 는 모두 뺀다.
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-8600}:8080"
+    restart: unless-stopped
+
+  # ---- 선택: 컨테이너 Ollama (docker compose --profile ollama ...) ------------------
+  # 보안: 이 서비스는 호스트 포트를 게시(ports)하지 않는다. compose 네트워크 안(backend, ollama-pull)에서만 11434 로 닿는다.
+  # 인증이 없는 Ollama 를 호스트나 LAN 에 노출하지 않기 위해 `ports:` 를 추가하지 말 것. 꼭 필요하면 "127.0.0.1:11434:11434" 만 쓴다.
+  ollama:
+    profiles: ["ollama"]
+    image: ollama/ollama:latest@sha256:265409e1d931028a8f7d5a32bcbafddd7bffbc6cc629d77efe9560adf692a5e7
+    volumes:
+      - ollama:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # 모델 한 번 받아두기(이미 있으면 빠르게 끝남). 끝나면 종료된다.
+  ollama-pull:
+    profiles: ["ollama"]
+    image: ollama/ollama:latest@sha256:265409e1d931028a8f7d5a32bcbafddd7bffbc6cc629d77efe9560adf692a5e7
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+      # 아래 두 기본값은 app/config.py 의 기본 모델과 같아야 한다(tests/test_packaging.py 가 어긋남을 잡는다).
+      FAST_MODEL: ${FAST_MODEL:-qwen3:0.6b}
+      QUALITY_MODEL: ${QUALITY_MODEL:-qwen3:8b}
+    entrypoint: ["/bin/sh", "-c", "ollama pull \"$$FAST_MODEL\" && ollama pull \"$$QUALITY_MODEL\" && ollama pull bge-m3"]
+    restart: "no"
+
+volumes:
+  ollama:
+  checkpoints:

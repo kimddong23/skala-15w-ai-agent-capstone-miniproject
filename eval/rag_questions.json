@@ -1,0 +1,338 @@
+[
+ {
+  "id": "Q01",
+  "question": "성인 안정시 심박수 정상 범위가 어떻게 되나요?",
+  "gold": [
+   "heart-rate-ranges",
+   "resting-hr-basics"
+  ]
+ },
+ {
+  "id": "Q02",
+  "question": "안정시 심박은 언제 어떻게 재야 정확해요?",
+  "gold": [
+   "resting-hr-basics"
+  ]
+ },
+ {
+  "id": "Q03",
+  "question": "운동선수는 맥박이 왜 이렇게 느려요?",
+  "gold": [
+   "resting-hr-basics",
+   "heart-rate-ranges",
+   "bradycardia-overview"
+  ]
+ },
+ {
+  "id": "Q04",
+  "question": "내 최대 심박수는 어떻게 계산해?",
+  "gold": [
+   "exercise-hr-zones"
+  ]
+ },
+ {
+  "id": "Q05",
+  "question": "220 - 나이 공식이 정확한가요",
+  "gold": [
+   "exercise-hr-zones"
+  ]
+ },
+ {
+  "id": "Q06",
+  "question": "러닝할 때 심박이 170까지 올라가는데 위험한 건 아니죠?",
+  "gold": [
+   "exercise-hr-zones",
+   "heart-rate-ranges"
+  ]
+ },
+ {
+  "id": "Q07",
+  "question": "운동 끝나고 심박수가 언제쯤 내려와요?",
+  "gold": [
+   "hr-recovery"
+  ]
+ },
+ {
+  "id": "Q08",
+  "question": "쿨다운은 왜 하는 거야",
+  "gold": [
+   "hr-recovery"
+  ]
+ },
+ {
+  "id": "Q09",
+  "question": "자는 동안 심박이 낮아지는 게 정상인가요",
+  "gold": [
+   "sleep-hr"
+  ]
+ },
+ {
+  "id": "Q10",
+  "question": "잘 때 심박이 갑자기 높게 나왔어요. 왜 그런가요?",
+  "gold": [
+   "sleep-hr"
+  ]
+ },
+ {
+  "id": "Q11",
+  "question": "서맥이 뭐예요?",
+  "gold": [
+   "bradycardia-overview"
+  ]
+ },
+ {
+  "id": "Q12",
+  "question": "맥박이 40 아래로 내려가면 큰일인가요",
+  "gold": [
+   "bradycardia-overview",
+   "red-flags"
+  ]
+ },
+ {
+  "id": "Q13",
+  "question": "빈맥 원인이 뭔가요",
+  "gold": [
+   "tachycardia-overview"
+  ]
+ },
+ {
+  "id": "Q14",
+  "question": "가만히 있는데 가슴이 두근거리고 100이 넘어요 어떻게 해야하죠",
+  "gold": [
+   "tachycardia-overview",
+   "when-to-see-doctor"
+  ]
+ },
+ {
+  "id": "Q15",
+  "question": "스마트워치 심박 측정은 얼마나 정확해?",
+  "gold": [
+   "wearable-measurement-limits"
+  ]
+ },
+ {
+  "id": "Q16",
+  "question": "PPG 센서가 뭔지 궁금합니다",
+  "gold": [
+   "wearable-measurement-limits"
+  ]
+ },
+ {
+  "id": "Q17",
+  "question": "달릴 때 워치 심박이 이상하게 튀어요",
+  "gold": [
+   "wearable-measurement-limits"
+  ]
+ },
+ {
+  "id": "Q18",
+  "question": "심박 데이터가 몇 시간씩 비어 있는 이유가 뭐죠",
+  "gold": [
+   "sensor-gaps-and-wear"
+  ]
+ },
+ {
+  "id": "Q19",
+  "question": "기기를 어떻게 차야 센서가 잘 읽나요",
+  "gold": [
+   "sensor-gaps-and-wear",
+   "wearable-measurement-limits"
+  ]
+ },
+ {
+  "id": "Q20",
+  "question": "커피 마시면 심박이 올라가나요",
+  "gold": [
+   "stimulants-caffeine-alcohol"
+  ]
+ },
+ {
+  "id": "Q21",
+  "question": "어제 술 마셨더니 안정시 심박이 높네요",
+  "gold": [
+   "stimulants-caffeine-alcohol"
+  ]
+ },
+ {
+  "id": "Q22",
+  "question": "스트레스 받으면 맥박이 빨라지는 이유",
+  "gold": [
+   "stress-and-sleep-deprivation"
+  ]
+ },
+ {
+  "id": "Q23",
+  "question": "잠을 못 잤더니 심박이 높아요",
+  "gold": [
+   "stress-and-sleep-deprivation",
+   "sleep-hr"
+  ]
+ },
+ {
+  "id": "Q24",
+  "question": "물 안 마시면 심박수가 올라가?",
+  "gold": [
+   "dehydration-heat-fever"
+  ]
+ },
+ {
+  "id": "Q25",
+  "question": "열이 나면 맥박이 얼마나 빨라지나요",
+  "gold": [
+   "dehydration-heat-fever"
+  ]
+ },
+ {
+  "id": "Q26",
+  "question": "베타차단제 먹는데 맥박이 느려요",
+  "gold": [
+   "medications-and-hr",
+   "bradycardia-overview"
+  ]
+ },
+ {
+  "id": "Q27",
+  "question": "감기약 먹고 두근거리는데 약 때문일 수 있나요",
+  "gold": [
+   "medications-and-hr"
+  ]
+ },
+ {
+  "id": "Q28",
+  "question": "언제 병원에 가야 하나요? 심박이 계속 높을 때",
+  "gold": [
+   "when-to-see-doctor"
+  ]
+ },
+ {
+  "id": "Q29",
+  "question": "병원 가기 전에 뭘 준비해서 가면 돼요",
+  "gold": [
+   "when-to-see-doctor"
+  ]
+ },
+ {
+  "id": "Q30",
+  "question": "가슴이 아프고 숨이 차요 119 불러야 하나요",
+  "gold": [
+   "emergency-response",
+   "red-flags"
+  ]
+ },
+ {
+  "id": "Q31",
+  "question": "119 신고할 때 뭐라고 말하죠",
+  "gold": [
+   "emergency-response"
+  ]
+ },
+ {
+  "id": "Q32",
+  "question": "HRV 가 뭐예요",
+  "gold": [
+   "hrv-and-trends"
+  ]
+ },
+ {
+  "id": "Q33",
+  "question": "안정시 심박수 추세 알림은 무슨 뜻이에요?",
+  "gold": [
+   "hrv-and-trends",
+   "service-detection-rules",
+   "stress-and-sleep-deprivation"
+  ]
+ },
+ {
+  "id": "Q34",
+  "question": "이 서비스에서 critical 알림은 어떤 기준으로 뜨는 거야?",
+  "gold": [
+   "service-detection-rules"
+  ]
+ },
+ {
+  "id": "Q35",
+  "question": "운동 중엔 왜 알림이 안 와요",
+  "gold": [
+   "service-detection-rules",
+   "hr-recovery"
+  ]
+ },
+ {
+  "id": "Q36",
+  "question": "이 앱이 진단도 해줘요? 의료기기예요?",
+  "gold": [
+   "disclaimer",
+   "service-detection-rules"
+  ]
+ },
+ {
+  "id": "Q37",
+  "question": "개인 기준 이탈이 뭔 말이죠",
+  "gold": [
+   "service-detection-rules"
+  ]
+ },
+ {
+  "id": "Q38",
+  "question": "heart rate 정상 범위 알려줘 pls",
+  "gold": [
+   "heart-rate-ranges",
+   "resting-hr-basics"
+  ]
+ },
+ {
+  "id": "Q39",
+  "question": "사이클 타고 있었는데 쉬는 걸로 나와서 알림 왔어요",
+  "gold": [
+   "exercise-hr-zones",
+   "service-detection-rules"
+  ]
+ },
+ {
+  "id": "Q40",
+  "question": "심박수가 며칠째 평소보다 높은데 이유가 뭘까요 (감기 기운도 있어요)",
+  "gold": [
+   "dehydration-heat-fever",
+   "stress-and-sleep-deprivation",
+   "hrv-and-trends"
+  ]
+ },
+ {
+  "id": "Q41",
+  "question": "쉬는데 130 넘게 나오면 위험한가요",
+  "gold": [
+   "red-flags",
+   "tachycardia-overview",
+   "emergency-response"
+  ]
+ },
+ {
+  "id": "Q42",
+  "question": "자다가 심박이 30대로 나왔는데 괜찮을까요",
+  "gold": [
+   "sleep-hr",
+   "bradycardia-overview"
+  ]
+ },
+ {
+  "id": "Q43",
+  "question": "서마게 뭐에요?",
+  "gold": [
+   "bradycardia-overview"
+  ]
+ },
+ {
+  "id": "Q44",
+  "question": "심박 센써가 계속 끊겨여",
+  "gold": [
+   "sensor-gaps-and-wear"
+  ]
+ },
+ {
+  "id": "Q45",
+  "question": "운동후 회복 언제까지 걸려요 ㅠ",
+  "gold": [
+   "hr-recovery"
+  ]
+ }
+]

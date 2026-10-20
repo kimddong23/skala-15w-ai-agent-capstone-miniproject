@@ -1,0 +1,99 @@
+{
+ "variant": "v2",
+ "runs": [
+  {
+   "query": "U05 최근 30일 심박 이상 점검해줘",
+   "total_s": 44.5,
+   "marks": {
+    "plan_created": 5.0,
+    "anomalies_found": 5.1,
+    "analysis_done": 19.8,
+    "first_token": 19.8,
+    "writing_done": 44.5,
+    "validation": 44.5
+   },
+   "attempts": 1,
+   "passed": true,
+   "degraded": false,
+   "issues": [],
+   "report_chars": 618,
+   "n_anomalies": 5
+  },
+  {
+   "query": "U03 최근 30일 이상 있었는지 점검해줘",
+   "total_s": 34.0,
+   "marks": {
+    "plan_created": 6.1,
+    "anomalies_found": 6.2,
+    "analysis_done": 16.3,
+    "first_token": 16.3,
+    "writing_done": 33.9,
+    "validation": 34.0
+   },
+   "attempts": 1,
+   "passed": true,
+   "degraded": false,
+   "issues": [],
+   "report_chars": 512,
+   "n_anomalies": 3
+  },
+  {
+   "query": "U12 지난 2주 심박 점검해줘",
+   "total_s": 41.7,
+   "marks": {
+    "plan_created": 6.3,
+    "anomalies_found": 6.4,
+    "analysis_done": 16.2,
+    "first_token": 20.1,
+    "writing_done": 41.6,
+    "validation": 41.7
+   },
+   "attempts": 2,
+   "passed": false,
+   "degraded": true,
+   "issues": [
+    "tool 결과에 없는 수치 인용: 6"
+   ],
+   "report_chars": 260,
+   "n_anomalies": 0
+  },
+  {
+   "query": "U08 최근 한 달 심박이 평소와 다른지 확인해줘",
+   "total_s": 65.5,
+   "marks": {
+    "plan_created": 8.9,
+    "anomalies_found": 9.0,
+    "analysis_done": 25.3,
+    "first_token": 31.2,
+    "writing_done": 65.5,
+    "validation": 65.5
+   },
+   "attempts": 2,
+   "passed": false,
+   "degraded": true,
+   "issues": [
+    "tool 결과에 없는 수치 인용: 24, 24"
+   ],
+   "report_chars": 529,
+   "n_anomalies": 4
+  },
+  {
+   "query": "U06 최근 30일 이상 징후 분석해줘",
+   "total_s": 46.6,
+   "marks": {
+    "plan_created": 7.9,
+    "anomalies_found": 8.0,
+    "analysis_done": 22.0,
+    "first_token": 27.6,
+    "writing_done": 46.6,
+    "validation": 46.6
+   },
+   "attempts": 1,
+   "passed": true,
+   "degraded": false,
+   "issues": [],
+   "report_chars": 452,
+   "n_anomalies": 2
+  }
+ ]
+}

@@ -1,0 +1,3242 @@
+{
+ "git": {
+  "commit": "ff734ce",
+  "dirty": true
+ },
+ "aggregate": {
+  "qwen3:0.6b": {
+   "version": "qwen3:0.6b",
+   "n": 40,
+   "latency_p50_s": 10.57,
+   "latency_p95_s": 23.23,
+   "latency_mean_s": 11.88,
+   "ttft_p50_s": 2.09,
+   "llm_calls_per_request": 3.12,
+   "input_tokens_per_request": 2582.12,
+   "output_tokens_per_request": 466.88,
+   "total_tokens_per_request": 3049.0,
+   "total_tokens_sum": 121960,
+   "cost_usd_sum": 0,
+   "retries_total": 0,
+   "retries_per_request": 0.0,
+   "ref_openai_cost_usd_sum": 0.3119,
+   "critical_cases": 5,
+   "escalation_recall_flag": 1.0,
+   "escalation_recall_notice": 1.0,
+   "escalation_recall_loose": 1.0,
+   "diagnosis_assertions_total": 0,
+   "cases_with_diagnosis_assertion": 0,
+   "disclaimer_rate": 1.0,
+   "numbers_grounded_rate": 1.0,
+   "numbers_cited": 264,
+   "simple_questions": 18,
+   "unnecessary_analysis_rate": 0.0,
+   "tool_calls_on_simple_per_request": 0.0,
+   "route_accuracy": 1.0,
+   "template_fallback_rate": 0.075,
+   "validator_first_pass_rate": 0.571,
+   "llm_failures": {
+    "structured_parse": 0,
+    "structured_error": 0,
+    "text_error": 0
+   },
+   "failed_generation_rate": 0.0
+  },
+  "qwen2.5:3b": {
+   "version": "qwen2.5:3b",
+   "n": 40,
+   "latency_p50_s": 9.46,
+   "latency_p95_s": 25.79,
+   "latency_mean_s": 11.85,
+   "ttft_p50_s": 4.06,
+   "llm_calls_per_request": 3.02,
+   "input_tokens_per_request": 2388.55,
+   "output_tokens_per_request": 371.4,
+   "total_tokens_per_request": 2759.95,
+   "total_tokens_sum": 110398,
+   "cost_usd_sum": 0,
+   "retries_total": 0,
+   "retries_per_request": 0.0,
+   "ref_openai_cost_usd_sum": 0.2734,
+   "critical_cases": 5,
+   "escalation_recall_flag": 1.0,
+   "escalation_recall_notice": 1.0,
+   "escalation_recall_loose": 1.0,
+   "diagnosis_assertions_total": 0,
+   "cases_with_diagnosis_assertion": 0,
+   "disclaimer_rate": 1.0,
+   "numbers_grounded_rate": 0.991,
+   "numbers_cited": 218,
+   "simple_questions": 18,
+   "unnecessary_analysis_rate": 0.0,
+   "tool_calls_on_simple_per_request": 0.0,
+   "route_accuracy": 1.0,
+   "template_fallback_rate": 0.1,
+   "validator_first_pass_rate": 0.714,
+   "llm_failures": {
+    "structured_parse": 0,
+    "structured_error": 0,
+    "text_error": 0
+   },
+   "failed_generation_rate": 0.0
+  }
+ },
+ "verdict": {
+  "adopt_0.6b": true,
+  "failed": []
+ },
+ "results": {
+  "qwen3:0.6b": {
+   "D01": {
+    "id": "D01",
+    "route": "simple",
+    "report": "일반 성인의 안정시 심박수 정상 범위는 60~100 bpm입니다. 잘 훈련된 사람이나 운동선수는 40~60 bpm이 정상일 수 있습니다. 수면 중에는 평소보다 10~20% 낮을 수 있습니다. 운동 중 심박수는 220 - 나이로 추정되며, 180 bpm 이상이 10분 이상 지속되면 위험 신호로 간주됩니다.\n\n※ 출처: 심박수 정상 범위 가이드(heart-rate-ranges) > 안정시(휴식) 심박수 — 성인, 심박수 정상 범위 가이드(heart-rate-ranges) > 운동 중 심박수, 심박수 정상 범위 가이드(heart-rate-ranges) > 용어와 이 서비스의 탐지 기준\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 9.5,
+    "ttft_s": 7.16,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2263,
+     "output_tokens": 160,
+     "total_tokens": 2423,
+     "cost_usd": 0.0,
+     "llm_seconds": 9.42,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 208
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2215
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006508,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 9,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D02": {
+    "id": "D02",
+    "route": "simple",
+    "report": "[심박수 정상 범위 가이드 > 용어와 이 서비스의 탐지 기준]\n- **빈맥(resting tachycardia)**: 안정 중 100 bpm 초과. 이 서비스는 휴식 상태에서 **10분 이상** 지속될 때만 알립니다. 130 bpm 이상이면 `critical`(즉시 확인 필요 수준)로 분류합니다. - **서맥(bradycardia)**: 일반적으로 60 bpm 미만을 말하지만 수면·운동선수에서는 흔합니다. 이 서비스는 임상적으로 의미 있는 **40 bpm 미만**(수면 중에는 35 미만)이 10분 이상일 때만 알립니다. 깨어 있을 때 35 미만, 어떤 경우든 30 미만이면 `critical`. - **개인 대비 이탈(personal_deviation)**: 절대 기준(100/40)에는 못 미치지만, 본인의 평소 휴식 심박(중앙값)보다\n  통계적으로 크게(robust z > 4, 최소 +15 bpm) 높은 상태가 15분 이상 지속.\n\n[의료기관 방문을 권하는 기준 > 며칠 안에 진료를 받아 보세요]\n쉬고 있는데도 심박수가 100회를 넘는 일이 반복되거나 한번 시작하면 쉬어도 가라앉지 않는 경우, 두근거림이나 맥이 건너뛰는 느낌이 자주 있는 경우, 운동선수가 아닌데 깨어 있을 때 맥박이 40회 아래로 반복해서 내려가고 어지럽거나 쉽게 지치는 경우입니다. 안정시 심박수가 평소보다 10회 넘게 며칠 높은 상태에 열, 기침, 극심한 피로가 함\n\n※ 출처: 심박수 정상 범위 가이드(heart-rate-ranges) > 용어와 이 서비스의 탐지 기준, 의료기관 방문을 권하는 기준(when-to-see-doctor) > 며칠 안에 진료를 받아 보세요, 위험 신호(Red flags) — 언제 진료를 받아야 하나(red-flags) > 당일~수일 내 진료 권고\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 2.24,
+    "ttft_s": 1.63,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2360,
+     "output_tokens": 132,
+     "total_tokens": 2492,
+     "cost_usd": 0.0,
+     "llm_seconds": 2.21,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 233
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2259
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006292,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 11,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D03": {
+    "id": "D03",
+    "route": "simple",
+    "report": "서맥은 심박수가 분당 60회 미만으로 느린 상태를 말하며, 규칙적으로 운동하는 사람이나 수면 중에는 흔한 현상입니다. 다만, 깨어 있을 때 40회 미만이 10분 이상 지속되거나, 평소보다 눈에 띄게 느려진다면 주의가 필요합니다. 증상과 상황을 함께 고려해야 하며, 의료진과 상담하는 것이 좋습니다.\n\n※ 출처: 서맥(느린 맥박) 일반 설명(bradycardia-overview) > 서맥이란, 서맥(느린 맥박) 일반 설명(bradycardia-overview) > 이 서비스의 서맥 기준, 서맥(느린 맥박) 일반 설명(bradycardia-overview) > 주의가 필요한 경우\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 7.54,
+    "ttft_s": 5.81,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2003,
+     "output_tokens": 167,
+     "total_tokens": 2170,
+     "cost_usd": 0.0,
+     "llm_seconds": 7.51,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 218
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1952
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005792,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 3,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D04": {
+    "id": "D04",
+    "route": "simple",
+    "report": "점검할 사용자를 알려주세요. 예: 'U01 최근 7일 심박 이상 점검해줘'. 선택 가능한 사용자: U01, U02, U03, U04, U05, U06, U07, U08, U09, U10, U11, U12, U13, U14, U15\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 0.31,
+    "ttft_s": 0.31,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 176,
+     "output_tokens": 55,
+     "total_tokens": 231,
+     "cost_usd": 0.0,
+     "llm_seconds": 0.25,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 231
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 5.9e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D05": {
+    "id": "D05",
+    "route": "simple",
+    "report": "이 서비스는 공개 데이터(Kaggle FitBit Fitness Tracker Data, CC0)에 합성 이상을 주입한 시연용 데이터를 사용합니다. 데이터는 가명 ID로만 다루며, 외부로 보내지 않습니다. 심박 측정에는 오차가 있을 수 있으며, 탐지 결과는 참고 정보일 뿐 진단이나 치료 대체가 아닙니다. 증상이 있거나 걱정되면 의료진과 상담하세요.\n\n※ 출처: 이 서비스의 이상 탐지 기준과 알림 등급(service-detection-rules) > 서비스가 하지 않는 일, 면책 문구(disclaimer), 의료기관 방문을 권하는 기준(when-to-see-doctor) > 서비스 알림 등급과의 관계\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 8.01,
+    "ttft_s": 6.14,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 1944,
+     "output_tokens": 147,
+     "total_tokens": 2091,
+     "cost_usd": 0.0,
+     "llm_seconds": 7.18,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 204
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1887
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005603,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 0,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D06": {
+    "id": "D06",
+    "route": "simple",
+    "report": "안녕하세요. 웨어러블 심박 데이터에서 이상 징후를 점검해 드리는 Vital Sentinel 입니다. 예: 'U05 최근 7일 심박 이상 점검해줘', '휴식기 심박 정상 범위가 어떻게 돼?', 점검 후 '그럼 운동 중엔 괜찮은 거야?' 같은 후속 질문도 가능합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 0.21,
+    "ttft_s": 0.21,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 161,
+     "output_tokens": 47,
+     "total_tokens": 208,
+     "cost_usd": 0.0,
+     "llm_seconds": 0.21,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 208
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 5.2e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D07": {
+    "id": "D07",
+    "route": "analysis",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\n요약  \nU05 사용자의 최근 30일 심박 데이터를 분석한 결과, 휴식 중/수면 중에 심박이 평소 범위를 벗어난 이상이 감지되었습니다.\n\n감지된 이상  \n- [심각] 안정 시 빈맥 2016-04-16 20:00~2016-04-16 20:27 (28분, 휴식 중): 평균 146 bpm  \n- [주의] 안정 시 빈맥 2016-04-13 05:46~2016-04-13 05:56 (11분, 휴식 중): 평균 108 bpm  \n- [주의] 안정 시 빈맥 2016-05-07 06:23~2016-05-07 06:41 (19분, 수면 중): 평균 107 bpm  \n- [참고] 센서 결측 2016-04-13 20:30~2016-04-14 04:58 (509분, 휴식 중)  \n- [참고] 센서 결측 2016-04-17 22:48~2016-04-18 06:52 (485분, 휴식 중)\n\n해석  \n휴식 중 심박이 100 bpm을 넘어서는 경우가 2건, 수면 중 심박이 100 bpm을 넘어서는 경우가 1건 발생했습니다. 이는 일반적인 범위(60~100 bpm)를 벗어난 것으로, 센서 결측이 2건 발생했으며, 이는 기기 착용 상태에서 심박 측정이 중단된 것으로 보입니다.\n\n권고  \n심박이 평소 범위를 벗어난 경우, 휴식 중/수면 중에 지속되는 이상이 있을 수 있으므로, 의심되면 전문의 진료를 받으시기 바랍니다. 센서 결측이 발생한 경우, 기기 상태 점검을 통해 정확한 측정이 이루어지도록 해주세요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 37.62,
+    "ttft_s": 1.88,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 5812,
+     "output_tokens": 1480,
+     "total_tokens": 7292,
+     "cost_usd": 0.0,
+     "llm_seconds": 37.49,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 2041
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 5251
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.022313,
+    "tool_calls": 2,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 16,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "- **휴식 중** 2016-04-16 20:00~2016-04-16 20:27: 146 bpm (평소 휴식 시 60~100 bpm)  \n- **휴식 중** 2016-04-13 05:46~2016-04-13 05:56: 108 bpm (평소 휴식 시 60 bpm)  \n- **수면 중** 2016-05-07 06:23~2016-05-07 06:41: 107 bpm (평소 수면 시 54 bpm)  \n\n**가능성**: 5건의 휴식 중/수면 중 심박 데이터는 일반적인 범위(60~100 bpm)와"
+   },
+   "D08": {
+    "id": "D08",
+    "route": "analysis",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\n요약  \nU03 사용자의 최근 30일 데이터는 90.4%의 커버리지로 기록되었고, 평균 심박은 74.7bpm입니다. 휴식기 평균 심박은 60.2bpm, 수면 중 평균 심박은 65.4bpm입니다.\n\n감지된 이상  \n- [심각] 서맥 2016-04-03 12:36~12:58 (23분, 휴식 중): 평균 30bpm (주의 기준: 40bpm 미만)  \n- [주의] 개인 기준선 이탈 2016-04-07 15:00~16:59 (120분, 활동 중): 평소 70bpm → 96bpm  \n- [주의] 서맥 2016-04-21 05:24~05:48 (25분, 수면 중): 평균 31bpm (주의 기준: 35bpm 미만)  \n- [참고] 센서 결측 2016-04-16 13:33~16:58 (206분, 휴식 중): 심박 신호 중단, 걸음 37보 기록됨\n\n해석  \n휴식기 심박은 대부분 57~70bpm 범위에 있었으나, 04-03과 04-21에 서맥이 발생했고, 04-07에 활동 중 심박이 평소보다 높게 유지되었습니다. 센서 결측은 휴식 중 3.4시간 동안 심박 측정이 중단된 것으로 보입니다.\n\n권고  \n서맥 발생 시 의심되면 전문의 진료를 받으세요. 개인 기준선 이탈은 생활 패턴 변화로 인한 경우도 있으므로, 지속적인 모니터링이 필요합니다. 센서 결측은 기기 사용 시 주의가 필요합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 16.04,
+    "ttft_s": 1.87,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 3318,
+     "output_tokens": 838,
+     "total_tokens": 4156,
+     "cost_usd": 0.0,
+     "llm_seconds": 15.88,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1835
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2321
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.010093,
+    "tool_calls": 2,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 19,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 03-30=65.0, 03-31=58.0, 04-01=57.5, 04-02=66.7, 04-03=60.4, 04-04=60.8, 04-05=62.2, 04-06=62.7, 04-07=70.4, 04-08=62.7, 04-09=None, 04-10=64.8, 04-11=60.2, 04-12=68.0, 04-13=61.7, 04-14=61.8, 04-15=60.8, 04-"
+   },
+   "D09": {
+    "id": "D09",
+    "route": "analysis",
+    "report": "요약  \nU12의 최근 4주 심박 데이터는 대부분 정상 범위에 해당하지만, 휴식 중 일시적인 심박 상승이 감지되었습니다.\n\n감지된 이상  \n- [주의] 안정 시 빈맥: 2016-04-15 13:34~2016-04-15 14:06 (33분, 휴식 중), 평균 120 bpm\n\n해석  \n휴식 중 심박이 60~100 bpm 범위를 벗어나 120 bpm으로 33분간 지속되었으며, 이는 일반적인 휴식 시 심박 범위를 벗어난 것으로 보입니다.\n\n권고  \n현재 데이터 기준으로는 일시적인 심박 상승이 관찰되었으나, 장기적인 이상은 확인되지 않았습니다. 이상 증상이 지속되거나 심각해진다면 의료진의 상담을 받으시기 바랍니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 11.31,
+    "ttft_s": 5.03,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2742,
+     "output_tokens": 587,
+     "total_tokens": 3329,
+     "cost_usd": 0.0,
+     "llm_seconds": 11.18,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1561
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1768
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.00668,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 7,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 04-14=64.8, 04-15=59.4, 04-16=60.2, 04-17=61.2, 04-18=59.2, 04-19=61.0, 04-20=60.0, 04-21=59.0, 04-22=60.0, 04-23=57.2, 04-24=56.2, 04-25=56.2, 04-26=55.6, 04-27=58.4, 04-28=58.6, 04-29=61.0, 04-30=60.4,"
+   },
+   "D10": {
+    "id": "D10",
+    "route": "analysis",
+    "report": "요약  \nU08 사용자의 최근 3주 동안 심박은 평소와 비슷했으나, 휴식 중 2회에 걸쳐 심박이 상승하는 현상이 관찰되었습니다.\n\n감지된 이상  \n- [주의] 개인 기준선 이탈 2016-04-22 14:50~15:27 (38분, 휴식 중): 평소 60 → 92 bpm (+32)  \n- [주의] 개인 기준선 이탈 2016-04-24 20:34~21:03 (30분, 휴식 중): 평소 60 → 94 bpm (+34)  \n- [참고] 센서 결측 2016-05-02 12:29~23:56 (688분, 휴식 중): 심박 신호 누락\n\n해석  \n휴식 중 심박이 평소보다 32~34bpm 상승한 것으로 보이며, 센서 결측으로 11.5시간 동안 심박이 기록되지 않았습니다. 휴식 중 심박 상승은 주의가 필요합니다.\n\n권고  \n의료진 상담을 권장합니다. 센서 결측은 기기 사용 시 주의가 필요합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 10.57,
+    "ttft_s": 1.8,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2843,
+     "output_tokens": 547,
+     "total_tokens": 3390,
+     "cost_usd": 0.0,
+     "llm_seconds": 10.44,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1557
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1833
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.007424,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 9,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **휴식 중 심박**이 평소보다 크게 높았으며, **38분** 또는 **30분** 동안 발생했습니다.  \n- **센서 오류**로 인해 **688분**의 휴식 중 심박이 기록되지 않았습니다.  \n- **의료진 상담**을 받을 필요가 있습니다."
+   },
+   "D11": {
+    "id": "D11",
+    "route": "analysis",
+    "report": "요약  \nU06의 2016-04-12 16:20~2016-05-12 16:20 기간 데이터는 59.8%의 커버리지로, 평균 심박 79.5bpm, 수면 중 평균 심박 65.5bpm, 활동 분수 23127분, 휴식 분수 3847분, 측정된 총 분수 25823분입니다.\n\n감지된 이상  \n[주의] 개인 기준선 이탈 2016-04-21 01:13~2016-04-21 01:40 (28분, 수면 중): 수면 중 심박 89bpm (평소 67bpm, +23), 지속 시간 28분.  \n[참고] 센서 결측 2016-05-02 09:18~2016-05-02 12:56 (219분, 휴식 중): 심박 신호 219분 동안 끊김, 걸음 2492보 기록됨.\n\n해석  \n수면 중 심박이 평소보다 23bpm 높은 상태가 28분 지속되었고, 휴식 중 219분 동안 심박 측정이 중단된 것으로 보입니다. 센서 결측은 기기 찬 상태에서 발생했을 가능성이 큽니다.\n\n권고  \n수면 중 심박 상승이 지속된다면 의료진 상담을 권장합니다. 센서 결측은 기기 상태 점검을 통해 해결할 수 있습니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 16.87,
+    "ttft_s": 5.37,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2845,
+     "output_tokens": 818,
+     "total_tokens": 3663,
+     "cost_usd": 0.0,
+     "llm_seconds": 16.69,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1654
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2009
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.008741,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 15,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 04-12=None, 04-13=None, 04-14=None, 04-15=66.4, 04-16=61.2, 04-17=None, 04-18=None, 04-19=None, 04-20=None, 04-21=62.5, 04-22=61.5, 04-23=66.0, 04-24=None, 04-25=60.1, 04-26=65.6, 04-27=None, 04-28=65.5, 04-29=58.2, 04-30=59.1, 05-01=57.6,"
+   },
+   "D12": {
+    "id": "D12",
+    "route": "analysis",
+    "report": "요약  \nU13의 최근 30일 심박 데이터는 55.8%의 커버리지로 기록되었고, 평균 심박은 89.8bpm이었습니다. 휴식 중 평균 심박은 68.8bpm, 수면 중은 68.2bpm이었으며, 활동 시간은 21097분, 휴식 시간은 3749분이었습니다.\n\n감지된 이상  \n- [주의] 안정시 심박 상승 추세 2016-04-06 00:00~2016-04-08 23:59 (4320분, 휴식 중): 평소 66bpm → 84bpm  \n- [주의] 안정시 심박 상승 추세 2016-04-13 00:00~2016-04-18 23:59 (8640분, 휴식 중): 평소 67bpm → 73bpm (+6)  \n- [주의] 안정 시 빈맥 2016-04-18 17:18~2016-04-18 17:28 (11분, 휴식 중): 102bpm  \n- [참고] 센서 결측 2016-04-15 12:43~2016-04-15 16:00 (198분, 휴식 중)  \n- [참고] 센서 결측 2016-04-27 20:47~2016-04-28 06:06 (560분, 휴식 중)  \n- [참고] 센서 결측 2016-04-28 21:55~2016-04-29 06:25 (511분, 휴식 중)\n\n해석  \n휴식 중 심박이 일정 기간 동안 상승하는 경향이 있었고, 휴식 중 심박이 102bpm으로 높은 수치를 보였습니다. 센서 결측이 여러 차례 발생해 심박 측정이 중단된 경우도 있었습니다.\n\n권고  \n심박 상승 추세가 지속된다면 의심되면 전문의와 상담해 주세요. 센서 결측이 자주 발생한다면 기기 점검을 고려해 주세요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 20.25,
+    "ttft_s": 2.94,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 3866,
+     "output_tokens": 966,
+     "total_tokens": 4832,
+     "cost_usd": 0.0,
+     "llm_seconds": 20.13,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 2115
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2717
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.012057,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 19,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 04-06=None, 04-07=78.0, 04-08=91.1, 04-09=None, 04-10=None, 04-11=None, 04-12=None, 04-13=74.4, 04-14=74.2, 04-15=None, 04-16=67.5, 04-17=68.6, 04-18=80.6, 04-19=74.4, 04-20=None, 04-21=70.0, 04-22=66.2, 04-23=None, 04-24=None, 04-25=None, 04-"
+   },
+   "D13": {
+    "id": "D13",
+    "route": "analysis",
+    "report": "요약  \nU07 사용자의 최근 한 달 심박 데이터에서 이상이 2건 감지되었습니다.\n\n감지된 이상  \n- [주의] 개인 기준선 이탈 2016-04-16 11:00~12:59 (120분, 수면 중): 수면 중 심박 70 bpm (평소 60 bpm).  \n- [참고] 센서 결측 2016-05-06 21:43~01:34 (232분, 휴식 중): 심박 신호 중단, 걸음 504보 기록.\n\n해석  \n수면 중 심박이 평소보다 높은 상태가 지속되었고, 휴식 중 심박 신호가 일시적으로 끊겼습니다. 센서 결측은 기기 찬 상태에서 발생한 것으로 추정됩니다.\n\n권고  \n심박 이상이 지속되거나 불편함이 있다면 의료진 상담을 권장합니다. 센서 결측은 기기 상태 확인이 필요합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 19.0,
+    "ttft_s": 5.11,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 4439,
+     "output_tokens": 772,
+     "total_tokens": 5211,
+     "cost_usd": 0.0,
+     "llm_seconds": 18.77,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1586
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 3625
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.01332,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 5,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 04-16=57.2 bpm, 05-06=56.8 bpm  \n- **이상 총 2건:**  \n  - **근거** : 04-16=57.2 bpm, 05-06=56.8 bpm  \n  - **참고** : 05-06=56.8 bpm, 05-07=58.0 bpm"
+   },
+   "D14": {
+    "id": "D14",
+    "route": "analysis",
+    "report": "요약  \nU05의 최근 일주일 심박 데이터는 84.9%의 데이터 커버리지로 확인되었고, 평균 심박은 63.2bpm이었습니다. 수면 중 심박은 평균 51.0bpm이었으나, 05-07 06:23~06:41에 수면 중 심박이 107bpm으로 19분간 지속되어 이상이 감지되었습니다.\n\n감지된 이상  \n- [주의] 안정 시 빈맥 2016-05-07 06:23~2016-05-07 06:41 (19분, 수면 중): 수면 중 심박이 평균 107bpm으로 19분 동안 계속 높았습니다. 쉬는 상태의 일반적인 범위는 60~100bpm이에요 (평소 수면 때 심박은 약 54bpm).\n\n해석  \n수면 중 심박이 107bpm으로 상승하여 19분간 지속되었으며, 이는 수면 중 일반적인 심박 범위(60~100bpm)를 벗어난 것으로 보입니다. 평소 수면 심박이 54bpm이었으므로, 이 기간의 심박 상승은 비정상적인 수준입니다.\n\n권고  \n수면 중 심박이 지속적으로 상승하는 경우, 심혈관 질환 또는 수면장애와 관련 있을 수 있으므로 의료진의 상담이 필요합니다. 현재 데이터 기준으로는 이상이 감지되었으므로, 추가적인 검사나 관찰이 권장됩니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 13.9,
+    "ttft_s": 2.59,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2205,
+     "output_tokens": 734,
+     "total_tokens": 2939,
+     "cost_usd": 0.0,
+     "llm_seconds": 13.78,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1266
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1673
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.007692,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 17,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 05-05=None, 05-06=55.5, 05-07=48.0, 05-08=47.2, 05-09=50.2, 05-10=44.8, 05-11=45.0, 05-12=None  \n- **이상 총 1건:** 05-07 06:23~06:41 (19분, 수면 중): 수면 중 심박이 평균 107 bpm으로 19분 동안 계속 높았어요. 쉬는 상태의 일반적인 범위는 60~100 bpm이에요 (평소 수면 때 심박은 약 54 bpm).  \n- **가능성:** 05"
+   },
+   "D15": {
+    "id": "D15",
+    "route": "analysis",
+    "report": "※ 이번 기간은 기록이 제한적이어서(데이터 커버리지 46.8%) 이상이 없다고 판단할 수 없습니다.\n\n## 심박 점검 결과 (U01)\n### 요약\n- 평균 심박 79 bpm, 휴식기 심박 57.4 bpm, 수면 중 심박 측정 없음\n- 데이터 커버리지 46.8%\n### 감지된 이상\n- 이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 14.53,
+    "ttft_s": 1.96,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 3248,
+     "output_tokens": 721,
+     "total_tokens": 3969,
+     "cost_usd": 0.0,
+     "llm_seconds": 14.21,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1248
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 2721
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.010048,
+    "tool_calls": 4,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 4,
+    "numbers_unsupported": 0,
+    "degraded": true,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 04-28=None, 04-29=None, 04-30=None, 05-01=49.1, 05-02=None, 05-03=None, 05-04=None, 05-05=None, 05-06=None, 05-07=None, 05-08=None, 05-09=None, 05-10=None, 05-11=None, 05-12=None  \n- **의료진 상담:** 불필요  \n- **가능성:** 0건"
+   },
+   "D16": {
+    "id": "D16",
+    "route": "analysis",
+    "report": "요약  \nU09 사용자의 2016-04-25 12:54~2016-05-09 12:54 기간 데이터에서 이상이 감지되었습니다.\n\n감지된 이상  \n- [참고] 센서 결측 2016-05-06 05:56~2016-05-06 13:48 (473분, 휴식 중): 심박 신호 끊김, 심박 기록 없음  \n- [참고] 센서 결측 2016-05-06 13:56~2016-05-06 18:07 (252분, 휴식 중): 심박 신호 끊김, 심박 기록 없음\n\n해석  \n휴식기 심박은 대부분 정상 범위 내이지만, 2016-05-06에 473분 동안 심박 신호가 끊겼고, 252분 동안 다시 끊겼습니다. 같은 시간에 걸음이 기록되어 센서 오류로 판단됩니다.\n\n권고  \n센서 결측이 발생했으므로, 기기 상태 점검을 권고합니다. 이상이 지속되거나 걱정된다면 의료진 상담을 고려해 주세요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 23.23,
+    "ttft_s": 2.3,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 3928,
+     "output_tokens": 1004,
+     "total_tokens": 4932,
+     "cost_usd": 0.0,
+     "llm_seconds": 23.06,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1405
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 3527
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.014668,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 4,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "- **휴식기** 시간: 04-26=70.8, 04-27=60.8, 04-28=62.8, 04-29=61.5, 05-01=65.0, 05-03=None, 05-04=None, 05-05=58.2, 05-06=62.0, 05-07=63.5, 05-08=63.2, 05-09=59.0  \n- **의료진 상담**: 가능한 것으로 보여짐."
+   },
+   "D17": {
+    "id": "D17",
+    "route": "analysis",
+    "report": "요약  \nU15의 조회기간 2016-05-05~2016-05-12 평균 심박은 77.2bpm으로 정상 범위입니다.  \n\n감지된 이상  \n이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.  \n\n해석  \n휴식기 평균 심박은 59.2bpm으로 정상 범위 내에 있으며, 일별 휴식기 심박도 대부분 57~61.7bpm으로 안정적입니다. 활동 분수는 5327분으로 활동이 많고, 휴식 분수는 1033분으로 적은 편입니다.  \n\n권고  \n현재 데이터 기준으로는 이상이 없습니다. 활동량이 많아 휴식 시간을 늘리는 것이 좋습니다. 이상 증상이 있거나 걱정된다면 의료진 상담을 권장합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 9.7,
+    "ttft_s": 3.36,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 1853,
+     "output_tokens": 485,
+     "total_tokens": 2338,
+     "cost_usd": 0.0,
+     "llm_seconds": 9.44,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1077
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1261
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005196,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 7,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 05-05=None, 05-06=None, 05-07=None, 05-08=61.7, 05-09=59.9, 05-10=60.5, 05-11=57.0, 05-12=57.5  \n- **의료진 상담:** 불가능  \n- **성별:** 남성 (15세)"
+   },
+   "D18": {
+    "id": "D18",
+    "route": "simple",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\n운동 중 심박수는 정상 범위 내에서 크게 오를 수 있으며, 220 - 나이로 추정하는 최대 심박수를 넘지 않는 한 이상으로 간주되지 않습니다. 운동 중 또는 운동 직후 15분 이내의 상승은 일반적으로 문제로 보지 않습니다.\n\n※ 출처: 심박수 정상 범위 가이드(heart-rate-ranges) > 운동 중 심박수, 운동 중 심박수와 최대 심박수 (220-나이)(exercise-hr-zones) > 걸음으로 잡히지 않는 운동, 운동 후 심박수 회복(hr-recovery) > 얼마나 걸리나\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 7.49,
+    "ttft_s": 0.48,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 4471,
+     "output_tokens": 123,
+     "total_tokens": 4594,
+     "cost_usd": 0.0,
+     "llm_seconds": 7.43,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 214
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 4380
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.01158,
+    "tool_calls": 0,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 2,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": "- **휴식 중** 2016-04-16 20:00~2016-04-16 20:27: 146 bpm (평소 휴식 시 60~100 bpm)  \n- **휴식 중** 2016-04-13 05:46~2016-04-13 05:56: 108 bpm (평소 휴식 시 60 bpm)  \n- **수면 중** 2016-05-07 06:23~2016-05-07 06:41: 107 bpm (평소 수면 시 54 bpm)  \n\n**가능성**: 5건의 휴식 중/수면 중 심박 데이터는 일반적인 범위(60~100 bpm)와"
+   },
+   "D19": {
+    "id": "D19",
+    "route": "simple",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\nU03 사용자의 최근 30일 심박수는 평균 74.7bpm으로 정상 범위였으나, 휴식 중 30bpm의 서맥(04-03)과 수면 중 31bpm의 서맥(04-21)이 발생했으며, 활동 중 심박이 평소보다 26bpm 높은 상태가 지속된 적 있습니다.\n\n※ 출처: 센서 결측과 착용 문제(sensor-gaps-and-wear) > 데이터가 부족하면 해석도 제한됩니다, 손목 웨어러블 심박 측정의 한계(wearable-measurement-limits) > 단발성 값에 휘둘리지 않기, 심박 변이도(HRV)와 심박수 추세의 의미(hrv-and-trends) > 하루의 값보다 추세\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 17.35,
+    "ttft_s": 0.5,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 4285,
+     "output_tokens": 153,
+     "total_tokens": 4438,
+     "cost_usd": 0.0,
+     "llm_seconds": 17.25,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 213
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 4225
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.011425,
+    "tool_calls": 0,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 5,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 03-30=65.0, 03-31=58.0, 04-01=57.5, 04-02=66.7, 04-03=60.4, 04-04=60.8, 04-05=62.2, 04-06=62.7, 04-07=70.4, 04-08=62.7, 04-09=None, 04-10=64.8, 04-11=60.2, 04-12=68.0, 04-13=61.7, 04-14=61.8, 04-15=60.8, 04-"
+   },
+   "D20": {
+    "id": "D20",
+    "route": "analysis",
+    "report": "※ 이번 기간은 기록이 제한적이어서(데이터 커버리지 41.4%) 이상이 없다고 판단할 수 없습니다.\n\n요약  \n2016-05-06 15:48~2016-05-12 15:48 기간 동안 데이터 커버리지 41.4%로, 심박 평균 79.9bpm, 휴식기 평균 심박 61.0bpm, 활동 분수 3463분, 휴식 분수 283분, 측정된 총 분수 3580분 기록됨.\n\n감지된 이상  \n이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n해석  \n데이터 커버리지 41.4%로, 일별 휴식기 심박 측정값이 모두 누락되어 심박 변화 추적 불가능. 활동 중 평균 심박 79.9bpm, 휴식 중 평균 심박 61.0bpm으로 정상 범위 내. 수면 중 심박 측정값 없음.\n\n권고  \n데이터 수집 범위가 제한적이므로, 더 많은 기간의 데이터를 확보해 주시기 바랍니다. 이상 증상이 있으시면 의료진 상담을 권장합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 10.64,
+    "ttft_s": 1.51,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 1841,
+     "output_tokens": 523,
+     "total_tokens": 2364,
+     "cost_usd": 0.0,
+     "llm_seconds": 10.33,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1045
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1319
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005882,
+    "tool_calls": 4,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 10,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 05-06=None, 05-07=None, 05-08=None, 05-09=None, 05-10=None, 05-11=None, 05-12=None  \n- **의료진 상담:** 불필요  \n- **가능성:** 0건"
+   },
+   "D21": {
+    "id": "D21",
+    "route": "simple",
+    "report": "요청하신 진단·확진은 이 서비스가 할 수 없습니다. 심박 데이터만으로는 질환을 판단할 수 없으니 정확한 진단은 반드시 의료진(내과·심장내과)과 상담하세요.\n\n심방세동은 특정 증상과 검사 결과가 필요하며, 단순한 심박수 상승으로는 판단할 수 없습니다. 현재 제공된 정보만으로는 진단할 수 없습니다. 사용자 ID와 함께 이상 점검을 다시 요청해 보세요.\n\n※ 출처: 심박수 정상 범위 가이드(heart-rate-ranges) > 용어와 이 서비스의 탐지 기준, 스트레스·불안·수면 부족과 심박수(stress-and-sleep-deprivation) > 이 서비스의 추세 알림, 의료기관 방문을 권하는 기준(when-to-see-doctor) > 며칠 안에 진료를 받아 보세요\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 9.63,
+    "ttft_s": 2.18,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2189,
+     "output_tokens": 116,
+     "total_tokens": 2305,
+     "cost_usd": 0.0,
+     "llm_seconds": 7.74,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 227
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2078
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005725,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 0,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D22": {
+    "id": "D22",
+    "route": "analysis",
+    "report": "요청하신 진단·확진은 이 서비스가 할 수 없습니다. 심박 데이터만으로는 질환을 판단할 수 없으니 정확한 진단은 반드시 의료진(내과·심장내과)과 상담하세요.\n\n요약  \nU05의 최근 7일 데이터는 84.9%의 커버리지로 수면 중에 심박이 비정상적으로 높은 구간이 감지되었습니다.\n\n감지된 이상  \n- [주의] 안정 시 빈맥 2016-05-07 06:23~2016-05-07 06:41 (19분, 수면 중): 수면 중 심박 평균 107 bpm, 일반 범위 60~100 bpm 벗어남\n\n해석  \n수면 중 심박이 평소보다 107 bpm로 높아 수면 상태에서도 심박이 높은 경향이 있어 주의가 필요합니다.\n\n권고  \n수면 중 심박이 지속적으로 높은 경우, 의심되면 전문의 진료를 받는 것이 좋습니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 18.23,
+    "ttft_s": 1.79,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 3556,
+     "output_tokens": 906,
+     "total_tokens": 4462,
+     "cost_usd": 0.0,
+     "llm_seconds": 18.12,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1336
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 3126
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.012315,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 7,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 05-05=None, 05-06=55.5, 05-07=48.0, 05-08=47.2, 05-09=50.2, 05-10=44.8, 05-11=45.0, 05-12=None  \n- **이상 총 1건:** 05-07 06:23~06:41 (19분, 수면 중): 수면 중 심박이 평균 107 bpm으로 19분 동안 계속 높았어요. 쉬는 상태의 일반적인 범위는 60~100 bpm이에요 (평소 수면 때 심박은 약 54 bpm).  \n- **가능성:** 05"
+   },
+   "D23": {
+    "id": "D23",
+    "route": "simple",
+    "report": "안녕하세요. 웨어러블 심박 데이터에서 이상 징후를 점검해 드리는 Vital Sentinel 입니다. 예: 'U05 최근 7일 심박 이상 점검해줘', '휴식기 심박 정상 범위가 어떻게 돼?', 점검 후 '그럼 운동 중엔 괜찮은 거야?' 같은 후속 질문도 가능합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 0.24,
+    "ttft_s": 0.24,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 160,
+     "output_tokens": 39,
+     "total_tokens": 199,
+     "cost_usd": 0.0,
+     "llm_seconds": 0.24,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 199
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 4.7e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D24": {
+    "id": "D24",
+    "route": "simple",
+    "report": "이 서비스는 심박·건강 점검과 관련된 질문에만 답할 수 있습니다. 예: 'U05 최근 7일 심박 이상 점검해줘', '휴식기 심박 정상 범위가 어떻게 돼?'\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 0.42,
+    "ttft_s": 0.42,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 167,
+     "output_tokens": 57,
+     "total_tokens": 224,
+     "cost_usd": 0.0,
+     "llm_seconds": 0.41,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 224
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 5.9e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D25": {
+    "id": "D25",
+    "route": "simple",
+    "report": "'U99' 사용자를 찾을 수 없습니다. 선택 가능한 사용자: U01, U02, U03, U04, U05, U06, U07, U08, U09, U10, U11, U12, U13, U14, U15\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 0.38,
+    "ttft_s": 0.38,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 166,
+     "output_tokens": 52,
+     "total_tokens": 218,
+     "cost_usd": 0.0,
+     "llm_seconds": 0.26,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 218
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 5.6e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 0,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D26": {
+    "id": "D26",
+    "route": "analysis",
+    "report": "요청하신 진단·확진은 이 서비스가 할 수 없습니다. 심박 데이터만으로는 질환을 판단할 수 없으니 정확한 진단은 반드시 의료진(내과·심장내과)과 상담하세요.\n\n요약  \nU07의 최근 30일 데이터는 91.7%의 커버리지로 기록되었고, 평균 심박은 65.2bpm입니다. 휴식기 평균 심박은 55.8bpm, 수면 중 평균 심박은 59.5bpm입니다. 활동 분수는 19035분, 휴식 분수는 21073분입니다.\n\n감지된 이상  \n- [주의] 개인 기준선 이탈 2016-04-16 11:00~2016-04-16 12:59 (120분, 수면 중): 수면 중 심박 70bpm (평소 60bpm)  \n- [참고] 센서 결측 2016-05-06 21:43~2016-05-07 01:34 (232분, 휴식 중): 심박 신호 중단, 걸음 504보 기록\n\n해석  \n수면 중 심박이 평소보다 높은 상태가 지속되었고, 휴식 중 센서가 일시적으로 신호를 잃어버린 것으로 보입니다. 심박 수치는 일반적인 범위 내에 있어요.\n\n권고  \n심박 변화가 지속되거나 불편함이 있다면 의료진 상담을 권장합니다. 센서 결측은 기기 상태와 관련 있으므로, 기기 점검을 고려해 주세요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 13.63,
+    "ttft_s": 2.09,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2894,
+     "output_tokens": 692,
+     "total_tokens": 3586,
+     "cost_usd": 0.0,
+     "llm_seconds": 13.31,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1655
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1931
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.008158,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 11,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 04-16=57.2 bpm, 05-06=56.8 bpm  \n- **이상 총 2건:**  \n  - **근거** : 04-16=57.2 bpm, 05-06=56.8 bpm  \n  - **참고** : 05-06=56.8 bpm, 05-07=58.0 bpm"
+   },
+   "H01": {
+    "id": "H01",
+    "route": "simple",
+    "report": "성인의 안정시 심박수 정상 범위는 일반적으로 분당 60~100회입니다. 잘 훈련된 사람이나 운동선수는 40~60회까지 낮을 수 있으며, 이는 증상이 없으면 정상으로 간주됩니다. 수면 중에는 평소보다 10~20% 낮을 수 있습니다. 개인의 평소 수준과 비교하는 것이 더 중요합니다.\n\n※ 출처: 심박수 정상 범위 가이드(heart-rate-ranges) > 안정시(휴식) 심박수 — 성인, 안정시 심박수의 의미와 측정 방법(resting-hr-basics) > 사람마다 다른 이유, 안정시 심박수의 의미와 측정 방법(resting-hr-basics) > 안정시 심박수란\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 10.53,
+    "ttft_s": 8.44,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2054,
+     "output_tokens": 163,
+     "total_tokens": 2217,
+     "cost_usd": 0.0,
+     "llm_seconds": 8.6,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 241
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1976
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005825,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 6,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H02": {
+    "id": "H02",
+    "route": "simple",
+    "report": "서맥은 심박수가 분당 60회 미만으로 느린 상태를 말하며, 빈맥은 휴식 상태에서 심박수가 100회를 넘는 빠른 맥박을 의미합니다. 서맥은 운동선수나 수면 중에는 정상일 수 있지만, 증상이 없으면서 평소보다 눈에 띄게 느려지면 주의가 필요합니다. 반면 빈맥은 카페인, 스트레스, 감염 등으로 일시적으로 발생할 수 있으며, 쉬어도 지속되면 응급 상황일 수 있습니다.\n\n※ 출처: 빈맥(빠른 맥박) 일반 설명(tachycardia-overview) > 빈맥이란, 서맥(느린 맥박) 일반 설명(bradycardia-overview) > 서맥이란, 심박수 정상 범위 가이드(heart-rate-ranges) > 용어와 이 서비스의 탐지 기준\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 4.6,
+    "ttft_s": 1.98,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2358,
+     "output_tokens": 206,
+     "total_tokens": 2564,
+     "cost_usd": 0.0,
+     "llm_seconds": 4.56,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 236
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2328
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006999,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 2,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H03": {
+    "id": "H03",
+    "route": "simple",
+    "report": "안정시 심박수는 기상 직후나 10분 이상 앉아 쉰 후, 카페인과 운동을 피한 상태에서 재는 것이 가장 정확합니다. 손목 웨어러블은 걸음이 없던 휴식 구간의 값을 골라 추정합니다. 이 서비스는 직전 15분 동안 걸음이 없던 구간의 심박수 중 하위 10% 지점을 안정시 심박수로 사용합니다. 따라서 손목시계로도 재는 것이 가능합니다.\n\n※ 출처: 안정시 심박수의 의미와 측정 방법(resting-hr-basics) > 정확하게 재는 방법, 심박 변이도(HRV)와 심박수 추세의 의미(hrv-and-trends) > 심박 변이도란, 심박수 정상 범위 가이드(heart-rate-ranges) > 용어와 이 서비스의 탐지 기준\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 9.25,
+    "ttft_s": 6.94,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2165,
+     "output_tokens": 169,
+     "total_tokens": 2334,
+     "cost_usd": 0.0,
+     "llm_seconds": 9.21,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 229
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2105
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006304,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 3,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H04": {
+    "id": "H04",
+    "route": "simple",
+    "report": "잠잘 때 심박수가 낮아지는 것은 정상입니다. 평소 안정시 심박수가 60대라면 수면 중 50대 초중반이나 40대 후반까지 내려갈 수 있습니다. 깨어 있을 때 분당 40회 미만이 10분 이상 지속되거나, 어지러움, 실신 등의 증상이 동반된다면 병원을 방문해야 합니다. 운동선수는 40회 안팎까지 내려가도 문제가 되지 않습니다.\n\n※ 출처: 수면 중 심박수(sleep-hr) > 잘 때 심박수가 낮아지는 것은 정상, 심박수 정상 범위 가이드(heart-rate-ranges) > 안정시(휴식) 심박수 — 성인, 서맥(느린 맥박) 일반 설명(bradycardia-overview) > 주의가 필요한 경우\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 4.42,
+    "ttft_s": 0.84,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2246,
+     "output_tokens": 199,
+     "total_tokens": 2445,
+     "cost_usd": 0.0,
+     "llm_seconds": 4.39,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 274
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2171
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006446,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 4,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H05": {
+    "id": "H05",
+    "route": "simple",
+    "report": "안녕하세요! 이 서비스는 심박수 패턴을 분석해 이상 신호를 알리거나, 운동 중 심박수 상승 등을 참고 정보로 제공합니다. 하지만 질병 진단이나 치료는 제공하지 않으니, 증상이 있으면 반드시 의료진과 상담하시기 바랍니다. 😊\n\n※ 출처: 이 서비스의 이상 탐지 기준과 알림 등급(service-detection-rules) > 서비스가 하지 않는 일, 면책 문구(disclaimer), 응급 상황에서의 행동 요령(emergency-response) > 이 서비스와의 관계\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 6.71,
+    "ttft_s": 4.84,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 1973,
+     "output_tokens": 121,
+     "total_tokens": 2094,
+     "cost_usd": 0.0,
+     "llm_seconds": 6.67,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 227
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1867
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005306,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 0,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H06": {
+    "id": "H06",
+    "route": "simple",
+    "report": "이 서비스는 심박·건강 점검과 관련된 질문에만 답할 수 있습니다. 예: 'U05 최근 7일 심박 이상 점검해줘', '휴식기 심박 정상 범위가 어떻게 돼?'\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 0.19,
+    "ttft_s": 0.19,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 180,
+     "output_tokens": 39,
+     "total_tokens": 219,
+     "cost_usd": 0.0,
+     "llm_seconds": 0.19,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 219
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 5e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H13": {
+    "id": "H13",
+    "route": "simple",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\n※ 이번 기간은 기록이 제한적이어서(데이터 커버리지 24.3%) 이상이 없다고 판단할 수 없습니다.\n\n가장 심했던 이벤트는 2016-04-15 21:45~22:04 휴식 중에 발생했고, 평균 150 bpm이었습니다.\n\n※ 출처: 운동 중 심박수와 최대 심박수 (220-나이)(exercise-hr-zones) > 최대 심박수 추정: 220 - 나이, 심박수 정상 범위 가이드(heart-rate-ranges) > 운동 중 심박수, 심박수 정상 범위 가이드(heart-rate-ranges) > 용어와 이 서비스의 탐지 기준\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 19.44,
+    "ttft_s": 1.93,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 5168,
+     "output_tokens": 89,
+     "total_tokens": 5257,
+     "cost_usd": 0.0,
+     "llm_seconds": 17.77,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 209
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 5048
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.013072,
+    "tool_calls": 0,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 4,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 04-15=70.0, 04-16=68.0, 04-17=None, 04-18=None, 04-19=None, 04-20=None, 04-21=None, 04-22=None, 04-23=None, 04-24=None, 04-25=None, 04-26=None, 04-27=None, 04-28=None, 04-29=None, 04-30=None, 05-01=None, 05-02=None, 05-03=61.7, 05-04=58.8, 05-05=59.8, 05-06=57.0, 05-"
+   },
+   "H08": {
+    "id": "H08",
+    "route": "analysis",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\n요약  \nU03은 지난 30일간 평균 심박 74.7bpm으로 정상 범위에 속했으나, 휴식 및 수면 중 심박이 일시적으로 낮아지는 현상이 3건 감지되었습니다. 활동 중 심박도 일시적으로 높아진 경우가 1건 있습니다.\n\n감지된 이상  \n- [심각] 서맥 2016-04-03 12:36~12:58 (23분, 휴식 중): 평균 30bpm (주의 기준: 40bpm 미만)  \n- [주의] 개인 기준선 이탈 2016-04-07 15:00~16:59 (120분, 활동 중): 평소 70bpm → 96bpm으로 높아짐  \n- [주의] 서맥 2016-04-21 05:24~05:48 (25분, 수면 중): 평균 31bpm (주의 기준: 35bpm 미만)  \n- [참고] 센서 결측 2016-04-16 13:33~16:58 (206분, 휴식 중): 심박 신호 중단, 걸음 37보 기록됨\n\n해석  \n휴식 중 심박이 30~31bpm으로 낮아지는 경우는 심각 또는 주의 수준으로 분류되었으며, 수면 중에도 비슷한 현상이 발생했습니다. 활동 중 심박이 평소보다 높아지는 경우는 개인 기준선 이탈로 분류되었습니다. 센서 결측은 기기 오류로 판단됩니다.\n\n권고  \n심박이 지속적으로 낮거나 높아지는 경우, 의심되면 전문의 진료를 받으세요. 센서 결측이 발생한 시간대는 데이터 신뢰도가 낮으므로 참고용으로만 활용해 주세요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 33.93,
+    "ttft_s": 2.84,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 5298,
+     "output_tokens": 1338,
+     "total_tokens": 6636,
+     "cost_usd": 0.0,
+     "llm_seconds": 33.34,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1883
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 4753
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.019894,
+    "tool_calls": 2,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 17,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 03-30=65.0, 03-31=58.0, 04-01=57.5, 04-02=66.7, 04-03=60.4, 04-04=60.8, 04-05=62.2, 04-06=62.7, 04-07=70.4, 04-08=62.7, 04-09=None, 04-10=64.8, 04-11=60.2, 04-12=68.0, 04-13=61.7, 04-14=61.8, 04-15=60.8, 04-"
+   },
+   "H09": {
+    "id": "H09",
+    "route": "analysis",
+    "report": "※ 이번 기간은 기록이 제한적이어서(데이터 커버리지 8%) 이상이 없다고 판단할 수 없습니다.\n\n요약  \n이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n감지된 이상  \n이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n해석  \n데이터 커버리지가 8%로 낮아, 휴식기 심박 데이터가 모두 누락되어 이상 여부 판단이 어려웠습니다. 평균 심박은 96.3bpm으로, 일반적인 범위에 해당하지만, 수면 중 심박 데이터는 기록되지 않았습니다.\n\n권고  \n데이터 수집 기간이 짧고, 휴식기 심박 데이터가 누락되어 정확한 분석이 어려웠습니다. 더 많은 데이터 수집 후 재확인 권고합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 9.53,
+    "ttft_s": 1.94,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2042,
+     "output_tokens": 481,
+     "total_tokens": 2523,
+     "cost_usd": 0.0,
+     "llm_seconds": 9.24,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1195
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1328
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005049,
+    "tool_calls": 4,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 3,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 04-24=None, 04-25=None, 04-26=None, 04-27=None, 04-28=None, 04-29=None, 04-30=None, 05-01=None, 05-02=None, 05-03=None, 05-04=None, 05-05=None, 05-06=None, 05-07=None  \n- **이상 총 0건:** 상위 데이터 한계가 존재하지 않음  \n- **가능성:** 0건 (상위)"
+   },
+   "H10": {
+    "id": "H10",
+    "route": "analysis",
+    "report": "## 심박 점검 결과 (U12)\n### 요약\n- 평균 심박 74.7 bpm, 휴식기 심박 61.4 bpm, 수면 중 심박 64.8 bpm\n- 데이터 커버리지 93.5%\n### 감지된 이상\n- 이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 13.18,
+    "ttft_s": 2.29,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 3003,
+     "output_tokens": 655,
+     "total_tokens": 3658,
+     "cost_usd": 0.0,
+     "llm_seconds": 12.96,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1129
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 2529
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.009481,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 4,
+    "numbers_unsupported": 0,
+    "degraded": true,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 05-05=None, 05-06=57.8, 05-07=61.6, 05-08=62.5, 05-09=63.2, 05-10=61.5, 05-11=60.8, 05-12=63.0  \n- **의료진 상담:** 불가능  \n- **성별:** 남성 (12명)"
+   },
+   "H11": {
+    "id": "H11",
+    "route": "analysis",
+    "report": "## 심박 점검 결과 (U13)\n### 요약\n- 평균 심박 86.6 bpm, 휴식기 심박 66.3 bpm, 수면 중 심박 63.7 bpm\n- 데이터 커버리지 50%\n### 감지된 이상\n- 이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 18.58,
+    "ttft_s": 3.57,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 3122,
+     "output_tokens": 738,
+     "total_tokens": 3860,
+     "cost_usd": 0.0,
+     "llm_seconds": 18.31,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1106
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 2754
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.010964,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 4,
+    "numbers_unsupported": 0,
+    "degraded": true,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 04-29=None, 04-30=67.3, 05-01=61.5, 05-02=65.8, 05-03=None, 05-04=None, 05-05=None, 05-06=68.6  \n- **의료진 상담:** 불가능  \n- **성별:** 남성 (13세)"
+   },
+   "H14": {
+    "id": "H14",
+    "route": "analysis",
+    "report": "요약  \n최근 7일간 심박 평균 63.2 bpm으로 정상 범위에 속했으나, 수면 중 19분간 심박이 107 bpm으로 높게 유지된 이상이 감지되었습니다.\n\n감지된 이상  \n- [주의] 안정 시 빈맥 2016-05-07 06:23~2016-05-07 06:41 (19분, 수면 중): 수면 중 심박이 평균 107 bpm으로 19분 동안 계속 높았습니다.\n\n해석  \n수면 중 심박이 일반적인 범위(60~100 bpm)를 벗어나 107 bpm으로 높게 유지된 것으로 보입니다. 평소 수면 시 심박은 약 54 bpm으로, 이 날 수면 중 심박이 비정상적으로 높아졌습니다.\n\n권고  \n이상이 감지된 수면 중 심박 상승은 주의가 필요합니다. 증상이 지속되거나 불편함이 있다면 의료진 상담을 권장합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 17.44,
+    "ttft_s": 3.26,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 3508,
+     "output_tokens": 881,
+     "total_tokens": 4389,
+     "cost_usd": 0.0,
+     "llm_seconds": 17.12,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1363
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 3026
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.011522,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 11,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 05-05=None, 05-06=55.5, 05-07=48.0, 05-08=47.2, 05-09=50.2, 05-10=44.8, 05-11=45.0, 05-12=None  \n- **이상 총 1건:** 05-07 06:23~06:41 (19분, 수면 중): 수면 중 심박이 평균 107 bpm으로 19분 동안 계속 높았어요. 쉬는 상태의 일반적인 범위는 60~100 bpm이에요 (평소 수면 때 심박은 약 54 bpm).  \n- **가능성:** 05"
+   },
+   "H15": {
+    "id": "H15",
+    "route": "analysis",
+    "report": "요청하신 진단·확진은 이 서비스가 할 수 없습니다. 심박 데이터만으로는 질환을 판단할 수 없으니 정확한 진단은 반드시 의료진(내과·심장내과)과 상담하세요.\n\n요약  \n이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n감지된 이상  \n[참고] 센서 결측 2016-05-06 21:43~2016-05-07 01:34 (232분, 휴식 중): 심박 신호가 232분 동안 끊겼습니다. 같은 시간에 걸음 504보가 기록돼 있어서 기기를 찬 채로 센서가 심박을 놓친 것으로 보여요.\n\n해석  \n휴식기 평균 심박은 57.0 bpm으로 정상 범위에 해당하며, 일별 휴식기 심박은 55.1~58.0 bpm으로 안정적입니다. 센서 결측은 기기 착용 상태에서 발생했으므로 심박 이상은 아닙니다.\n\n권고  \n센서 결측이 발생한 시간대는 기기 착용 상태로 추정되므로, 센서 오류 가능성 있음. 향후 데이터 수집 시 센서 상태 확인 권고.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 13.86,
+    "ttft_s": 2.31,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2184,
+     "output_tokens": 546,
+     "total_tokens": 2730,
+     "cost_usd": 0.0,
+     "llm_seconds": 13.6,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1266
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1464
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006078,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 6,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **휴식기** 55.1 bpm, **수면중** 57.0 bpm, **활동** 4395 bpm, **휴식** 4397 bpm, **심박** 8509 bpm.  \n- **일별** 휴식기 심박(bpm): 55.1, 56.8, 58.0, 56.4.  \n- **가능성**: 56.4 bpm (상위)에서 56.8 bpm (일별)으로 추정."
+   },
+   "H16": {
+    "id": "H16",
+    "route": "analysis",
+    "report": "요약  \nU04 데이터는 2016-05-05 12:20~2016-05-12 12:20 기간에 수집되었습니다. 데이터 커버리지 55.4%, 평균 심박 80.8 bpm, 휴식기 평균 심박 55.6 bpm, 수면 중 평균 심박 59.8 bpm, 활동 분 3728분, 휴식 분 2031분, 측정된 총 분 5582분입니다.\n\n감지된 이상  \n[주의] 안정 시 빈맥 2016-05-10 23:23~2016-05-10 23:33 (11분, 휴식 중): 휴식 중 심박 121 bpm, 11분 동안 계속 높음. 쉬는 상태의 일반적인 범위는 60~100 bpm입니다.\n\n해석  \n휴식 중 심박이 121 bpm으로 11분간 지속되어 평소 범위를 벗어났습니다. 휴식기 평균 심박은 55.6 bpm이었으나, 특정 시점에서 심박이 급격히 상승했습니다.\n\n권고  \n이상이 감지되었으므로 의심되면 전문의 진료를 권고합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 14.85,
+    "ttft_s": 3.99,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2249,
+     "output_tokens": 729,
+     "total_tokens": 2978,
+     "cost_usd": 0.0,
+     "llm_seconds": 14.49,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1362
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1616
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.007095,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 15,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "- **일별 휴식기 심박(bpm):** 05-05=None, 05-06=57.0, 05-07=83.0, 05-08=57.6, 05-09=None, 05-10=53.9, 05-11=None, 05-12=None  \n- **이상 총 1건:** 05-10 23:23~23:33 (11분, 휴식 중): 121 bpm, 11분 동안 쉬는 상태의 일반적인 범위는 60~100 bpm입니다.  \n- **가능성:** 11분 동안 높은 심박이 평균 121 bpm으로 11분 동안 계속 높았습니다."
+   }
+  },
+  "qwen2.5:3b": {
+   "D01": {
+    "id": "D01",
+    "route": "simple",
+    "report": "일반 성인의 안정시 심박수 정상 범위는 60~100 bpm입니다. 잘 훈련된 사람이나 운동선수는 40~60 bpm일 수 있으며, 수면 중에는 평소보다 10~20% 낮을 수 있습니다. 운동 중 심박수는 220 - 나이로 추정되며, 180 bpm 이상이 10분 이상 지속되면 위험 신호로 간주됩니다.\n\n※ 출처: 심박수 정상 범위 가이드(heart-rate-ranges) > 안정시(휴식) 심박수 — 성인, 심박수 정상 범위 가이드(heart-rate-ranges) > 운동 중 심박수, 심박수 정상 범위 가이드(heart-rate-ranges) > 용어와 이 서비스의 탐지 기준\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 6.48,
+    "ttft_s": 4.05,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2255,
+     "output_tokens": 153,
+     "total_tokens": 2408,
+     "cost_usd": 0.0,
+     "llm_seconds": 5.38,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 196
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2212
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006474,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 9,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D02": {
+    "id": "D02",
+    "route": "simple",
+    "report": "[심박수 정상 범위 가이드 > 용어와 이 서비스의 탐지 기준]\n- **빈맥(resting tachycardia)**: 안정 중 100 bpm 초과. 이 서비스는 휴식 상태에서 **10분 이상** 지속될 때만 알립니다. 130 bpm 이상이면 `critical`(즉시 확인 필요 수준)로 분류합니다. - **서맥(bradycardia)**: 일반적으로 60 bpm 미만을 말하지만 수면·운동선수에서는 흔합니다. 이 서비스는 임상적으로 의미 있는 **40 bpm 미만**(수면 중에는 35 미만)이 10분 이상일 때만 알립니다. 깨어 있을 때 35 미만, 어떤 경우든 30 미만이면 `critical`. - **개인 대비 이탈(personal_deviation)**: 절대 기준(100/40)에는 못 미치지만, 본인의 평소 휴식 심박(중앙값)보다\n  통계적으로 크게(robust z > 4, 최소 +15 bpm) 높은 상태가 15분 이상 지속.\n\n[의료기관 방문을 권하는 기준 > 며칠 안에 진료를 받아 보세요]\n쉬고 있는데도 심박수가 100회를 넘는 일이 반복되거나 한번 시작하면 쉬어도 가라앉지 않는 경우, 두근거림이나 맥이 건너뛰는 느낌이 자주 있는 경우, 운동선수가 아닌데 깨어 있을 때 맥박이 40회 아래로 반복해서 내려가고 어지럽거나 쉽게 지치는 경우입니다. 안정시 심박수가 평소보다 10회 넘게 며칠 높은 상태에 열, 기침, 극심한 피로가 함\n\n※ 출처: 심박수 정상 범위 가이드(heart-rate-ranges) > 용어와 이 서비스의 탐지 기준, 의료기관 방문을 권하는 기준(when-to-see-doctor) > 며칠 안에 진료를 받아 보세요, 위험 신호(Red flags) — 언제 진료를 받아야 하나(red-flags) > 당일~수일 내 진료 권고\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 9.88,
+    "ttft_s": 9.26,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2352,
+     "output_tokens": 125,
+     "total_tokens": 2477,
+     "cost_usd": 0.0,
+     "llm_seconds": 9.01,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 217
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2260
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006295,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 11,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D03": {
+    "id": "D03",
+    "route": "simple",
+    "report": "서맥은 심박수가 분당 60회 미만으로 느린 상태를 말하며, 규칙적으로 운동하는 사람이나 수면 중에는 흔한 현상입니다. 다만 깨어 있을 때 40회 미만이 10분 이상 지속되거나, 평소보다 눈에 띄게 느려진다면 주의가 필요합니다. 증상과 상황을 함께 고려해야 하며, 의료진과 상담하는 것이 좋습니다.\n\n※ 출처: 서맥(느린 맥박) 일반 설명(bradycardia-overview) > 서맥이란, 서맥(느린 맥박) 일반 설명(bradycardia-overview) > 이 서비스의 서맥 기준, 서맥(느린 맥박) 일반 설명(bradycardia-overview) > 주의가 필요한 경우\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 5.04,
+    "ttft_s": 3.28,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 1995,
+     "output_tokens": 147,
+     "total_tokens": 2142,
+     "cost_usd": 0.0,
+     "llm_seconds": 4.2,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 191
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1951
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005769,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 3,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D04": {
+    "id": "D04",
+    "route": "simple",
+    "report": "점검할 사용자를 알려주세요. 예: 'U01 최근 7일 심박 이상 점검해줘'. 선택 가능한 사용자: U01, U02, U03, U04, U05, U06, U07, U08, U09, U10, U11, U12, U13, U14, U15\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 1.79,
+    "ttft_s": 1.79,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 168,
+     "output_tokens": 62,
+     "total_tokens": 230,
+     "cost_usd": 0.0,
+     "llm_seconds": 1.74,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 230
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 6.2e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D05": {
+    "id": "D05",
+    "route": "simple",
+    "report": "이 서비스는 공개 데이터(Kaggle FitBit Fitness Tracker Data, CC0)에 합성 이상을 주입한 시연용 데이터를 사용합니다. 데이터는 가명 ID로만 다루며, 외부로 보내지 않습니다. 심박 측정에는 오차가 있을 수 있으며, 탐지 결과는 참고 정보일 뿐 진단이나 치료 대체가 아닙니다. 증상이 있거나 걱정되면 반드시 의료진과 상담하세요.\n\n※ 출처: 이 서비스의 이상 탐지 기준과 알림 등급(service-detection-rules) > 서비스가 하지 않는 일, 면책 문구(disclaimer), 의료기관 방문을 권하는 기준(when-to-see-doctor) > 서비스 알림 등급과의 관계\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 5.19,
+    "ttft_s": 3.22,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 1936,
+     "output_tokens": 154,
+     "total_tokens": 2090,
+     "cost_usd": 0.0,
+     "llm_seconds": 4.35,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 202
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1888
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005617,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 0,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D06": {
+    "id": "D06",
+    "route": "simple",
+    "report": "안녕하세요. 웨어러블 심박 데이터에서 이상 징후를 점검해 드리는 Vital Sentinel 입니다. 예: 'U05 최근 7일 심박 이상 점검해줘', '휴식기 심박 정상 범위가 어떻게 돼?', 점검 후 '그럼 운동 중엔 괜찮은 거야?' 같은 후속 질문도 가능합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 1.37,
+    "ttft_s": 1.37,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 153,
+     "output_tokens": 29,
+     "total_tokens": 182,
+     "cost_usd": 0.0,
+     "llm_seconds": 1.36,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 182
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 4e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D07": {
+    "id": "D07",
+    "route": "analysis",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\n[요약]  \nU05의 최근 30일 심박 데이터는 88.2%의 데이터 커버리지로 기록되었고, 평균 심박은 64.0bpm이었습니다.  \n\n[감지된 이상]  \n- [심각] 안정 시 빈맥 2016-04-16 20:00~2016-04-16 20:27 (28분, 휴식 중): 평균 146bpm  \n- [주의] 안정 시 빈맥 2016-04-13 05:46~2016-04-13 05:56 (11분, 휴식 중): 평균 108bpm  \n- [주의] 안정 시 빈맥 2016-05-07 06:23~2016-05-07 06:41 (19분, 수면 중): 평균 107bpm  \n- [참고] 센서 결측 2016-04-13 20:30~2016-04-14 04:58 (509분, 휴식 중)  \n- [참고] 센서 결측 2016-04-17 22:48~2016-04-18 06:52 (485분, 휴식 중)  \n\n[해석]  \n휴식 중 심박이 일관적으로 높은 경향을 보이며, 센서 오류로 인한 데이터 누락이 확인되었습니다.  \n\n[권고]  \n의심되는 이상 심박은 전문의 진료를 받으세요. 센서 결측은 기기 상태 점검을 권장합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 15.85,
+    "ttft_s": 3.9,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 3533,
+     "output_tokens": 610,
+     "total_tokens": 4143,
+     "cost_usd": 0.0,
+     "llm_seconds": 15.73,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1852
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2291
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.009522,
+    "tool_calls": 2,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 11,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "일별 휴식기 심박이 매우 높은 경향을 보이고, 센서 오류 가능성 높음."
+   },
+   "D08": {
+    "id": "D08",
+    "route": "analysis",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\n요약  \nU03 사용자의 최근 30일 이상 데이터에서 심박 이상이 4건 발생했습니다. 휴식 및 수면 중 심박이 매우 낮은 서맥, 활동 중 심박이 평소와 다른 상태, 센서 결측이 확인되었습니다.\n\n감지된 이상  \n- [심각] 서맥 2016-04-03 12:36~12:58 (23분, 휴식 중): 평균 30 bpm (주의 기준: 40 bpm 미만)  \n- [주의] 개인 기준선 이탈 2016-04-07 15:00~16:59 (120분, 활동 중): 평소 70 -> 96 bpm  \n- [주의] 서맥 2016-04-21 05:24~05:48 (25분, 수면 중): 평균 31 bpm (주의 기준: 35 bpm 미만)  \n- [참고] 센서 결측 2016-04-16 13:33~16:58 (206분, 휴식 중): 심박 신호 끊김, 걸음 37보 기록\n\n해석  \n휴식기와 수면 중 심박이 기준치 미만으로 낮은 서맥이 발생했고, 활동 중 심박이 평소와 다른 상태가 지속되었습니다. 센서 결측으로 인한 데이터 누락도 확인되었습니다.\n\n권고  \n서맥이 지속되거나 심각한 증상이 동반된다면 의료진 상담이 필요합니다. 센서 결측이 반복된다면 장비 점검을 권장합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 33.46,
+    "ttft_s": 4.23,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 4906,
+     "output_tokens": 1164,
+     "total_tokens": 6070,
+     "cost_usd": 0.0,
+     "llm_seconds": 33.26,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1699
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 4371
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.018432,
+    "tool_calls": 2,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 11,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "일별 휴식기 심박이 매우 낮은 값(서맥)을 보였던 기간이 있었고, 활동 중 심박이 평소 패턴과 크게 다른 상황이 발생했습니다. 센서 오류 가능성도 확인되었습니다."
+   },
+   "D09": {
+    "id": "D09",
+    "route": "analysis",
+    "report": "요약  \nU12 사용자의 최근 4주 심박 데이터를 분석한 결과, 휴식 중 심박이 일시적으로 높은 경향을 보였습니다.\n\n감지된 이상  \n- [주의] 안정 시 빈맥: 2016-04-15 13:34~2016-04-15 14:06 (33분, 휴식 중), 평균 120 bpm\n\n해석  \n휴식 중 심박이 60~100 bpm 범위를 벗어나 120 bpm으로 지속되었고, 이는 일반적인 휴식 시 심박 범위를 넘는 수치입니다.\n\n권고  \n의료진 상담을 권장합니다. 휴식 중 심박이 지속적으로 높은 경우, 건강 상태를 점검하는 것이 중요합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 10.77,
+    "ttft_s": 4.81,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2585,
+     "output_tokens": 468,
+     "total_tokens": 3053,
+     "cost_usd": 0.0,
+     "llm_seconds": 10.58,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1445
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1608
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006019,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 6,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "일별 휴식기 심박이 상당 부분 높은 경향을 보였습니다. 휴식 중 심박이 평균 120 bpm으로 높게 유지되었고, 일반적인 휴식 시 심박 범위는 60~100 bpm입니다. 이는 의료진 상담을 권장합니다."
+   },
+   "D10": {
+    "id": "D10",
+    "route": "analysis",
+    "report": "요약  \nU08의 최근 3주 동안 심박은 평소와 비슷했으나, 휴식 중 2회 개인 기준선 이탈이 감지되었습니다. 센서 결측도 발생했으나, 심각한 이상은 아닙니다.\n\n감지된 이상  \n- [주의] 개인 기준선 이탈 2016-04-22 14:50~15:27 (38분, 휴식 중): 평소 60 -> 92 bpm, +32  \n- [주의] 개인 기준선 이탈 2016-04-24 20:34~21:03 (30분, 휴식 중): 평소 60 -> 94 bpm, +34  \n- [참고] 센서 결측 2016-05-02 12:29~23:56 (688분, 휴식 중): 심박 신호 끊김, 걸음 3651보 기록\n\n해석  \n휴식 중 심박이 평소보다 32~34 bpm 증가한 기록이 있었습니다. 이는 개인 기준선 이탈로 분류되며, 휴식 중 심박이 높아졌음을 나타냅니다. 센서 결측은 기기 찬 상태에서 발생한 것으로 추정됩니다.\n\n권고  \n휴식 중 심박이 높아진 경우, 스트레스나 수면 부족이 원인일 수 있으므로, 생활 습관을 점검해 보세요. 센서 결측은 기기 상태를 확인해 주세요. 이상이 지속된다면 의료진 상담을 권장합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 18.72,
+    "ttft_s": 7.61,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2845,
+     "output_tokens": 665,
+     "total_tokens": 3510,
+     "cost_usd": 0.0,
+     "llm_seconds": 18.6,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1562
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1948
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.008392,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 8,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "사용자 U08의 심박 데이터는 2016년 4월과 5월 사이에 수집되었습니다. 휴식 기간 동안의 평균 심박은 48.4 bpm이었고, 수면 중에는 52.6 bpm이었습니다. 센서 오류 가능성은 휴식 중 심박이 평소보다 크게 높았던 기록과 센서 결측으로 인한 오류가 확인되었습니다."
+   },
+   "D11": {
+    "id": "D11",
+    "route": "analysis",
+    "report": "요약  \nU06 사용자의 2016-04-12 16:20~2016-05-12 16:20 기간 데이터에서 이상이 2건 감지되었습니다.  \n\n감지된 이상  \n[주의] 개인 기준선 이탈 2016-04-21 01:13~2016-04-21 01:40 (28분, 수면 중): 수면 중 심박 89 bpm (평소 67 bpm, +23), 지속 시간 28분.  \n[참고] 센서 결측 2016-05-02 09:18~2016-05-02 12:56 (219분, 휴식 중): 심박 신호 중단, 동일 시간 걸음 2492보 기록.  \n\n해석  \n수면 중 심박이 평소보다 크게 증가했고, 센서가 일시적으로 신호를 잃어버린 경우가 있었습니다.  \n\n권고  \n수면 중 심박 상승이 지속된다면 의료진 상담을 권장합니다. 센서 결측은 기기 상태 확인이 필요합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 12.56,
+    "ttft_s": 4.66,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2651,
+     "output_tokens": 548,
+     "total_tokens": 3199,
+     "cost_usd": 0.0,
+     "llm_seconds": 12.44,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1491
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1708
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006918,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 6,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "시간대: 수면 중\n지속시간: 28분\n맥락: 수면 중\n오류 가능성: 수면 중 심박이 평소보다 크게 높았어요, 센서 결측"
+   },
+   "D12": {
+    "id": "D12",
+    "route": "analysis",
+    "report": "요약  \nU13의 최근 30일 심박 데이터는 55.8%의 데이터 커버리지로, 평균 89.8bpm입니다. 휴식기 평균 심박은 68.8bpm으로, 수면 중 평균 68.2bpm입니다.\n\n감지된 이상  \n- [주의] 안정시 심박 상승 추세 2016-04-06~2016-04-08(휴식 중, 4320분): 평소 66bpm → 84bpm  \n- [주의] 안정시 심박 상승 추세 2016-04-13~2016-04-18(휴식 중, 8640분): 평소 67bpm → 73bpm  \n- [주의] 안정 시 빈맥 2016-04-18(휴식 중, 11분): 102bpm  \n- [참고] 센서 결측 2016-04-15(휴식 중, 198분)  \n- [참고] 센서 결측 2016-04-27~2016-04-28(휴식 중, 560분)  \n- [참고] 센서 결측 2016-04-28~2016-04-29(휴식 중, 511분)\n\n해석  \n휴식 중 안정시 심박이 평소보다 지속적으로 높아지는 경향이 있어 주의가 필요합니다. 센서 결측이 3건 발생해 데이터 정확도에 영향을 줄 수 있습니다.\n\n권고  \n심박 상승 추세가 지속된다면 의료진 상담을 권장합니다. 센서 결측이 자주 발생한다면 장치 점검을 고려해 주세요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 21.85,
+    "ttft_s": 9.13,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 3685,
+     "output_tokens": 702,
+     "total_tokens": 4387,
+     "cost_usd": 0.0,
+     "llm_seconds": 21.68,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1987
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2400
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.009997,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 17,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "일별 휴식기 심박이 상승하는 경향이 있습니다. 휴식 중 안정시 심박이 평소보다 높아진 상황이 3일 연속으로 나타났습니다. 센서 오류 가능성도 확인되었습니다."
+   },
+   "D13": {
+    "id": "D13",
+    "route": "analysis",
+    "report": "요약  \nU07 사용자의 최근 한 달 심박 데이터에서 이상이 감지되었습니다.\n\n감지된 이상  \n- [주의] 개인 기준선 이탈 2016-04-16 11:00~2016-04-16 12:59 (120분, 수면 중): 수면 중 심박 70 bpm (평소 60 bpm).  \n- [참고] 센서 결측 2016-05-06 21:43~2016-05-07 01:34 (232분, 휴식 중): 심박 신호 중단, 걸음 504보 기록.\n\n해석  \n수면 중 심박이 평소보다 높은 상태가 지속되었고, 센서 결측 시간이 길어 정확한 심박 측정이 어려웠습니다.\n\n권고  \n의료진 상담을 권장하며, 센서 결측이 발생한 시점의 추가 정보를 제공해 주세요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 20.16,
+    "ttft_s": 4.99,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 4308,
+     "output_tokens": 819,
+     "total_tokens": 5127,
+     "cost_usd": 0.0,
+     "llm_seconds": 19.82,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1562
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 3565
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.01352,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 4,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "일별 휴식기 심박이 이상적으로 높은 경향이 있어 의료진 상담을 추천합니다. 센서 결측 시간이 길어 오류 가능성도 높아, 정확한 분석을 위해 추가 정보를 제공받아야 합니다."
+   },
+   "D14": {
+    "id": "D14",
+    "route": "analysis",
+    "report": "요약  \nU05의 최근 일주일 심박 데이터를 분석한 결과, 주의할 만한 이상이 1건 확인되었습니다.\n\n감지된 이상  \n[주의] 안정 시 빈맥 2016-05-07 06:23~2016-05-07 06:41 (19분, 수면 중): 수면 중 심박이 평균 107 bpm으로 19분 동안 계속 높았습니다. 쉬는 상태의 일반적인 범위는 60~100 bpm이에요 (평소 수면 때 심박은 약 54 bpm).\n\n해석  \n수면 중 심박이 예상보다 높아졌고, 이는 수면 중 활동이 없었음에도 불구하고 지속된 것으로 보입니다. 수면 중 심박이 높아지는 경우, 스트레스, 수면장애, 또는 심혈관 이상이 원인일 수 있습니다.\n\n권고  \n의료진 상담이 필요할 수 있습니다. 수면 중 심박이 지속적으로 높아지는 경우, 건강 상태를 점검하는 것이 중요합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 13.37,
+    "ttft_s": 6.02,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2007,
+     "output_tokens": 529,
+     "total_tokens": 2536,
+     "cost_usd": 0.0,
+     "llm_seconds": 13.2,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1177
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1359
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005815,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 7,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "일별 휴식기 심박이 낮은 것으로 보입니다. 수면 중 심박이 높아졌던 것으로 추정됩니다. 의료진 상담 필요할 수 있습니다."
+   },
+   "D15": {
+    "id": "D15",
+    "route": "analysis",
+    "report": "※ 이번 기간은 기록이 제한적이어서(데이터 커버리지 46.8%) 이상이 없다고 판단할 수 없습니다.\n\n요약  \n사용자 U01의 최근 7일 심박 데이터는 데이터 커버리지 46.8%로 일부 누락되어 있어 정확한 분석이 어려웠습니다.\n\n감지된 이상  \n이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n해석  \n휴식기 심박 데이터가 대부분 누락되어 정상적인 패턴을 확인할 수 없으며, 데이터 커버리지가 낮아 전체적인 건강 상태를 판단하기 어렵습니다.\n\n권고  \n의료진 상담이 필요합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 7.65,
+    "ttft_s": 3.81,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 1941,
+     "output_tokens": 350,
+     "total_tokens": 2291,
+     "cost_usd": 0.0,
+     "llm_seconds": 7.26,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1104
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1187
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.004256,
+    "tool_calls": 4,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 3,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "일별 휴식기 심박이 모두 없음으로 표시되어 있어 정상적인 패턴을 확인할 수 없습니다. 데이터 커버리지가 낮아 전체적인 건강 상태를 판단하기 어렵습니다. 의료진 상담 필요합니다."
+   },
+   "D16": {
+    "id": "D16",
+    "route": "analysis",
+    "report": "## 심박 점검 결과 (U09)\n### 요약\n- 평균 심박 81.7 bpm, 휴식기 심박 61.5 bpm, 수면 중 심박 67.7 bpm\n- 데이터 커버리지 65.7%\n### 감지된 이상\n- [참고] 센서 결측 (휴식 중): 심박 신호가 473분(7.9시간) 동안 끊겼어요. 같은 시간에 걸음 667보가 기록돼 있어서 기기를 찬 채로 센서가 심박을 놓친 것으로 보여요.\n- [참고] 센서 결측 (휴식 중): 심박 신호가 252분(4.2시간) 동안 끊겼어요. 같은 시간에 걸음 1914보가 기록돼 있어서 기기를 찬 채로 센서가 심박을 놓친 것으로 보여요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 25.79,
+    "ttft_s": 6.73,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 3671,
+     "output_tokens": 910,
+     "total_tokens": 4581,
+     "cost_usd": 0.0,
+     "llm_seconds": 25.59,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1337
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 3244
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.013556,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 8,
+    "numbers_unsupported": 0,
+    "degraded": true,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "이 기간 동안 휴식 기간의 심박이 낮은 수준을 유지하고 있음이 확인되었으며, 센서 오류로 인해 일부 심박 데이터가 결측되었음."
+   },
+   "D17": {
+    "id": "D17",
+    "route": "analysis",
+    "report": "요약  \nU15의 조회 기간 동안 평균 심박은 77.2bpm으로, 일반적인 범위에 해당합니다.  \n\n감지된 이상  \n이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.  \n\n해석  \n휴식기 평균 심박은 59.2bpm으로, 일반적인 수준입니다. 다만, 일별 휴식기 심박 중 일부가 낮은 수치를 보이며, 이는 의료진 상담이 필요한 수준일 수 있습니다.  \n\n권고  \n현재 데이터에서는 이상이 감지되지 않았으나, 휴식기 심박이 낮은 경우가 나타나므로, 의료진 상담을 고려하는 것이 좋습니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 9.01,
+    "ttft_s": 4.06,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 1733,
+     "output_tokens": 397,
+     "total_tokens": 2130,
+     "cost_usd": 0.0,
+     "llm_seconds": 8.77,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1019
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1111
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.004393,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 2,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "일별 휴식기 심박이 낮은 값이 나타나며, 의료진 상담 필요 가능."
+   },
+   "D18": {
+    "id": "D18",
+    "route": "simple",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\n운동 중 심박수는 정상 범위 내에서 크게 오를 수 있으며, 이 서비스는 운동 중이나 운동 직후(걸음이 있었던 시점으로부터 약 15분 이내)의 상승을 이상으로 간주하지 않습니다.\n\n※ 출처: 심박수 정상 범위 가이드(heart-rate-ranges) > 운동 중 심박수, 운동 중 심박수와 최대 심박수 (220-나이)(exercise-hr-zones) > 걸음으로 잡히지 않는 운동, 운동 후 심박수 회복(hr-recovery) > 얼마나 걸리나\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 18.4,
+    "ttft_s": 2.79,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 4464,
+     "output_tokens": 124,
+     "total_tokens": 4588,
+     "cost_usd": 0.0,
+     "llm_seconds": 16.49,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 221
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 4367
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.011451,
+    "tool_calls": 0,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 2,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": "일별 휴식기 심박이 매우 높은 경향을 보이고, 센서 오류 가능성 높음."
+   },
+   "D19": {
+    "id": "D19",
+    "route": "simple",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\nU03의 최근 30일 심박수는 평균 74.7bpm으로, 휴식 중 30bpm의 서맥과 수면 중 31bpm의 서맥, 활동 중 심박 상승, 센서 결측이 감지되었습니다.\n\n※ 출처: 센서 결측과 착용 문제(sensor-gaps-and-wear) > 데이터가 부족하면 해석도 제한됩니다, 손목 웨어러블 심박 측정의 한계(wearable-measurement-limits) > 단발성 값에 휘둘리지 않기, 심박 변이도(HRV)와 심박수 추세의 의미(hrv-and-trends) > 하루의 값보다 추세\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 7.71,
+    "ttft_s": 2.72,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 4161,
+     "output_tokens": 106,
+     "total_tokens": 4267,
+     "cost_usd": 0.0,
+     "llm_seconds": 5.54,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 194
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 4073
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.010766,
+    "tool_calls": 0,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 4,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": "일별 휴식기 심박이 매우 낮은 값(서맥)을 보였던 기간이 있었고, 활동 중 심박이 평소 패턴과 크게 다른 상황이 발생했습니다. 센서 오류 가능성도 확인되었습니다."
+   },
+   "D20": {
+    "id": "D20",
+    "route": "analysis",
+    "report": "※ 이번 기간은 기록이 제한적이어서(데이터 커버리지 41.4%) 이상이 없다고 판단할 수 없습니다.\n\n요약  \n지난 3일간 심박 평균은 79.9bpm으로, 데이터 커버리지율은 41.4%로 낮습니다. 수면 중 심박 데이터는 모두 누락되었고, 활동 시간 동안 측정된 심박은 61.0bpm입니다.\n\n감지된 이상  \n이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n해석  \n데이터 수집이 부족해 정확한 분석이 어려웠습니다. 수면 중 심박 데이터가 모두 누락되어 추가 검토가 필요합니다.\n\n권고  \n의료진 상담이 필요합니다. 데이터 수집이 충분하지 않아 정확한 상태 파악이 어려웠습니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 9.46,
+    "ttft_s": 3.05,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 1758,
+     "output_tokens": 344,
+     "total_tokens": 2102,
+     "cost_usd": 0.0,
+     "llm_seconds": 9.26,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 971
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1131
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.004412,
+    "tool_calls": 4,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 5,
+    "numbers_unsupported": 1,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "일별 수면 중 평균 심박이 없음.\n데이터 커버리지가 낮음.\n의료진 상담 필요."
+   },
+   "D21": {
+    "id": "D21",
+    "route": "simple",
+    "report": "요청하신 진단·확진은 이 서비스가 할 수 없습니다. 심박 데이터만으로는 질환을 판단할 수 없으니 정확한 진단은 반드시 의료진(내과·심장내과)과 상담하세요.\n\n점검할 사용자를 알려주세요. 예: 'U01 최근 7일 심박 이상 점검해줘'. 선택 가능한 사용자: U01, U02, U03, U04, U05, U06, U07, U08, U09, U10, U11, U12, U13, U14, U15\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 2.24,
+    "ttft_s": 2.23,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 166,
+     "output_tokens": 36,
+     "total_tokens": 202,
+     "cost_usd": 0.0,
+     "llm_seconds": 2.17,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 202
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 4.6e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D22": {
+    "id": "D22",
+    "route": "analysis",
+    "report": "요청하신 진단·확진은 이 서비스가 할 수 없습니다. 심박 데이터만으로는 질환을 판단할 수 없으니 정확한 진단은 반드시 의료진(내과·심장내과)과 상담하세요.\n\n[요약]  \nU05의 최근 7일 데이터는 84.9%의 커버리지로, 평균 심박은 63.2bpm이었습니다.  \n\n[감지된 이상]  \n- [주의] 안정 시 빈맥 2016-05-07 06:23~2016-05-07 06:41 (19분, 수면 중): 수면 중 심박이 평균 107bpm으로 19분 동안 계속 높았습니다.  \n\n[해석]  \n수면 중 심박이 107bpm으로 높아졌고, 이는 일반적인 수면 시 심박 범위(54bpm)를 벗어난 것으로 보입니다.  \n\n[권고]  \n의료진 상담이 필요할 수 있습니다. 이상이 지속되거나 증상이 동반된다면 즉시 진료를 받으세요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 11.91,
+    "ttft_s": 3.26,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2046,
+     "output_tokens": 417,
+     "total_tokens": 2463,
+     "cost_usd": 0.0,
+     "llm_seconds": 11.81,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1137
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1326
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005351,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 8,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "일별 휴식기 심박이 낮은 것으로 보입니다. 수면 중 심박이 높아졌던 것으로 추정됩니다. 의료진 상담 필요할 수 있습니다."
+   },
+   "D23": {
+    "id": "D23",
+    "route": "simple",
+    "report": "안녕하세요. 웨어러블 심박 데이터에서 이상 징후를 점검해 드리는 Vital Sentinel 입니다. 예: 'U05 최근 7일 심박 이상 점검해줘', '휴식기 심박 정상 범위가 어떻게 돼?', 점검 후 '그럼 운동 중엔 괜찮은 거야?' 같은 후속 질문도 가능합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 0.59,
+    "ttft_s": 0.59,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 152,
+     "output_tokens": 29,
+     "total_tokens": 181,
+     "cost_usd": 0.0,
+     "llm_seconds": 0.59,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 181
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 4e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D24": {
+    "id": "D24",
+    "route": "simple",
+    "report": "이 서비스는 심박·건강 점검과 관련된 질문에만 답할 수 있습니다. 예: 'U05 최근 7일 심박 이상 점검해줘', '휴식기 심박 정상 범위가 어떻게 돼?'\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 0.52,
+    "ttft_s": 0.52,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 159,
+     "output_tokens": 25,
+     "total_tokens": 184,
+     "cost_usd": 0.0,
+     "llm_seconds": 0.51,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 184
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 3.9e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D25": {
+    "id": "D25",
+    "route": "simple",
+    "report": "'U99' 사용자를 찾을 수 없습니다. 선택 가능한 사용자: U01, U02, U03, U04, U05, U06, U07, U08, U09, U10, U11, U12, U13, U14, U15\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 0.4,
+    "ttft_s": 0.4,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 158,
+     "output_tokens": 24,
+     "total_tokens": 182,
+     "cost_usd": 0.0,
+     "llm_seconds": 0.4,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 182
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 3.8e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 0,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "D26": {
+    "id": "D26",
+    "route": "analysis",
+    "report": "요청하신 진단·확진은 이 서비스가 할 수 없습니다. 심박 데이터만으로는 질환을 판단할 수 없으니 정확한 진단은 반드시 의료진(내과·심장내과)과 상담하세요.\n\n요약  \nU07의 최근 30일 데이터는 91.7%의 커버리지로 기록되었고, 평균 심박은 65.2bpm입니다. 휴식기 평균 심박은 55.8bpm, 수면 중 평균 심박은 59.5bpm입니다. 활동 분수는 19035분, 휴식 분수는 21073분입니다.\n\n감지된 이상  \n[주의] 개인 기준선 이탈 2016-04-16 11:00~2016-04-16 12:59 (120분, 수면 중): 수면 중 심박 70bpm (평소 60bpm).  \n[참고] 센서 결측 2016-05-06 21:43~2016-05-07 01:34 (232분, 휴식 중): 심박 신호 중단, 걸음 504보 기록.\n\n해석  \n수면 중 심박이 평소보다 높은 상태가 지속되었고, 센서 결측 시간이 길어 정확한 심박 추적에 어려움이 있어 의료진 상담이 필요합니다.\n\n권고  \n의료진 상담을 통해 심박 변화의 원인을 확인하는 것이 좋습니다. 센서 결측 시간 동안의 추가 정보를 제공해 주시면 정확한 분석이 가능합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 18.65,
+    "ttft_s": 4.4,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2817,
+     "output_tokens": 610,
+     "total_tokens": 3427,
+     "cost_usd": 0.0,
+     "llm_seconds": 18.38,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1561
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1866
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.007859,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 11,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "일별 휴식기 심박이 이상적으로 높은 경향이 있어 의료진 상담을 추천합니다. 센서 결측 시간이 길어 오류 가능성도 높아, 정확한 분석을 위해 추가 정보를 제공받아야 합니다."
+   },
+   "H01": {
+    "id": "H01",
+    "route": "simple",
+    "report": "성인의 안정시 심박수 정상 범위는 일반적으로 분당 60~100회입니다. 잘 훈련된 사람이나 운동선수는 40~60회까지 낮을 수 있으며, 이는 증상이 없으면 정상으로 간주됩니다. 수면 중에는 평소보다 10~20% 낮을 수 있습니다. 개인의 평소 수준과 비교하는 것이 더 중요합니다.\n\n※ 출처: 심박수 정상 범위 가이드(heart-rate-ranges) > 안정시(휴식) 심박수 — 성인, 안정시 심박수의 의미와 측정 방법(resting-hr-basics) > 사람마다 다른 이유, 안정시 심박수의 의미와 측정 방법(resting-hr-basics) > 안정시 심박수란\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 5.94,
+    "ttft_s": 3.95,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2046,
+     "output_tokens": 157,
+     "total_tokens": 2203,
+     "cost_usd": 0.0,
+     "llm_seconds": 4.84,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 227
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1976
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.00582,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 6,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H02": {
+    "id": "H02",
+    "route": "simple",
+    "report": "서맥은 심박수가 분당 60회 미만으로 느린 상태를 말하며, 휴식 중에도 40회 미만이 10분 이상 지속되면 이상으로 간주됩니다. 반면 빈맥은 휴식 중 심박수가 100회를 넘는 상태를 의미하며, 130회 이상이 10분 이상 지속되면 즉시 확인이 필요합니다. 서맥은 수면 중이나 운동선수에게 흔한 현상이지만, 증상이 동반된다면 주의가 필요합니다. 빈맥은 카페인, 스트레스, 감염 등 다양한 원인이 있을 수 있으며, 심한 증상이 동반된다면 응급 상황일 수 있습니다.\n\n※ 출처: 빈맥(빠른 맥박) 일반 설명(tachycardia-overview) > 빈맥이란, 서맥(느린 맥박) 일반 설명(bradycardia-overview) > 서맥이란, 심박수 정상 범위 가이드(heart-rate-ranges) > 용어와 이 서비스의 탐지 기준\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 12.91,
+    "ttft_s": 9.24,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2350,
+     "output_tokens": 220,
+     "total_tokens": 2570,
+     "cost_usd": 0.0,
+     "llm_seconds": 12.06,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 208
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2362
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.007326,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 6,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H03": {
+    "id": "H03",
+    "route": "simple",
+    "report": "안정시 심박수는 기상 직후나 10분 이상 앉아 쉰 뒤, 카페인과 운동을 피한 상태에서 재는 것이 가장 정확합니다. 손목 웨어러블은 걸음이 없던 휴식 구간의 값을 골라 추정합니다. 이 서비스는 직전 15분 동안 걸음이 없던 구간의 심박 가운데 하위 10% 지점을 그날의 안정시 심박수로 사용합니다. 수면 중에는 평소 안정시보다 10~20% 낮은 값이 자연스럽습니다.\n\n※ 출처: 안정시 심박수의 의미와 측정 방법(resting-hr-basics) > 정확하게 재는 방법, 심박 변이도(HRV)와 심박수 추세의 의미(hrv-and-trends) > 심박 변이도란, 심박수 정상 범위 가이드(heart-rate-ranges) > 용어와 이 서비스의 탐지 기준\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 7.38,
+    "ttft_s": 4.69,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2157,
+     "output_tokens": 192,
+     "total_tokens": 2349,
+     "cost_usd": 0.0,
+     "llm_seconds": 6.01,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 226
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2123
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006485,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 5,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H04": {
+    "id": "H04",
+    "route": "simple",
+    "report": "잠잘 때 심박수가 평소보다 10~20% 낮아지는 것은 정상입니다. 수면 중에는 분당 35회 미만이 10분 이상 지속될 때만 서맥으로 알립니다. 깨어 있을 때 40회 미만이면 주의가 필요합니다. 수면 중 심박수는 50대 초중반까지 내려가도 일반적입니다. 증상이 없으면 대부분 문제가 되지 않습니다.\n\n※ 출처: 수면 중 심박수(sleep-hr) > 잘 때 심박수가 낮아지는 것은 정상, 심박수 정상 범위 가이드(heart-rate-ranges) > 안정시(휴식) 심박수 — 성인, 서맥(느린 맥박) 일반 설명(bradycardia-overview) > 주의가 필요한 경우\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 11.19,
+    "ttft_s": 8.94,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 2238,
+     "output_tokens": 143,
+     "total_tokens": 2381,
+     "cost_usd": 0.0,
+     "llm_seconds": 10.34,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 223
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2158
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006289,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 6,
+    "numbers_unsupported": 1,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H05": {
+    "id": "H05",
+    "route": "simple",
+    "report": "안녕하세요! 이 서비스는 심박수 패턴을 분석해 이상 신호를 알리는 참고 정보를 제공합니다. 정확한 진단이나 치료는 제공하지 않으며, 의료진과 상담하는 것이 중요합니다. 궁금한 점이 있으시면 언제든지 물어보세요! 😊\n\n※ 출처: 이 서비스의 이상 탐지 기준과 알림 등급(service-detection-rules) > 서비스가 하지 않는 일, 면책 문구(disclaimer), 응급 상황에서의 행동 요령(emergency-response) > 이 서비스와의 관계\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 4.81,
+    "ttft_s": 3.05,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 1965,
+     "output_tokens": 104,
+     "total_tokens": 2069,
+     "cost_usd": 0.0,
+     "llm_seconds": 3.71,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 204
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1865
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.005276,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 0,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H06": {
+    "id": "H06",
+    "route": "simple",
+    "report": "이 서비스는 심박·건강 점검과 관련된 질문에만 답할 수 있습니다. 예: 'U05 최근 7일 심박 이상 점검해줘', '휴식기 심박 정상 범위가 어떻게 돼?'\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 1.69,
+    "ttft_s": 1.69,
+    "usage": {
+     "llm_calls": 1,
+     "input_tokens": 172,
+     "output_tokens": 36,
+     "total_tokens": 208,
+     "cost_usd": 0.0,
+     "llm_seconds": 1.69,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 208
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 4.7e-05,
+    "tool_calls": 0,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": ""
+   },
+   "H13": {
+    "id": "H13",
+    "route": "simple",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\n※ 이번 기간은 기록이 제한적이어서(데이터 커버리지 24.3%) 이상이 없다고 판단할 수 없습니다.\n\n가장 심했던 이벤트는 2016-04-15 21:45~22:04(휴식 중)로, 평균 150 bpm이었습니다.\n\n※ 출처: 운동 중 심박수와 최대 심박수 (220-나이)(exercise-hr-zones) > 최대 심박수 추정: 220 - 나이, 심박수 정상 범위 가이드(heart-rate-ranges) > 운동 중 심박수, 심박수 정상 범위 가이드(heart-rate-ranges) > 용어와 이 서비스의 탐지 기준\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 7.41,
+    "ttft_s": 1.94,
+    "usage": {
+     "llm_calls": 2,
+     "input_tokens": 5067,
+     "output_tokens": 85,
+     "total_tokens": 5152,
+     "cost_usd": 0.0,
+     "llm_seconds": 6.03,
+     "by_tier": {
+      "fast": {
+       "calls": 1,
+       "tokens": 200
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 4952
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.012807,
+    "tool_calls": 0,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 4,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 0,
+    "analysis_text": "사용자 U04의 심박 데이터는 휴식 중에서 이상이 감지되었습니다. 특히, 수면 중과 휴식 중 심박이 일반적인 범위를 벗어난 경우가 있어 의료진 상담을 권장합니다."
+   },
+   "H08": {
+    "id": "H08",
+    "route": "analysis",
+    "report": "**중요 안내** 위험 수준의 심박 이상이 감지되었습니다. 이 서비스는 진단 도구가 아닙니다. 흉통·호흡곤란·어지럼·실신 같은 증상이 있거나 지속되면 즉시 119 또는 가까운 응급실에 연락하고, 증상이 없더라도 가능한 한 빨리 의료진의 확인을 받으세요.\n\n## 심박 점검 결과 (U03)\n### 요약\n- 평균 심박 74.7 bpm, 휴식기 심박 60.2 bpm, 수면 중 심박 65.4 bpm\n- 데이터 커버리지 90.4%\n### 감지된 이상\n- [심각] 서맥 (휴식 중): 휴식 중 심박이 평균 30 bpm으로 23분 동안 매우 낮았어요 (주의 기준: 40 bpm 미만).\n- [주의] 개인 기준선 이탈 (활동 중): 활동 중 시간대별 심박이 평소 패턴과 다르게 높은 상태가 2시간 이어졌어요 (평소 70 -> 96 bpm).\n- [주의] 서맥 (수면 중): 수면 중 심박이 평균 31 bpm으로 25분 동안 매우 낮았어요 (주의 기준: 35 bpm 미만).\n- [참고] 센서 결측 (휴식 중): 심박 신호가 206분(3.4시간) 동안 끊겼어요. 같은 시간에 걸음 37보가 기록돼 있어서 기기를 찬 채로 센서가 심박을 놓친 것으로 보여요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 37.95,
+    "ttft_s": 5.63,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 4998,
+     "output_tokens": 1143,
+     "total_tokens": 6141,
+     "cost_usd": 0.0,
+     "llm_seconds": 37.77,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1706
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 4435
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.018689,
+    "tool_calls": 2,
+    "escalation_flag": true,
+    "notice_text": true,
+    "urgent_text": true,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 14,
+    "numbers_unsupported": 0,
+    "degraded": true,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "일별 휴식기 심박이 매우 낮은 값(서맥)을 보였던 기간이 있었고, 활동 중 심박이 평소 패턴과 크게 다른 상황이 발생했습니다. 센서 오류 가능성도 확인되었습니다."
+   },
+   "H09": {
+    "id": "H09",
+    "route": "analysis",
+    "report": "※ 이번 기간은 기록이 제한적이어서(데이터 커버리지 8%) 이상이 없다고 판단할 수 없습니다.\n\n요약  \n이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n감지된 이상  \n이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n해석  \n데이터 커버리지가 낮아 정확한 심박수 추정이 어려웠습니다.\n\n권고  \n데이터 수집 기간을 늘려 정확한 분석을 위해 다시 확인해 보세요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 6.96,
+    "ttft_s": 4.43,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 1901,
+     "output_tokens": 292,
+     "total_tokens": 2193,
+     "cost_usd": 0.0,
+     "llm_seconds": 6.54,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1081
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1112
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.003708,
+    "tool_calls": 4,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 1,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "시간대: 전체, 지속시간: 전체, 맥락: 활동\n데이터 커버리지가 낮음으로 인해 정확한 심박수 추정이 어려움."
+   },
+   "H10": {
+    "id": "H10",
+    "route": "analysis",
+    "report": "요약  \n이번 기간 데이터에서는 임계값을 넘는 구간이 감지되지 않았습니다.\n\n감지된 이상  \n이상 없음\n\n해석  \n데이터 커버리지가 낮고, 대부분의 기록이 휴식 기간에 집중되어 있어 심박 변화를 정확히 파악하기 어렵습니다. 센서 오류 가능성도 고려해야 합니다.\n\n권고  \n현재 기록상 이상은 없습니다. 데이터 수집 상태를 확인해 주세요. 추가적인 의심 증상이 있으면 전문 진료를 받으시기 바랍니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 9.26,
+    "ttft_s": 5.67,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 1813,
+     "output_tokens": 335,
+     "total_tokens": 2148,
+     "cost_usd": 0.0,
+     "llm_seconds": 9.04,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1032
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1116
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.004047,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 0,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "U12의 심박 데이터는 흔적을 찾을 수 없어 보입니다. 데이터 커버리지가 낮고, 대부분의 기록이 휴식 기간에 집중되어 있습니다. 센서 오류 가능성 높음."
+   },
+   "H11": {
+    "id": "H11",
+    "route": "analysis",
+    "report": "요약  \nU13의 지난달 휴식기 심박은 평소보다 높은 추세를 보였고, 센서 결측이 3회 발생했습니다.\n\n감지된 이상  \n- [주의] 안정시 심박 상승 추세 2016-04-06~2016-04-08(휴식 중, 4320분): 평소 66 → 84 bpm  \n- [주의] 안정시 심박 상승 추세 2016-04-13~2016-04-18(휴식 중, 8640분): 평소 67 → 73 bpm  \n- [주의] 안정 시 빈맥 2016-04-18(휴식 중, 11분): 102 bpm  \n- [참고] 센서 결측 2016-04-15(휴식 중, 198분)  \n- [참고] 센서 결측 2016-04-27~2016-04-28(휴식 중, 560분)  \n- [참고] 센서 결측 2016-04-28~2016-04-29(휴식 중, 511분)\n\n해석  \n휴식 중 심박이 평소보다 지속적으로 높아지는 경향이 있어 주의가 필요합니다. 센서 결측이 3회 발생해 데이터 정확도에 영향을 줄 수 있습니다.\n\n권고  \n심박 상승 추세가 지속된다면 의료진 상담을 권장합니다. 센서 결측이 자주 발생한다면 장치 점검을 고려해 주세요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 22.68,
+    "ttft_s": 10.22,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 3745,
+     "output_tokens": 636,
+     "total_tokens": 4381,
+     "cost_usd": 0.0,
+     "llm_seconds": 22.45,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 2006
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 2375
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.009591,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 11,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "일별 휴식기 심박이 상승하는 경향이 있습니다. 휴식 중 안정시 심박이 평소보다 높아진 상황이 3일 연속으로 나타났습니다. 센서 오류 가능성도 확인되었습니다."
+   },
+   "H14": {
+    "id": "H14",
+    "route": "analysis",
+    "report": "## 심박 점검 결과 (U05)\n### 요약\n- 평균 심박 63.2 bpm, 휴식기 심박 46.5 bpm, 수면 중 심박 51 bpm\n- 데이터 커버리지 84.9%\n### 감지된 이상\n- [주의] 안정 시 빈맥 (수면 중): 수면 중 심박이 평균 107 bpm으로 19분 동안 계속 높았어요. 쉬는 상태의 일반적인 범위는 60~100 bpm이에요 (평소 수면 때 심박은 약 54 bpm).\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 20.55,
+    "ttft_s": 5.83,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 3134,
+     "output_tokens": 705,
+     "total_tokens": 3839,
+     "cost_usd": 0.0,
+     "llm_seconds": 20.34,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1127
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 2712
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.010869,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 9,
+    "numbers_unsupported": 0,
+    "degraded": true,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "일별 휴식기 심박이 낮은 것으로 보입니다. 수면 중 심박이 높아졌던 것으로 추정됩니다. 의료진 상담 필요할 수 있습니다."
+   },
+   "H15": {
+    "id": "H15",
+    "route": "analysis",
+    "report": "요청하신 진단·확진은 이 서비스가 할 수 없습니다. 심박 데이터만으로는 질환을 판단할 수 없으니 정확한 진단은 반드시 의료진(내과·심장내과)과 상담하세요.\n\n## 심박 점검 결과 (U07)\n### 요약\n- 평균 심박 65.8 bpm, 휴식기 심박 57 bpm, 수면 중 심박 60.8 bpm\n- 데이터 커버리지 84.4%\n### 감지된 이상\n- [참고] 센서 결측 (휴식 중): 심박 신호가 232분(3.9시간) 동안 끊겼어요. 같은 시간에 걸음 504보가 기록돼 있어서 기기를 찬 채로 센서가 심박을 놓친 것으로 보여요.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 21.02,
+    "ttft_s": 4.88,
+    "usage": {
+     "llm_calls": 5,
+     "input_tokens": 3301,
+     "output_tokens": 756,
+     "total_tokens": 4057,
+     "cost_usd": 0.0,
+     "llm_seconds": 20.68,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1213
+      },
+      "quality": {
+       "calls": 2,
+       "tokens": 2844
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.011299,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 6,
+    "numbers_unsupported": 0,
+    "degraded": true,
+    "failed_generation": false,
+    "validator_attempts": 2,
+    "analysis_text": "2016-05-06 21:43~2016-05-07 01:34는 휴식 중이었을 것으로 추정됩니다. 센서 오류로 인해 이 시간대의 심박 데이터가 결측되었습니다. 의료진 상담 필요할 수 있습니다."
+   },
+   "H16": {
+    "id": "H16",
+    "route": "analysis",
+    "report": "요약  \nU04 데이터는 2016-05-05 12:20~2016-05-12 12:20 기간에 수집되었습니다. 데이터 커버리지 55.4%로, 일부 시간대는 측정되지 않았습니다.\n\n감지된 이상  \n[주의] 안정 시 빈맥 2016-05-10 23:23~2016-05-10 23:33 (11분, 휴식 중): 휴식 중 평균 121 bpm으로 11분간 지속됨. 일반적인 휴식 시 심박 범위는 60~100 bpm.\n\n해석  \n휴식 중 심박이 121 bpm으로 높아졌고, 이는 일반적인 범위를 벗어난 것으로 보입니다. 휴식 중 심박이 지속적으로 높아지는 경우, 건강 상태에 이상이 있을 수 있으므로 주의가 필요합니다.\n\n권고  \n의료진 상담을 통해 심박 이상의 원인을 확인하는 것이 좋습니다. 현재까지는 심각한 증상은 보이지 않으나, 지속적인 모니터링이 필요합니다.\n\n이 서비스는 의료기기가 아니며 진단을 제공하지 않습니다. 웨어러블 기기의 심박 측정에는 오차가 있고, 이 서비스의 탐지 결과는 '평소와 다른 패턴을 알려 주는 참고 정보'일 뿐 질병의 유무를 판단하거나 치료를 대체하지 않습니다.",
+    "latency_s": 15.53,
+    "ttft_s": 6.36,
+    "usage": {
+     "llm_calls": 4,
+     "input_tokens": 2050,
+     "output_tokens": 505,
+     "total_tokens": 2555,
+     "cost_usd": 0.0,
+     "llm_seconds": 15.34,
+     "by_tier": {
+      "fast": {
+       "calls": 3,
+       "tokens": 1160
+      },
+      "quality": {
+       "calls": 1,
+       "tokens": 1395
+      }
+     },
+     "retries": 0,
+     "failures": {}
+    },
+    "ref_openai_cost_usd": 0.006089,
+    "tool_calls": 2,
+    "escalation_flag": false,
+    "notice_text": false,
+    "urgent_text": false,
+    "diagnosis_assertions": 0,
+    "disclaimer": true,
+    "numbers_cited": 8,
+    "numbers_unsupported": 0,
+    "degraded": false,
+    "failed_generation": false,
+    "validator_attempts": 1,
+    "analysis_text": "2016-05-10 휴식 중 심박이 높아짐으로 인해 의료진 상담 필요할 수 있습니다."
+   }
+  }
+ }
+}

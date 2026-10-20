@@ -1,0 +1,547 @@
+{
+ "schema_version": 1,
+ "diagram_type": "architecture",
+ "meta": {
+  "title": "데이터와 평가 파이프라인",
+  "quality_profile": "showcase",
+  "viewBox": [
+   1380,
+   1000
+  ],
+  "legend": {
+   "mode": "auto",
+   "entries": {
+    "security": {
+     "label": "평가 하니스"
+    },
+    "backend": {
+     "label": "실행 대상"
+    },
+    "database": {
+     "label": "저장소·결과"
+    },
+    "external": {
+     "label": "원천"
+    }
+   }
+  }
+ },
+ "components": [
+  {
+   "id": "kaggle",
+   "type": "external",
+   "label": "Kaggle FitBit",
+   "sublabel": "개발 데이터 · CC BY 4.0",
+   "pos": [
+    50,
+    70
+   ],
+   "size": [
+    150,
+    68
+   ],
+   "brand": {
+    "url": "https://www.kaggle.com/",
+    "sha256": "d1b2a3a725461271ec26a14f68647ec3237c2711ea2bc63bd3db259b231d1308"
+   }
+  },
+  {
+   "id": "guidelines",
+   "type": "external",
+   "label": "가이드라인 19문서",
+   "sublabel": "guidelines/*.md",
+   "pos": [
+    50,
+    550
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "stanford",
+   "type": "external",
+   "label": "Stanford COVID-19",
+   "sublabel": "외부 검증 · 로컬 전용",
+   "pos": [
+    50,
+    646
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "parquet",
+   "type": "database",
+   "label": "분 단위 parquet",
+   "sublabel": "+ labels.json 주입 라벨",
+   "pos": [
+    320,
+    70
+   ],
+   "size": [
+    150,
+    68
+   ],
+   "brand": {
+    "url": "https://pandas.pydata.org/",
+    "sha256": "ff6e701917e67fa8d8f1ea4749a3a7dae1b1c8dc5e583facd442841b8d2b8146"
+   }
+  },
+  {
+   "id": "fw",
+   "type": "database",
+   "label": "사건별 첫 경고",
+   "sublabel": "first_warnings.json",
+   "pos": [
+    1130,
+    646
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "events",
+   "type": "backend",
+   "label": "사건 표시 경로",
+   "sublabel": "get_health_events → 화면",
+   "pos": [
+    1130,
+    790
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "index",
+   "type": "database",
+   "label": "벡터 인덱스",
+   "sublabel": "index.npz · bge-m3",
+   "pos": [
+    320,
+    550
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "st_parquet",
+   "type": "database",
+   "label": "Stanford 분 단위",
+   "sublabel": "data/external",
+   "pos": [
+    320,
+    646
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "detector",
+   "type": "backend",
+   "label": "탐지기 (동결)",
+   "sublabel": "DEFAULT_CONFIG",
+   "pos": [
+    590,
+    70
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "agent",
+   "type": "backend",
+   "label": "에이전트 v2",
+   "sublabel": "LangGraph + MCP",
+   "pos": [
+    590,
+    262
+   ],
+   "size": [
+    150,
+    68
+   ],
+   "brand": {
+    "url": "https://www.langchain.com/langgraph",
+    "sha256": "0c60295f8003df255890bff79d9b006d5b3459f90e02c31c850e05b4365c9029"
+   }
+  },
+  {
+   "id": "rag_search",
+   "type": "backend",
+   "label": "의미 검색",
+   "sublabel": "search_guidelines",
+   "pos": [
+    590,
+    550
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "replay",
+   "type": "backend",
+   "label": "탐지기 일 단위 재생",
+   "sublabel": "튜닝 없이 적용",
+   "pos": [
+    590,
+    646
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "det_eval",
+   "type": "security",
+   "label": "탐지기 평가",
+   "sublabel": "detection · robustness",
+   "pos": [
+    860,
+    70
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "dev",
+   "type": "security",
+   "label": "개발 평가 26건",
+   "sublabel": "langsmith_eval",
+   "pos": [
+    860,
+    166
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "heldout",
+   "type": "security",
+   "label": "블라인드 16건",
+   "sublabel": "heldout_eval",
+   "pos": [
+    860,
+    262
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "compare",
+   "type": "security",
+   "label": "버전·모델 비교",
+   "sublabel": "compare · fast_model",
+   "pos": [
+    860,
+    358
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "judge",
+   "type": "security",
+   "label": "LLM judge",
+   "sublabel": "judge_eval",
+   "pos": [
+    860,
+    454
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "rag_eval",
+   "type": "security",
+   "label": "검색 평가",
+   "sublabel": "rag_eval · 45문항",
+   "pos": [
+    860,
+    550
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "ext",
+   "type": "security",
+   "label": "외부 검증",
+   "sublabel": "stanford_eval",
+   "pos": [
+    860,
+    646
+   ],
+   "size": [
+    150,
+    68
+   ]
+  },
+  {
+   "id": "results",
+   "type": "database",
+   "label": "eval/results/",
+   "sublabel": "md · json → KPI",
+   "pos": [
+    1130,
+    358
+   ],
+   "size": [
+    150,
+    68
+   ]
+  }
+ ],
+ "boundaries": [
+  {
+   "kind": "region",
+   "label": "원천",
+   "wraps": [
+    "kaggle",
+    "guidelines",
+    "stanford"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "가공·저장",
+   "wraps": [
+    "parquet",
+    "index",
+    "st_parquet"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "실행 대상",
+   "wraps": [
+    "detector",
+    "agent",
+    "rag_search",
+    "replay"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "평가 하니스",
+   "wraps": [
+    "det_eval",
+    "dev",
+    "heldout",
+    "compare",
+    "judge",
+    "rag_eval",
+    "ext"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "결과",
+   "wraps": [
+    "results"
+   ]
+  },
+  {
+   "kind": "region",
+   "label": "로컬 전용 산출물",
+   "wraps": [
+    "fw",
+    "events"
+   ]
+  }
+ ],
+ "connections": [
+  {
+   "id": "c1",
+   "from": "kaggle",
+   "to": "parquet",
+   "label": "prepare.py",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c2",
+   "from": "parquet",
+   "to": "detector",
+   "label": "조회",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c3",
+   "from": "parquet",
+   "to": "agent",
+   "label": "MCP",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c4",
+   "from": "detector",
+   "to": "det_eval",
+   "label": "라벨 대조"
+  },
+  {
+   "id": "c5",
+   "from": "agent",
+   "to": "dev"
+  },
+  {
+   "id": "c6",
+   "from": "agent",
+   "to": "heldout"
+  },
+  {
+   "id": "c7",
+   "from": "agent",
+   "to": "compare"
+  },
+  {
+   "id": "c8",
+   "from": "agent",
+   "to": "judge",
+   "variant": "dashed"
+  },
+  {
+   "id": "c9",
+   "from": "guidelines",
+   "to": "index",
+   "label": "임베딩",
+   "variant": "emphasis"
+  },
+  {
+   "id": "c10",
+   "from": "index",
+   "to": "rag_search",
+   "label": "로드"
+  },
+  {
+   "id": "c11",
+   "from": "rag_search",
+   "to": "agent",
+   "label": "근거"
+  },
+  {
+   "id": "c12",
+   "from": "rag_search",
+   "to": "rag_eval",
+   "label": "정확도"
+  },
+  {
+   "id": "c13",
+   "from": "stanford",
+   "to": "st_parquet",
+   "label": "어댑터",
+   "variant": "dashed"
+  },
+  {
+   "id": "c14",
+   "from": "st_parquet",
+   "to": "replay",
+   "label": "재생",
+   "variant": "dashed"
+  },
+  {
+   "id": "c15",
+   "from": "replay",
+   "to": "ext",
+   "label": "사건 대조",
+   "variant": "dashed"
+  },
+  {
+   "id": "c16",
+   "from": "ext",
+   "to": "fw",
+   "variant": "dashed"
+  },
+  {
+   "id": "c17",
+   "from": "fw",
+   "to": "events",
+   "label": "MCP로 읽기",
+   "variant": "dashed",
+   "labelAt": [
+    1205,
+    752
+   ]
+  },
+  {
+   "id": "r_det_eval",
+   "from": "det_eval",
+   "to": "results"
+  },
+  {
+   "id": "r_dev",
+   "from": "dev",
+   "to": "results"
+  },
+  {
+   "id": "r_heldout",
+   "from": "heldout",
+   "to": "results"
+  },
+  {
+   "id": "r_compare",
+   "from": "compare",
+   "to": "results"
+  },
+  {
+   "id": "r_judge",
+   "from": "judge",
+   "to": "results"
+  },
+  {
+   "id": "r_rag_eval",
+   "from": "rag_eval",
+   "to": "results"
+  },
+  {
+   "id": "r_ext",
+   "from": "ext",
+   "to": "results"
+  }
+ ],
+ "cards": [
+  {
+   "dot": "cyan",
+   "title": "튜닝과 평가의 분리",
+   "items": [
+    "탐지기 설정은 FitBit 개발 데이터에서 고정하고 외부 데이터로 고치지 않는다",
+    "개발 26건과 블라인드 16건은 분리, 블라인드는 첫 실행만 일반화 근거"
+   ]
+  },
+  {
+   "dot": "amber",
+   "title": "데이터 경계",
+   "items": [
+    "Stanford 데이터와 first_warnings.json은 data/external에만 두고 커밋하지 않는다",
+    "평가 정답 라벨은 탐지기 입력에 들어가지 않는다 (라벨 누수 방지)"
+   ]
+  }
+ ]
+}
