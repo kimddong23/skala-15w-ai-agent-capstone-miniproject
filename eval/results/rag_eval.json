@@ -17,8 +17,8 @@
       "mrr": 0.133,
       "latency_ms": {
         "p50": 0.14,
-        "p95": 0.22,
-        "mean": 0.16
+        "p95": 0.42,
+        "mean": 0.19
       }
     },
     "B_keyword_expanded": {
@@ -26,9 +26,9 @@
       "hit@3": 0.756,
       "mrr": 0.63,
       "latency_ms": {
-        "p50": 2.57,
-        "p95": 3.87,
-        "mean": 2.63
+        "p50": 2.67,
+        "p95": 4.29,
+        "mean": 2.76
       }
     },
     "C_rag_vector": {
@@ -36,9 +36,9 @@
       "hit@3": 0.956,
       "mrr": 0.908,
       "latency_ms": {
-        "p50": 20.67,
-        "p95": 168.24,
-        "mean": 36.47
+        "p50": 53.75,
+        "p95": 69.51,
+        "mean": 55.97
       }
     },
     "D_rag_keyword_fallback": {
@@ -46,9 +46,9 @@
       "hit@3": 0.756,
       "mrr": 0.62,
       "latency_ms": {
-        "p50": 0.21,
-        "p95": 0.38,
-        "mean": 0.21
+        "p50": 0.15,
+        "p95": 0.24,
+        "mean": 0.15
       }
     }
   },
@@ -78,21 +78,21 @@
     "model": "bge-m3:latest",
     "dim": 1024,
     "bytes": 217126,
-    "cold_build_s": 5.085,
+    "cold_build_s": 3.147,
     "cold_embedded": 52,
-    "warm_build_s": 0.002,
+    "warm_build_s": 0.003,
     "warm_embedded": 0,
-    "first_embed_call_ms": 1996.9,
+    "first_embed_call_ms": 1421.7,
     "query_embed_ms": {
-      "p50": 85.97,
-      "p95": 115.61,
-      "mean": 74.7
+      "p50": 51.99,
+      "p95": 60.32,
+      "mean": 51.7
     }
   },
   "outage": {
     "method": "keyword",
     "note": "임베딩 사용 불가(ConnectError: [Errno 61] Connection refused) - 키워드 검색으로 대체했습니다",
-    "first_query_ms": 4.5,
+    "first_query_ms": 6.2,
     "second_query_ms": 0.2,
     "second_method": "keyword"
   },

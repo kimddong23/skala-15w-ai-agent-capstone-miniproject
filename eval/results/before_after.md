@@ -1,6 +1,6 @@
 # Before/After: v1 선형 기준선 vs v2 (현재 에이전트)
 
-- 측정 커밋: `4269e26`, 실행: 2026-10-20T22:16:30
+- 측정 커밋: `4269e26`, 실행: 2026-10-20T22:16:30 (개발 저장소 해시. 측정한 `app/`·`eval/compare_versions.py`는 공개 저장소 커밋 `8ba8f4c`와 같다)
 - analysis 티어: quality
 - 백엔드: `ollama` (fast=qwen3:0.6b, quality=qwen3:8b), 장비: Apple M4 Pro / RAM 48 GB
 - 입력: 개발 평가셋 26건 + 홀드아웃 14건 = 40건, 같은 입력·같은 thread 규칙, 케이스마다 실행 순서 교차. 다중 턴은 마지막 턴을 측정.
