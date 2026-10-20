@@ -434,7 +434,7 @@ def test_real_corpus_every_doc_has_the_info_section_with_the_non_medical_line():
         assert "\n## 문서 정보\n" in text, p.name
         info = text.split("\n## 문서 정보\n", 1)[1]
         assert "의학적 조언이 아니며 임상 검토를 받지 않았습니다" in info and ("자체 작성" in info or "자체 설명" in info), p.name
-    for name, needle in (("exercise-hr-zones", "50~70%"), ("hr-recovery", "12회"), ("sleep-hr", "10~20%"), ("dehydration-heat-fever", "8~10회")):
+    for name, needle in (("exercise-hr-zones", "50–70%"), ("hr-recovery", "12회"), ("sleep-hr", "10~20%"), ("dehydration-heat-fever", "8~10회")):
         info = (GUIDELINES_DIR / f"{name}.md").read_text(encoding="utf-8").split("\n## 문서 정보\n", 1)[1]
         assert needle in info and "검증하지 않았습니다" in info, name                                   # 검증 못 한 수치는 해당 문서에 명시
 
