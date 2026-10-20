@@ -94,6 +94,20 @@ LangGraph 노드 그래프는 `app/agent/graph.py`(v2)와 `supervisor_v1.py`(v1)
 
 ![LangGraph 노드 그래프 (v2와 v1 기준선)](architecture/agent-graph.png)
 
+### 에이전트 구성 (Supervisor 패턴)
+
+역할이 다른 LLM 에이전트 5개가 시스템 프롬프트와 모델 크기, 출력 형식을 각자 따로 갖고, 다음 단계는 조건부 엣지와 코드 노드 7개가 정한다. 에이전트끼리는 `AgentState`의 칸으로만 주고받는다.
+
+| 에이전트 | 맡는 일 | 모델 | 출력 |
+|---|---|---|---|
+| `route` | 일반 질문인지 데이터 점검 요청인지 가른다 | fast (`qwen3:0.6b`) | JSON |
+| `plan` | 조회할 작업과 기간을 정한다 | fast | JSON |
+| `analysis` | 탐지 결과를 시간대와 맥락으로 해석한다 | quality (`qwen3:8b`) | 문장 3개 이내 |
+| `writing` | 수치를 인용해 리포트를 쓴다 | quality | 마크다운 리포트 |
+| `simple_answer` | 가이드라인과 직전 결과로 일반 질문에 답한다 | quality | 5문장 이내 |
+
+코드 노드는 `gate`(계획 보정), `research`(도구 병렬 실행), `replan`, `safety_gate`, `validator`, `finalize`, `notify_guardian`이다. 에이전트마다 도구를 스스로 골라 반복 호출하는 자율형 구조는 비교해 보고 택하지 않았다. 로컬 소형 모델은 도구 호출이 불안정하고 호출 수와 지연이 늘며, 건강 데이터에서 조회 도구와 기간을 LLM이 마음대로 고르게 두면 위험하다. 그래서 도구 호출은 계획자가 정한 작업 목록을 `research`가 코드로 실행한다.
+
 자세한 그림(PNG와 확대·검색이 되는 인터랙티브 HTML): [시스템 구성도](architecture/system-architecture.html) · [종단 간 흐름](architecture/e2e-system-flow.html) · [노드 그래프](architecture/agent-graph.html) · [저장소 구조](architecture/repo-structure.html) · [데이터와 평가 파이프라인](architecture/data-and-eval-pipeline.html) · [SSE 시퀀스](architecture/sse-sequence.html).
 
 ## 주요 유스케이스별 시퀀스 다이어그램
