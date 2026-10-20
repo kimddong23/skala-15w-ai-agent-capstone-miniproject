@@ -3,89 +3,96 @@
   "n_docs": 19,
   "n_chunks": 52,
   "n_answerable_by_old_corpus": 7,
+  "n_candidate_docs": {
+    "A_old_keyword": 2,
+    "B_keyword_expanded": 19,
+    "C_rag_vector": 19,
+    "D_rag_keyword_fallback": 19
+  },
+  "n_zero_keyword_questions": 1,
   "results": {
     "A_old_keyword": {
+      "hit@1": 0.111,
+      "hit@3": 0.156,
       "mrr": 0.133,
       "latency_ms": {
-        "p50": 0.11,
+        "p50": 0.14,
         "p95": 0.22,
-        "mean": 0.13
-      },
-      "hit@1": 0.111,
-      "hit@3": 0.156
+        "mean": 0.16
+      }
     },
     "B_keyword_expanded": {
+      "hit@1": 0.467,
+      "hit@3": 0.756,
       "mrr": 0.63,
       "latency_ms": {
-        "p50": 2.29,
-        "p95": 3.48,
-        "mean": 2.38
-      },
-      "hit@1": 0.467,
-      "hit@3": 0.756
+        "p50": 2.57,
+        "p95": 3.87,
+        "mean": 2.63
+      }
     },
     "C_rag_vector": {
+      "hit@1": 0.867,
+      "hit@3": 0.956,
       "mrr": 0.908,
       "latency_ms": {
-        "p50": 50.61,
-        "p95": 66.35,
-        "mean": 51.74
-      },
-      "hit@1": 0.867,
-      "hit@3": 0.956
+        "p50": 20.67,
+        "p95": 168.24,
+        "mean": 36.47
+      }
     },
     "D_rag_keyword_fallback": {
+      "hit@1": 0.444,
+      "hit@3": 0.756,
       "mrr": 0.62,
       "latency_ms": {
-        "p50": 0.14,
-        "p95": 0.24,
-        "mean": 0.14
-      },
-      "hit@1": 0.444,
-      "hit@3": 0.756
+        "p50": 0.21,
+        "p95": 0.38,
+        "mean": 0.21
+      }
     }
   },
   "results_answerable_subset": {
     "A_old_keyword": {
-      "mrr": 0.857,
       "hit@1": 0.714,
-      "hit@3": 1.0
+      "hit@3": 1.0,
+      "mrr": 0.857
     },
     "B_keyword_expanded": {
-      "mrr": 0.857,
       "hit@1": 0.714,
-      "hit@3": 1.0
+      "hit@3": 1.0,
+      "mrr": 0.857
     },
     "C_rag_vector": {
-      "mrr": 1.0,
       "hit@1": 1.0,
-      "hit@3": 1.0
+      "hit@3": 1.0,
+      "mrr": 1.0
     },
     "D_rag_keyword_fallback": {
-      "mrr": 0.786,
       "hit@1": 0.571,
-      "hit@3": 1.0
+      "hit@3": 1.0,
+      "mrr": 0.786
     }
   },
   "index": {
     "model": "bge-m3:latest",
     "dim": 1024,
     "bytes": 217126,
-    "cold_build_s": 3.062,
+    "cold_build_s": 5.085,
     "cold_embedded": 52,
     "warm_build_s": 0.002,
     "warm_embedded": 0,
-    "first_embed_call_ms": 79.3,
+    "first_embed_call_ms": 1996.9,
     "query_embed_ms": {
-      "p50": 55.21,
-      "p95": 71.04,
-      "mean": 54.37
+      "p50": 85.97,
+      "p95": 115.61,
+      "mean": 74.7
     }
   },
   "outage": {
     "method": "keyword",
     "note": "임베딩 사용 불가(ConnectError: [Errno 61] Connection refused) - 키워드 검색으로 대체했습니다",
-    "first_query_ms": 4.9,
+    "first_query_ms": 4.5,
     "second_query_ms": 0.2,
     "second_method": "keyword"
   },
@@ -236,8 +243,8 @@
       ],
       "B": [
         "heart-rate-ranges",
-        "sleep-hr",
-        "dehydration-heat-fever"
+        "hr-recovery",
+        "sleep-hr"
       ],
       "C": [
         "heart-rate-ranges",
@@ -583,7 +590,7 @@
       "C": [
         "sensor-gaps-and-wear",
         "wearable-measurement-limits",
-        "disclaimer"
+        "service-detection-rules"
       ],
       "D": [
         "sensor-gaps-and-wear",
@@ -1216,7 +1223,7 @@
       "B": [
         "bradycardia-overview",
         "dehydration-heat-fever",
-        "emergency-response"
+        "disclaimer"
       ],
       "C": [
         "bradycardia-overview",
@@ -1281,17 +1288,5 @@
         "resting-hr-basics"
       ]
     }
-  ],
-  "n_candidate_docs": {
-    "A_old_keyword": 2,
-    "B_keyword_expanded": 19,
-    "C_rag_vector": 19,
-    "D_rag_keyword_fallback": 19
-  },
-  "n_zero_keyword_questions": 1,
-  "measurement": {
-    "measured_at": "2026-10-20 09:30",
-    "rerun": false,
-    "note": "측정은 hit@k 이름 변경과 동점 처리 명시 이전 코드로 했다. 키워드 폴백의 동점은 당시에도 파일 순(= 문서 id 순)이어서 순위는 같다. 측정 이후 disclaimer 문서의 데이터 출처 문구(CC BY 4.0 표기) 한 줄이 바뀌어 해당 청크(disclaimer#0) 1개만 색인에서 다시 임베딩됐다(기존 벡터와 코사인 0.99). 나머지 51개 청크와 이 표의 수치는 바뀌지 않았고 재측정은 하지 않았다."
-  }
+  ]
 }

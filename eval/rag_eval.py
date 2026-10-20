@@ -31,6 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from app.agent.report import guideline_excerpt  # noqa: E402
+from app.config import settings  # noqa: E402
 from app.rag.chunking import chunk_corpus  # noqa: E402
 from app.rag.corpus import GUIDELINES_DIR, load_corpus  # noqa: E402
 from app.rag.embeddings import EmbeddingError, OllamaEmbedder  # noqa: E402
@@ -256,7 +257,7 @@ def render(r: dict) -> str:
           f"- **지연**: 질의마다 임베딩 호출(로컬 Ollama)이 들어가 키워드({res['B_keyword_expanded']['latency_ms']['p50']} ms)보다 "
           f"약 {res['C_rag_vector']['latency_ms']['p50'] / max(res['B_keyword_expanded']['latency_ms']['p50'], 0.01):.0f}배 느리다"
           f"({res['C_rag_vector']['latency_ms']['p50']} ms). 그래도 LLM 생성(수 초)에 비하면 작다. 서버가 응답하지 않고 멈춘 경우는 "
-          "연결 거부와 달리 임베딩 타임아웃(기본 20초)만큼 기다린 뒤 키워드로 내려간다(표 4는 즉시 거부된 경우).",
+          f"연결 거부와 달리 질의 임베딩 타임아웃(EMBED_TIMEOUT_S, 기본 {settings.embed_timeout_s:g}초)만큼 기다린 뒤 키워드로 내려간다(표 4는 즉시 거부된 경우).",
           "- **A 와 B 의 차이는 검색 방식이 아니라 코퍼스 확장 효과**다: 같은 함수를 2문서와 19문서에 적용했을 뿐이다. 검색 방식의 효과는 표 2(같은 범위 질문)와 B-C 비교로 본다.",
           "- **의존성**: Ollama + bge-m3(1.2 GB) 가 필요하다. 꺼져 있으면 키워드 폴백으로 내려가며 정확도가 떨어진다(표 D). 폴백은 서비스 중단을 막는 용도다.",
           "- **비용 구조**: 인덱스는 코퍼스 변경 시 바뀐 청크만 다시 임베딩하고(웜 0건), 질의 임베딩은 캐시하지 않는다.",

@@ -2,7 +2,7 @@
 
 책임: 노드(`AgentNodes`)와 조건부 엣지를 아래 도식대로 연결해 컴파일한다. 비즈니스 로직은 두지 않는다.
 협력 모듈: `nodes.py`(노드 구현), `toolbox.py`(주입되는 도구), `llm.py`(주입되는 LLM), `checkpointer.py`(영속화).
-설계 근거: 11개 노드의 명시적 파이프라인, 재계획 루프, 검증 재시도 루프.
+설계 근거: 12개 노드(LLM 노드 5개 + 결정론 게이트 7개)의 명시적 파이프라인, 재계획 루프, 검증 재시도 루프.
 
     START → route ─simple→ simple_answer → END
                  └analysis→ plan → gate → research ─(replan↺ | analysis | safety_gate)
