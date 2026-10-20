@@ -235,7 +235,7 @@ health_anomaly_agent/
 ├── README.md                 # 프로젝트 개요
 ├── requirements.txt          # 버전 고정 의존성
 ├── .env.example              # 환경변수 견본 (.env 는 커밋하지 않음)
-├── .gitleaks.toml            # 비밀값 검사 설정 (pre-commit 훅은 scripts/install-hooks.sh)
+├── .gitleaks.toml            # 비밀값 검사 설정 (pre-commit 훅은 sh/install-hooks.sh)
 ├── Dockerfile, docker-compose.yml, docker-compose.gpu.yml   # 한 줄 기동 (Ollama 프로필, GPU 선택)
 │
 ├── app/
@@ -283,10 +283,10 @@ health_anomaly_agent/
 │   └── judge_eval.py, promote_failures.py   # 서술 품질 judge 평가, 실패 예제 회귀셋 승격
 ├── tests/                    # pytest (단위·통합·API E2E)
 ├── e2e/                      # Playwright 브라우저 E2E
-├── scripts/install-hooks.sh  # gitleaks pre-commit 훅 설치
 ├── data/                     # processed/ (가공 parquet·labels.json·id_map.json·rag 인덱스, git 포함), raw/ (Kaggle 원본, git 제외), external/ (Stanford, git 제외)
 ├── sh/
 │   ├── _common.sh            # 공용 함수 (자기 프로세스만 종료, 포트 검사)
+│   ├── install-hooks.sh      # gitleaks pre-commit 훅 설치
 │   ├── setup_venv.sh         # .venv 생성 + 설치 (맨 처음 1회)
 │   ├── setup_ollama.sh       # 모델 준비 (있으면 재사용)
 │   ├── run_agent_fake.sh     # 백엔드 기동: LLM 없음

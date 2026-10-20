@@ -33,11 +33,11 @@ npm --prefix e2e run test:llm
 |---|---|
 | `.gitleaks.toml` | 기본 규칙셋 사용. 공개 원천 데이터(`data/raw/`)와 `node_modules`, 빌드 산출물만 검사에서 제외 |
 | `.pre-commit-config.yaml` | pre-commit 프레임워크용 훅 (gitleaks v8.30.1) |
-| `scripts/install-hooks.sh` | 프레임워크 없이 로컬 gitleaks 바이너리로 `.git/hooks/pre-commit` 설치. 가짜 토큰으로 커밋이 차단되는 것을 확인했다 |
+| `sh/install-hooks.sh` | 프레임워크 없이 로컬 gitleaks 바이너리로 `.git/hooks/pre-commit` 설치. 가짜 토큰으로 커밋이 차단되는 것을 확인했다 |
 | `.env.example` | 환경변수 견본. 실제 `.env`는 `.gitignore` 대상이다 |
 
 ```bash
-brew install gitleaks && scripts/install-hooks.sh   # 커밋 훅 설치
+brew install gitleaks && sh/install-hooks.sh   # 커밋 훅 설치
 gitleaks git . --redact                             # 전체 커밋 이력 검사
 gitleaks dir . --redact                             # 작업 트리 검사
 ```

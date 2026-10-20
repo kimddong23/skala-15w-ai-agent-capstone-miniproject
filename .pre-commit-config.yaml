@@ -1,5 +1,5 @@
 # pre-commit 훅 — 커밋 직전에 스테이징된 변경분의 비밀값 유출을 차단한다.
-# 설치: pip install pre-commit && pre-commit install  (또는 scripts/install-hooks.sh)
+# 설치: pip install pre-commit && pre-commit install  (또는 sh/install-hooks.sh)
 repos:
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.30.1
