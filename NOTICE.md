@@ -20,14 +20,14 @@ Vital Sentinel은 아래 자료를 쓰거나 참고했다. 이 문서는 어떤 
 > Furberg, R., Brinton, J., Keating, M., & Ortiz, A. (2016). *Crowd-sourced Fitbit datasets 03.12.2016-05.12.2016* [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.53894
 
 - 라이선스: Creative Commons Attribution 4.0 International (CC BY 4.0). Zenodo 기록 페이지에서 확인했다.
-- 내용: Amazon Mechanical Turk 설문으로 모은 Fitbit 사용자 30명의 분 단위 활동·심박·수면 기록이다. 이 프로젝트는 심박이 있는 15명을 쓴다 (기록 기간 2016-03-29 ~ 2016-05-12).
+- 내용: Amazon Mechanical Turk 설문으로 모은 Fitbit 사용자 30명의 분 단위 활동·심박·수면 기록이다. 이 프로젝트는 심박이 있는 15명을 쓴다 (기록 기간 2016-03-29 \~ 2016-05-12).
 - 받은 곳: Kaggle 재배포본 [`arashnic/fitbit`](https://www.kaggle.com/datasets/arashnic/fitbit). Kaggle의 표기는 원본과 다르므로 원본의 CC BY 4.0을 따른다. 원저자를 밝히고 변경 사항을 적는다.
 
 **변경 사항 (CC BY 4.0 Section 3(a)(1)에 따라 밝힌다)**
 
 1. 초 단위 심박을 분 단위로 집계했다 (평균, 최소, 최대, 표본 수).
 2. 걸음·수면 기록을 결합하고 중복 행을 지웠다.
-3. 사용자 ID를 `U01`~`U15`로 가명화했다. 매핑은 `data/processed/id_map.json`에 있다.
+3. 사용자 ID를 `U01`\~`U15`로 가명화했다. 매핑은 `data/processed/id_map.json`에 있다.
 4. 평가용 **합성 이상**을 실제 데이터 위에 주입하고 정답 라벨(`labels.json`)을 만들었다.
 
 `data/processed/`는 이 변경을 거친 **2차 저작물**이다. `vitals_minute.parquet`에는 우리가 주입한 합성 이상이 섞여 있으므로 원자료나 임상 기록으로 쓰면 안 된다. 주입이 없는 `vitals_minute_clean.parquet`을 함께 둔다. 저장소 루트의 MIT 라이선스는 이 데이터에 적용되지 않는다. 이 데이터를 다시 쓰거나 재배포하는 사람도 위 원저자 표시와 변경 사항 표시를 유지해야 한다. 원저자와 Zenodo 기록은 이 변경을 승인하거나 보증하지 않는다. 원본 CSV(`data/raw/`)는 저장소에 넣지 않는다.

@@ -30,18 +30,18 @@
 
 | 예시 | 창 | 커버리지 / 휴식 분 | 탐지된 이벤트 | 라벨 |
 |---|---|---|---|---|
-| H07 | U04, 30일 (04-12~05-12) | 24.3% / 4482 | 빈맥 7건: critical 3건 (04-15 21:45 20분 평균 150 bpm, 04-15 22:55 55분 113, 04-16 01:22 93분 127), warning 4건 | types=[빈맥], escalation=true, low_coverage=true |
-| H08 | U03, 30일 (03-30~04-29) | 90.4% / 15996 | 서맥 critical 1건 (04-03 12:36 23분 평균 30 bpm, 각성), 서맥 warning 1건 (04-21 05:24 수면 31 bpm), 개인 이탈 1건, 센서 결측 1건 | types=[서맥, 개인 이탈, 결측], escalation=true |
-| H09 | U11, 7일 (04-30~05-07) | 9.7% / 195 | 없음 (14일로 재계획해도 8.0% / 384 에 이상 없음) | types=[], low_coverage=true, replan=true |
+| H07 | U04, 30일 (04-12\~05-12) | 24.3% / 4482 | 빈맥 7건: critical 3건 (04-15 21:45 20분 평균 150 bpm, 04-15 22:55 55분 113, 04-16 01:22 93분 127), warning 4건 | types=[빈맥], escalation=true, low_coverage=true |
+| H08 | U03, 30일 (03-30\~04-29) | 90.4% / 15996 | 서맥 critical 1건 (04-03 12:36 23분 평균 30 bpm, 각성), 서맥 warning 1건 (04-21 05:24 수면 31 bpm), 개인 이탈 1건, 센서 결측 1건 | types=[서맥, 개인 이탈, 결측], escalation=true |
+| H09 | U11, 7일 (04-30\~05-07) | 9.7% / 195 | 없음 (14일로 재계획해도 8.0% / 384 에 이상 없음) | types=[], low_coverage=true, replan=true |
 | H10 | U12, 7일 | 93.5% / 4499 | 없음 | types=[], escalation=false |
-| H11 | U13, 30일 (04-06~05-06) | 55.8% / 3749 | 안정시 심박 상승 추세 2건, 센서 결측 3건, 빈맥 warning 1건 (102 bpm) | types=[추세, 빈맥, 결측], escalation=false |
+| H11 | U13, 30일 (04-06\~05-06) | 55.8% / 3749 | 안정시 심박 상승 추세 2건, 센서 결측 3건, 빈맥 warning 1건 (102 bpm) | types=[추세, 빈맥, 결측], escalation=false |
 | H12 | U05, 30일 | 88.2% / 15783 | 빈맥 critical 1건 (04-16 20:00 28분 평균 146 bpm), 빈맥 warning 2건, 센서 결측 2건 | types=[빈맥, 결측], escalation=true |
 | H13 | U04, 30일 (H07 과 동일 창) | - | 후속: 새 분석 없이 앞선 결과로 답 | route=simple, 가장 높았던 이벤트 04-15 21:45 평균 150 bpm |
-| H14 | U05, 7일 (05-05~05-12) | 84.9% / 3241 | 빈맥 warning 1건 (05-07 06:23 수면 중 19분 평균 107 bpm), critical 없음 | types=[빈맥], escalation=false |
+| H14 | U05, 7일 (05-05\~05-12) | 84.9% / 3241 | 빈맥 warning 1건 (05-07 06:23 수면 중 19분 평균 107 bpm), critical 없음 | types=[빈맥], escalation=false |
 | H15 | U07, 7일 | 84.4% / 4397 | 센서 결측 1건 | types=[결측], escalation=false |
-| H16 | U04, 7일 (05-05~05-12) | 55.4% / 2031 | 빈맥 warning 1건 (05-10 23:23 11분 평균 121 bpm) | types=[빈맥], escalation=false |
+| H16 | U04, 7일 (05-05\~05-12) | 55.4% / 2031 | 빈맥 warning 1건 (05-10 23:23 11분 평균 121 bpm) | types=[빈맥], escalation=false |
 
-H01~H06 은 사용자 데이터가 필요 없는 질문이라 `expected_route=simple`, `expected_types=[]`, `expected_escalation=false` 이다.
+H01\~H06 은 사용자 데이터가 필요 없는 질문이라 `expected_route=simple`, `expected_types=[]`, `expected_escalation=false` 이다.
 
 ## 의도한 함정
 
