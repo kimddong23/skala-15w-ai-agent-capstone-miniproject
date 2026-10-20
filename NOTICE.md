@@ -78,7 +78,7 @@ Vital Sentinel은 아래 자료를 쓰거나 참고했다. 이 문서는 어떤 
 
 ## 6. 로고와 상표
 
-`docs/architecture/`의 구성도에 들어 있는 기술 로고(React, FastAPI, Ollama, Docker, Python, SQLite, OpenAI, nginx, Kaggle, Playwright, pytest, pandas, Zod, LangChain 계열 등)와 README의 배지는 각 소유자의 상표나 저작물이다. 어떤 기술을 쓰는지 알리는 용도로만 썼고 소유자와의 제휴나 보증을 뜻하지 않는다.
+`docs/architecture/`의 구성도에 들어 있는 기술 로고(React, FastAPI, Ollama, Docker, Python, SQLite, OpenAI, nginx, Kaggle, Playwright, pytest, pandas, Zod, LangChain 계열 등)와 README의 배지는 각 소유자의 상표나 저작물이다. 어떤 기술을 쓰는지 알리는 용도로만 썼고 소유자와의 제휴나 보증을 뜻하지 않는다. 일부 로고 도형은 Simple Icons(CC0 1.0)의 SVG로 바꿔 넣었다.
 
 ## 7. 의료기기가 아니다
 
