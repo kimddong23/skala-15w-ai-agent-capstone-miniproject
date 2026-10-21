@@ -29,6 +29,8 @@ async def test_an_all_clear_sentence_in_the_anomalous_users_section_is_still_rej
     events, st = await mu.run(mu.make(mu.PerUserTools(), llm), "U01이랑 U05 비교해줘")
     assert any(e["type"] == "validation" and not e["passed"] for e in events)   # U05 절의 '구간 없음'은 반려된다
     assert st["validation"]["degraded"] and gates.ESCALATION_MESSAGE in st["report"]   # 재시도를 소진하고 템플릿으로 대체
+    vals = [e for e in events if e["type"] == "validation"]
+    assert vals[-1]["degraded"] and not any(v["degraded"] for v in vals[:-1])   # UI 가 '대체 문안 사용'을 띄울 수 있게 마지막 검증만 알린다
 
 
 @pytest.mark.asyncio

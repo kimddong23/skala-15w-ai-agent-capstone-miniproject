@@ -123,6 +123,7 @@ class Validation(_Event):
     passed: bool
     issues: list[str]
     attempt: int
+    degraded: bool = False  # 재시도 상한을 넘겨 finalize 가 템플릿으로 대체한다 (선택 필드)
 
 
 class ApprovalRequired(_Event):

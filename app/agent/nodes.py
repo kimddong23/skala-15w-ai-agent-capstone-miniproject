@@ -910,7 +910,8 @@ class AgentNodes:
         )
         if not issues:
             issues = await judge(self.llm, state["report"], rpt.facts_brief(state))
-        emit(ev.Validation(passed=not issues, issues=issues, attempt=attempt))
+        degraded = bool(issues) and attempt > settings.max_validation_retries  # validation_check 가 finalize 로 보내 템플릿으로 대체한다
+        emit(ev.Validation(passed=not issues, issues=issues, attempt=attempt, degraded=degraded))
         return {
             "validation_attempt": attempt, "validation_issues": issues,
             "validation": {"passed": not issues, "issues": issues, "attempt": attempt, "degraded": False},

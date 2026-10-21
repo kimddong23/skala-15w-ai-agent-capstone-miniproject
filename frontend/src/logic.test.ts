@@ -296,6 +296,10 @@ describe("서버 계약 보강", () => {
     t = applyEvent(t, { type: "validation", passed: false, issues: ["x"], attempt: 2, degraded: true }, 5);
     expect(buildTrace(t).find((s) => s.node === "validator")!.subs[0].note).toContain("대체 문안");
     expect(t.validations[0].degraded).toBe(true);
+    t = applyEvent(t, { type: "done", thread_id: "th", report: "r", escalation: false }, 6);
+    const v = buildTrace(t).find((s) => s.node === "validator")!;
+    expect(v.status).toBe("done");
+    expect(v.lines).toContain("검증을 통과하지 못해 기본 리포트로 대체");
   });
   it("splitReport: 맨 위 중요 안내와 맨 끝 면책을 본문에서 분리한다", () => {
     const r = splitReport("**중요 안내** 즉시 119에 연락하세요.\n\n## 점검\n\n- 빈맥 128 bpm\n\n본 서비스는 의료기기가 아니며 진단을 대신하지 않습니다.");

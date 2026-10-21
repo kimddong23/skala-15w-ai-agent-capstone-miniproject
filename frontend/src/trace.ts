@@ -187,8 +187,9 @@ export function buildTrace(t: Turn, now = t.elapsedMs): TraceStep[] {
     if (node === "replan_check") status = t.replans.length || cur >= 5 ? "done" : finished && t.status === "done" ? "skipped" : "pending";
     if (node === "analysis" && !subs.analysis.length && cur > 5) status = "skipped";
     if (node === "validator" && vals.length) {
-      const lastOk = (vals[vals.length - 1].ev as Extract<ChatEvent, { type: "validation" }>).passed;
-      status = lastOk ? "done" : finished ? "failed" : "running";
+      const last = vals[vals.length - 1].ev as Extract<ChatEvent, { type: "validation" }>;
+      // degraded 는 검증이 제 역할(불합격 판정)을 하고 기본 리포트로 넘긴 것이라 완료로 센다.
+      status = last.passed || last.degraded ? "done" : finished ? "failed" : "running";
     }
     if (node === "safety_gate" && esc) status = "alert";
 
@@ -241,6 +242,7 @@ export function buildTrace(t: Turn, now = t.elapsedMs): TraceStep[] {
         break;
       case "validator":
         stepSubs = validatorSubs;
+        if (vals.some((v) => v.ev.type === "validation" && v.ev.degraded)) lines.push("검증을 통과하지 못해 기본 리포트로 대체");
         break;
       case "finalize":
         if (t.status === "error") lines.push("실행 중 오류가 발생했습니다.");
