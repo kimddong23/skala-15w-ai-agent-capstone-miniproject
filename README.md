@@ -9,6 +9,12 @@
 
 ![Vital Sentinel 콘솔](frontend/docs/screenshots/desktop-light.png)
 
+## 시연 영상
+
+[![Vital Sentinel 시연 영상 (6분 44초)](docs/image_demo/demo-thumbnail.png)](https://youtu.be/kZoScZeaYmM)
+
+점검 요청부터 안전 안내와 보호자 알림 승인, 후속 질문, 개선 전후 비교, 측정 결과와 한계까지 실제 화면으로 보여 준다(6분 44초). 이미지를 누르면 YouTube에서 재생된다.
+
 ## 무엇인가
 
 손목 밴드가 기록한 분 단위 심박·걸음·수면 데이터를 규칙으로 점검하고 LangGraph 에이전트가 결과를 한국어로 설명하는 서비스다. 채팅창에 "U05 최근 30일 심박 이상 점검해줘"처럼 물으면 에이전트가 데이터를 직접 조회해 이상 구간을 찾고 가이드라인 근거와 함께 설명한다. 데이터는 가명 처리한 공개 FitBit 데이터이고 LLM은 기본적으로 내 컴퓨터(Ollama)에서 돈다.
